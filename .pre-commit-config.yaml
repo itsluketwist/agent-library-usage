@@ -1,0 +1,39 @@
+files: '.*'
+
+repos:
+# pre-commit
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: 'v5.0.0'
+    hooks:
+      - id: check-case-conflict
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: requirements-txt-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+
+# isort
+-   repo: https://github.com/PyCQA/isort
+    rev: '6.0.1'
+    hooks:
+      - id: isort
+        args: ["--line-length=88", "--multi-line=3", "--lines-after-imports=2", "--trailing-comma"]
+
+# ruff linter and formatter
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.13
+    hooks:
+      - id: ruff
+        types_or: [ python, pyi, jupyter ]
+        args: [ --fix ]
+      - id: ruff-format
+        types_or: [ python, pyi, jupyter ]
+
+# mypy type-checker
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: 'v1.16.0'
+    hooks:
+      - id: mypy
+        args: ["--show-error-codes", "--ignore-missing-imports"]
+        additional_dependencies: [ types-requests ]
