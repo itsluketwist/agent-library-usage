@@ -13,7 +13,33 @@
 
 ## *about*
 
-todo
+This repository contains the research code and analysis for investigating how AI coding agents use external libraries in the code they write. This work is being prepared for submission to the MSR 2026 Mining Challenge.
+
+### Research Questions
+
+1. **Library Adoption**: Do agents happily import and install new libraries?
+2. **Existing Dependencies**: Do agents willingly use external libraries that are already installed, or do they avoid them?
+3. **Invalid Libraries**: Do agents try to commit invalid or non-existent libraries?
+4. **Version Specifications**: Do agents specify library versions in their PRs?
+5. **Common Libraries**: What are the most frequently used libraries by agents across different programming languages?
+
+### Dataset
+
+We analyze the [AIDev dataset](https://huggingface.co/datasets/hao-li/AIDev) from the MSR 2026 Mining Challenge, which contains:
+- 33,596 curated agent-authored pull requests (Agentic-PRs)
+- Data from 2,807 popular GitHub repositories (100+ stars)
+- Contributions from 5 AI agents: Claude Code, Cursor, Devin, GitHub Copilot, OpenAI Codex
+- PR metadata, commits, comments, reviews, and file-level changes
+
+### Methodology
+
+Our analysis focuses on the **top 3 most popular programming languages** in the dataset (TypeScript, Python, JavaScript) and examines:
+
+- Library imports in code files
+- Package manager file changes (package.json, requirements.txt, etc.)
+- Version specification patterns
+- Comparison of standard library vs external library usage
+- New dependencies added vs existing dependencies used
 
 ## *installation*
 
@@ -62,11 +88,16 @@ These notebooks are contained in the [`notebooks/`](notebooks/) directory, and a
 
 ## *structure*
 
-todo
-
-- [`data/`](data/) - The data used in the project.
-- [`output/`](output/) - The generated results.
-- [`src/`](src/) - The main project code.
+- [`data/`](data/) - Downloaded AIDev dataset files (parquet format)
+- [`output/`](output/) - Generated analysis results, statistics, and visualizations
+- [`src/`](src/) - Main project code:
+  - `library_extractor.py` - Extract library imports from code files
+  - `pr_analyzer.py` - Analyze PRs for library usage patterns
+  - `cli.py` - Command-line interface
+- [`notebooks/`](notebooks/) - Jupyter notebooks for analysis:
+  - `01_download_dataset.ipynb` - Download the AIDev dataset
+  - `02_explore_languages.ipynb` - Identify top programming languages
+  - `03_analyze_library_usage.ipynb` - Main analysis and visualizations
 
 ## *development*
 
