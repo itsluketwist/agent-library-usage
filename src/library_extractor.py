@@ -310,8 +310,8 @@ class LibraryExtractor:
             packages_str = re.sub(r"\s-[a-zA-Z]\s+\S+", " ", packages_str)
             packages_str = re.sub(r"\s-[a-zA-Z](?:\s|$)", " ", packages_str)
             # Remove long flags (double dash)
-            packages_str = re.sub(r"\s--[a-z-]+(?:=\S+)?(?:\s|$)", " ", packages_str)
-            packages_str = re.sub(r"\s--[a-z-]+\s+\S+", " ", packages_str)
+            # Only handle --flag and --flag=value, not --flag value (ambiguous with package names)
+            packages_str = re.sub(r"\s--[a-z][a-z0-9-]*(?:=\S+)?(?:\s|$)", " ", packages_str)
             # Split and clean
             packages = [
                 p.strip()
@@ -349,8 +349,9 @@ class LibraryExtractor:
         for match in go_pattern.finditer(text):
             command = match.group(1).lower()
             packages_str = match.group(2)
-            # Remove flags
-            packages_str = re.sub(r"-[a-z](?:\s+\S+)?", "", packages_str)
+            # Remove flags (single dash followed by letter)
+            packages_str = re.sub(r"\s-[a-zA-Z](?:\s|$)", " ", packages_str)
+            packages_str = re.sub(r"\s-[a-zA-Z]\s+\S+", " ", packages_str)
             # Split and clean
             packages = [
                 p.strip()
