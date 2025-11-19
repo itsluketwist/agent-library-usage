@@ -1,2 +1,8 @@
 Jupyter
 tqdm
+pandas
+pyarrow
+huggingface_hub
+datasets
+matplotlib
+seaborn
