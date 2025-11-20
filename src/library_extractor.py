@@ -2,7 +2,7 @@
 
 import json
 import re
-from typing import Dict, Optional, Set
+from typing import Dict, List, Optional, Set, Tuple
 
 
 class LibraryExtractor:
@@ -10,11 +10,11 @@ class LibraryExtractor:
 
     # Language-specific import patterns
     PYTHON_IMPORT_PATTERN = re.compile(
-        r"^(?:from\s+([\w.]+)\s+import|import\s+([\w.,\s]+))", re.MULTILINE
+        r"^(?:from\s+([\w.]+)\s+import|import\s+([\w., ]+))", re.MULTILINE
     )
 
     JS_IMPORT_PATTERN = re.compile(
-        r'(?:import\s+.*?\s+from\s+["\']([^"\']+)["\']|'
+        r'(?:import\s+(?:.*?\s+from\s+)?["\']([^"\']+)["\']|'
         r'require\(["\']([^"\']+)["\']\))',
         re.MULTILINE,
     )
@@ -24,7 +24,8 @@ class LibraryExtractor:
     )
 
     GO_IMPORT_PATTERN = re.compile(
-        r'^\s*import\s+(?:"([^"]+)"|(\([\s\S]*?\)))', re.MULTILINE
+        r'^\s*(?:_\s+|[a-zA-Z0-9_]+\s+|\.\s+)?import\s+(?:"([^"]+)"|(\([\s\S]*?\)))',
+        re.MULTILINE,
     )
 
     # Package manager file patterns
@@ -127,13 +128,20 @@ class LibraryExtractor:
                 # Extract all quoted strings
                 for line in import_block.split("\n"):
                     line = line.strip()
-                    if line.startswith('"') and line.endswith('"'):
+                    # Handle aliased imports: _ "pkg", alias "pkg", . "pkg"
+                    alias_match = re.match(r'^(?:_|[a-zA-Z0-9_]+|\.)\s+"([^"]+)"', line)
+                    if alias_match:
+                        pkg = alias_match.group(1)
+                    elif line.startswith('"') and line.endswith('"'):
                         pkg = line.strip('"')
-                        parts = pkg.split("/")
-                        if len(parts) >= 3:
-                            imports.add("/".join(parts[:3]))
-                        else:
-                            imports.add(pkg)
+                    else:
+                        continue
+
+                    parts = pkg.split("/")
+                    if len(parts) >= 3:
+                        imports.add("/".join(parts[:3]))
+                    else:
+                        imports.add(pkg)
 
         return imports
 
@@ -278,6 +286,82 @@ class LibraryExtractor:
             return cls.extract_go_imports(content)
 
         return set()
+
+    @staticmethod
+    def extract_install_commands(text: str) -> List[Tuple[str, str, List[str]]]:
+        """
+        Extract installation commands from PR body or commit messages.
+
+        Returns:
+            List of tuples: (package_manager, command, [packages])
+            Examples:
+                [("pip", "install", ["numpy", "pandas"]),
+                 ("npm", "install", ["react", "lodash"])]
+        """
+        installations = []
+
+        # Python: pip install, pip3 install, python -m pip install
+        pip_pattern = re.compile(
+            r"(?:pip|pip3|python3?\s+-m\s+pip)\s+install\s+([^\n]+)", re.IGNORECASE
+        )
+        for match in pip_pattern.finditer(text):
+            packages_str = match.group(1)
+            # Remove common flags (single dash followed by single letter)
+            packages_str = re.sub(r"\s-[a-zA-Z]\s+\S+", " ", packages_str)
+            packages_str = re.sub(r"\s-[a-zA-Z](?:\s|$)", " ", packages_str)
+            # Remove long flags (double dash)
+            # Only handle --flag and --flag=value, not --flag value (ambiguous with package names)
+            packages_str = re.sub(r"\s--[a-z][a-z0-9-]*(?:=\S+)?(?:\s|$)", " ", packages_str)
+            # Split and clean
+            packages = [
+                p.strip()
+                for p in packages_str.split()
+                if p.strip() and not p.startswith("-") and p != "."
+            ]
+            if packages:
+                installations.append(("pip", "install", packages))
+
+        # Node.js: npm install, yarn add, pnpm add
+        npm_pattern = re.compile(
+            r"(npm|yarn|pnpm)\s+(install|add|i)\s+([^\n]+)", re.IGNORECASE
+        )
+        for match in npm_pattern.finditer(text):
+            pkg_manager = match.group(1).lower()
+            packages_str = match.group(3)
+            # Remove flags (single dash followed by single letter)
+            packages_str = re.sub(r"\s-[a-zA-Z]\s+\S+", " ", packages_str)
+            packages_str = re.sub(r"\s-[a-zA-Z](?:\s|$)", " ", packages_str)
+            # Remove long flags (double dash)
+            packages_str = re.sub(r"\s--[a-z-]+(?:=\S+)?(?:\s|$)", " ", packages_str)
+            # Split and clean
+            packages = [
+                p.strip()
+                for p in packages_str.split()
+                if p.strip()
+                and not p.startswith("-")
+                and p not in ["install", "add", "i"]
+            ]
+            if packages:
+                installations.append((pkg_manager, "install", packages))
+
+        # Go: go get, go install
+        go_pattern = re.compile(r"go\s+(get|install)\s+([^\n]+)", re.IGNORECASE)
+        for match in go_pattern.finditer(text):
+            command = match.group(1).lower()
+            packages_str = match.group(2)
+            # Remove flags (single dash followed by letter)
+            packages_str = re.sub(r"\s-[a-zA-Z](?:\s|$)", " ", packages_str)
+            packages_str = re.sub(r"\s-[a-zA-Z]\s+\S+", " ", packages_str)
+            # Split and clean
+            packages = [
+                p.strip()
+                for p in packages_str.split()
+                if p.strip() and not p.startswith("-")
+            ]
+            if packages:
+                installations.append(("go", command, packages))
+
+        return installations
 
     @staticmethod
     def is_stdlib(module: str, language: str) -> bool:
