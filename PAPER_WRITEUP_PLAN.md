@@ -1,11 +1,37 @@
 # MSR 2026 Mining Challenge Paper Write-Up Plan
 
 ## Paper Title (Draft)
-**"Library Dependency Patterns in Agent-Authored Pull Requests: An Empirical Study of AIDev"**
 
-Alternative titles:
-- "How Conservative Are AI Coding Agents? An Analysis of Library Usage in Agent-Authored PRs"
-- "External Library Adoption in AI-Generated Code: Evidence from 23,791 Pull Requests"
+**Primary**: "From Conversations to Code: How AI Agents Specify Library Dependencies"
+
+**Alternatives**:
+- "Library Dependency Patterns in Agent-Authored Pull Requests: An Empirical Study of AIDev"
+- "How Conservative Are AI Coding Agents? An Analysis of Library Usage in 23,791 Pull Requests"
+- "Dependency Diligence: Version Specification Behavior in AI-Generated Code"
+
+**Title rationale**: Emphasizes the key finding (8-10x improvement over conversations) and creates contrast
+
+---
+
+## Key Findings Summary (Funnel Narrative)
+
+**The Story**: Agents are conservative, careful, and context-aware when managing dependencies in production code
+
+1. **RQ1 - Baseline**: Agents use libraries frequently (avg 0.97-2.63 libs/PR) but favor standard libraries (4-8% stdlib vs 92-96% external of unique libs)
+
+2. **RQ2 - Conservatism**: Agents are highly conservative - only 0.2-3.2% of PRs introduce new libraries ("dependency minimalism")
+
+3. **RQ3 - Diligence** ⭐ **HEADLINE**: When agents DO add libraries, they specify versions 8-10x more often than in conversations (84-100% vs 9.67%)
+   - Context matters: Modified files (84-100%) vs project init (33-100%)
+   - Ecosystem influences: Python flexible (84%), TypeScript/Go enforced (100%)
+
+4. **RQ4 - Patterns**: Common choices reflect training data (openai, typescript) and practical needs (testing frameworks)
+
+**Contributions**:
+- First large-scale study of agent library usage in production code (23,791 PRs)
+- Challenges concerns about AI carelessness with dependencies
+- Shows agents adapt behavior to context (conversations vs production)
+- Quantifies language ecosystem influence on agent behavior
 
 ---
 
@@ -19,50 +45,157 @@ Alternative titles:
 
 ---
 
-## Refined Research Questions
+## Refined Research Questions (Funnel Narrative)
 
-### Primary RQs (Core of Paper)
+**Narrative Structure**: Each RQ progressively narrows focus, building a coherent story about agent library usage:
+1. All library usage (broad baseline)
+2. New library additions (narrowing focus)
+3. Version specifications for new libraries (quality check)
+4. Patterns or issues (contextual insights)
 
-**RQ1: How frequently do AI coding agents add new external library dependencies?**
-- **Motivation**: Understanding if agents are conservative or experimental with dependencies
+---
+
+### RQ1: How frequently do AI agents use libraries?
+
+**Short form**: How frequently do agents use libraries?
+
+**Motivation**: Establish baseline understanding of agent library usage patterns
+
+**Analysis Scope**:
+- **All imports**: Both standard library and external
+- **Classification**: Standard vs external libraries
 - **Metrics**:
-  - % PRs adding new libraries (0.2% Go, 1.7% Python, 3.2% TypeScript)
-  - % PRs modifying dependency files (1.8% Go, 9.4% Python, 25.3% TypeScript)
-  - Comparison across languages and agents
-- **Insight**: Agents are surprisingly conservative, especially for compiled languages
+  - Total libraries per PR: avg 0.97 (Go), 2.13 (Python), 2.63 (TypeScript)
+  - Stdlib vs external ratio: 55:641 (Go), 49:1,250 (Python), 25:2,614 (TypeScript)
+  - % PRs using external libraries
+  - Most commonly imported libraries (overall)
 
-**RQ2: Do AI agents prefer standard library imports over external dependencies?**
-- **Motivation**: Assessing if agents follow best practices of minimizing dependencies
+**Key Findings**:
+- Agents use libraries in majority of PRs
+- Heavy reliance on standard libraries where available
+- Language ecosystem maturity affects external library adoption
+- Go: 8% stdlib, Python: 4% stdlib, TypeScript: 1% stdlib
+
+**Insight**: Agents follow best practices by preferring standard libraries, but vary by ecosystem
+
+---
+
+### RQ2: How frequently do AI agents import NEW libraries?
+
+**Short form**: How frequently do agents import new libraries?
+
+**Motivation**: Understand agent conservatism vs experimentation with dependencies (narrows from RQ1 to just NEW additions)
+
+**Analysis Scope**:
+- **Focus**: Only newly added libraries (not existing usage)
+- **Context**: Both modified files and added files
 - **Metrics**:
-  - Ratio of stdlib vs external imports (55:641 Go, 49:1250 Python, 25:2614 TypeScript)
-  - Avg libraries per PR (0.97 Go, 2.13 Python, 2.63 TypeScript)
-- **Insight**: Agents heavily favor stdlib but vary significantly by language ecosystem
+  - % PRs adding new libraries: 0.2% (Go), 1.7% (Python), 3.2% (TypeScript)
+  - % PRs modifying dependency files: 1.8% (Go), 9.4% (Python), 25.3% (TypeScript)
+  - Avg new libraries per PR: 0.02 (Go), 0.12 (Python), 0.40 (TypeScript)
+  - Total new libraries introduced: 203 (Go), 887 (Python), 2,584 (TypeScript)
 
-**RQ3: How do AI agents specify library versions in dependency files?**
-- **Motivation**: Version specification is critical for reproducibility and security
+**Key Findings**:
+- Agents are highly conservative about adding new dependencies
+- Less than 4% of PRs introduce new libraries across all languages
+- TypeScript most active (3.2%), Go most conservative (0.2%)
+- Gap between dep file changes (25%) and truly new libraries (3.2%) shows agents mostly maintain existing dependencies
+
+**Insight**: Agents exhibit "dependency minimalism" - they prefer working with existing libraries rather than introducing new ones
+
+---
+
+### RQ3: Do AI agents specify versions when importing new libraries?
+
+**Short form**: Do agents specify versions when importing new libraries?
+
+**Motivation**: Assess quality and rigor of new library additions (narrows from RQ2 to quality of additions)
+
+**Analysis Scope**:
+- **Focus**: Only libraries in modified/added dependency files
+- **Critical distinction**: Modified files (agents choosing libraries) vs added files (project init)
+- **Comparison**: Prior work (Raj & Costa MSR 2024) found ChatGPT mentions versions in only 9.67% of conversations
+
+**Metrics**:
+
+*Modified files (most relevant):*
+- Go: 100% (203/203)
+- TypeScript: 100% (2,584/2,584)
+- Python: 83.9% (759/905)
+
+*Added files (project initialization):*
+- Python: 33.3% (19/57)
+- TypeScript: 100% (1,349/1,349)
+
+*Version operators:*
+- Python prefers exact: `==` (88%)
+- TypeScript prefers compatible: `^` (73%)
+- Go: Module system enforces versions
+
+**Key Findings**:
+- **8-10x improvement over conversations** (9.67% → 84-100%)
+- Context matters: Higher rates when modifying (84-100%) vs initializing (33-100%)
+- Language ecosystems influence behavior (npm/go mod enforce, Python more flexible)
+- Agents adapt to project context and follow ecosystem conventions
+
+**Insight**: While agents are careless about versions in casual conversations, they demonstrate high diligence in production code contributions
+
+---
+
+### RQ4: What patterns emerge in agent library adoption?
+
+**Short form**: What are the most common libraries used/adopted by agents? **OR** Do agents import invalid/hallucinated dependencies?
+
+**Status**: ⚠️ Choose based on which is more interesting/novel
+
+**Option A: Most Common Libraries (SAFE)**
+- **Motivation**: Understand agent preferences and training data influence
 - **Metrics**:
-  - % dependencies with version specs (100% Go/TypeScript, 84% Python)
-  - Distribution of version operators (Python: `==` 670, TypeScript: `^` 1884)
-- **Insight**: Agents are diligent about versions, with language-specific patterns
+  - Top 10 libraries per language (with counts)
+  - Patterns: testing frameworks, AI libraries, type systems
+  - Language-specific preferences
+- **Findings**:
+  - Python: openai (18), requests (17), numpy (15), pandas (13)
+  - TypeScript: typescript (123), @types/node (84), eslint (52), zod (48)
+  - Go: testify (3), snappy (6)
+- **Insight**: Reflects both training data and practical developer needs
 
-**RQ4: What are the most commonly adopted libraries by AI agents across languages?**
-- **Motivation**: Understanding agent preferences and potential biases
+**Option B: Invalid Libraries (NOVEL)**
+- **Motivation**: Quality and reliability concerns - do agents hallucinate?
 - **Metrics**:
-  - Top 10 libraries per language (with frequency)
-  - Common patterns (e.g., openai, testing frameworks)
-- **Insight**: Reveals agent training data influence and practical developer needs
+  - % libraries validated against PyPI/npm/Go packages
+  - Types of errors: typos, outdated names, hallucinations
+  - Comparison across agents
+- **Requirements**:
+  - Implement validation (~8-10 hours)
+  - API rate limiting considerations
+  - Handle private packages gracefully
+- **Expected finding**: Very low error rate (<1%), but even rare errors are concerning
+- **Insight**: Quantifies reliability for production use
 
-### Optional Secondary RQs (If space permits)
+**Decision Criteria**:
+- **Choose A** if: Time-constrained, want safe contribution, good story completion
+- **Choose B** if: Have time for validation, want novelty, findings show issues
+- **Fallback**: Do A, mention B in "Future Work"
 
-**RQ5: How does library usage vary across different AI coding agents?**
-- **Motivation**: Comparing agent behaviors (Claude Code, Cursor, Devin, Copilot, Codex)
-- **Metrics**: Per-agent statistics (requires additional analysis)
-- **Note**: OpenAI Codex dominates dataset (16,487/23,802 PRs), may skew results
+---
 
-**RQ6: Do agents introduce invalid or non-existent library dependencies?**
-- **Motivation**: Quality and reliability concerns
-- **Metrics**: Validation against PyPI, npm, Go packages (requires additional analysis)
-- **Note**: Mentioned in RESEARCH_PLAN.md but not yet implemented
+### Optional: RQ5 (Agent Comparison)
+
+**Only include if**: Space permits (~0.3 pages) or drop to "Future Work"
+
+**Motivation**: Different agents may have different training/design
+
+**Quick wins from existing data**:
+- Already have agent labels in results
+- Can break down RQ1-4 by agent
+- 4 hours analysis + visualization
+
+**Expected findings**:
+- Codex may be more conservative (older training)
+- Devin may be more experimental (autonomous)
+- Claude Code limited sample (290 PRs) but newer
+- Variation in library preferences by agent
 
 ---
 
@@ -104,47 +237,46 @@ Alternative titles:
 - Aggregate statistics across languages
 - Quantitative analysis with frequency distributions
 
-### Page 3: Results Part 1 (~1.0 page)
+### Page 3: Results (~1.0 page)
 
-**3.1 RQ1: Frequency of New Dependencies (0.35 page)**
-- **Finding**: Agents are highly conservative
-  - Go: 0.2% PRs add new libraries (16/10,107)
-  - Python: 1.7% (122/7,190)
-  - TypeScript: 3.2% (207/6,494)
-- **Dependency file changes** are more common (1.8-25.3%)
-- **Interpretation**: Agents modify existing dependencies more than adding new ones
-- **Figure 2**: Bar chart comparing % PRs with new libs across languages
+**Narrative**: Progressive narrowing from all usage → new additions → quality of additions → patterns
 
-**3.2 RQ2: Standard Library vs External (0.35 page)**
-- **Finding**: Heavy stdlib preference, but varies by ecosystem
-  - Go: 55 stdlib, 641 external (8:92 ratio)
-  - Python: 49 stdlib, 1,250 external (4:96 ratio)
-  - TypeScript: 25 stdlib, 2,614 external (1:99 ratio)
-- **Average libraries per PR**: 0.97 (Go), 2.13 (Python), 2.63 (TypeScript)
-- **Interpretation**: Language ecosystem maturity affects agent behavior
-- **Table 2**: Library counts and ratios per language
+**3.1 RQ1: How frequently do agents use libraries? (0.25 page)**
+- **Finding**: Agents use libraries in majority of PRs
+  - Avg libraries per PR: 0.97 (Go), 2.13 (Python), 2.63 (TypeScript)
+  - Heavy stdlib reliance: 8% (Go), 4% (Python), 1% (TypeScript) of unique libraries
+- **Table 2**: Library usage statistics per language
+- **Interpretation**: Agents follow best practices but vary by ecosystem
 
-**3.3 RQ3: Version Specifications (0.3 page)**
-- **Finding**: Agents are diligent with versions
-  - Go/TypeScript: 100% specify versions
-  - Python: 83.9% (759/905)
-- **Version operators**:
-  - Python prefers exact versions (`==`: 670)
-  - TypeScript prefers compatible ranges (`^`: 1,884)
-  - Go uses module versions (all versioned)
-- **Figure 3**: Version operator distribution (stacked bar chart)
+**3.2 RQ2: How frequently do agents import NEW libraries? (0.25 page)**
+- **Finding**: Agents are highly conservative ("dependency minimalism")
+  - Only 0.2% (Go), 1.7% (Python), 3.2% (TypeScript) of PRs add new libraries
+  - Avg new libs per PR: 0.02 (Go), 0.12 (Python), 0.40 (TypeScript)
+- **Figure 2**: Bar chart - % PRs adding new libraries by language
+- **Interpretation**: Agents prefer working with existing dependencies over introducing new ones
 
-### Page 4: Results Part 2 + Discussion + Conclusion (~1.0 page)
+**3.3 RQ3: Do agents specify versions when importing new libraries? (0.35 page)**
+- **Finding**: **8-10x more diligent than conversations** (headline result!)
+  - Modified files: 100% (Go/TS), 83.9% (Python)
+  - Comparison: ChatGPT conversations only 9.67% (Raj & Costa MSR 2024)
+- **Context matters**: Modified (84-100%) vs added files (33-100%)
+- **Version operators**: Python `==` (88%), TypeScript `^` (73%)
+- **Figure 3**: Side-by-side comparison with conversation baseline (RED LINE at 9.67%)
+- **Interpretation**: Agents adapt to production context, follow ecosystem conventions
 
-**3.4 RQ4: Most Common Libraries (0.25 page)**
-- **Top libraries per language** (Table 3):
-  - Python: openai (18), requests (17), numpy (15), pandas (13)
-  - TypeScript: typescript (123), @types/node (84), eslint (52), zod (48)
-  - Go: snappy (6), testify (3), yaml.v3 (3)
-- **Patterns**: Testing frameworks, type systems, AI/ML libraries
-- **Interpretation**: Reflects agent training data and practical developer needs
+**3.4 RQ4: What patterns emerge? (0.15 page)**
+- **Option A - Common Libraries**:
+  - Top libraries: openai, typescript, testing frameworks
+  - Reflects training data and practical needs
+  - **Table 3**: Top 10 libraries per language (compact)
+- **Option B - Invalid Libraries** (if implemented):
+  - Validation rate: X% against PyPI/npm/Go packages
+  - Error types and frequency
+  - Quality implications
 
-**4. Discussion (0.3 page)**
+### Page 4: Discussion + Conclusion + Ethics (~1.0 page)
+
+**4. Discussion (0.35 page)**
 - **Implications for developers**: Agents are safe but may miss useful libraries
 - **Implications for tool builders**: Consider dependency suggestion features
 - **Limitations**: Dataset bias (Codex-heavy), patch-based extraction may miss context
