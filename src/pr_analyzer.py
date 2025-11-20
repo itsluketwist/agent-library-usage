@@ -1,7 +1,7 @@
 """Analyze pull requests for library usage patterns."""
 
 from collections import Counter
-from dataclasses import asdict, dataclass
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set, Tuple, cast
 
@@ -45,23 +45,27 @@ class LibraryUsage:
 
     def to_dict(self) -> Dict:
         """Convert to dictionary for serialization."""
-        d = asdict(self)
-        # Convert sets to lists
-        for key in [
-            "libraries_in_code",
-            "libraries_in_deps",
-            "all_libraries",
-            "new_libraries",
-            "stdlib_imports",
-            "external_libs",
-        ]:
-            if key in d and isinstance(d[key], set):
-                d[key] = list(d[key])
-        # Convert Counter to dict
-        if "version_operators" in d:
-            d["version_operators"] = dict(d["version_operators"])
-        if "dep_files_changed" in d:
-            d["dep_files_changed"] = list(d["dep_files_changed"])
+        # Manually convert to avoid asdict() issues with Counter
+        d = {
+            "pr_id": self.pr_id,
+            "repository_id": self.repository_id,
+            "language": self.language,
+            "agent": self.agent,
+            "libraries_in_code": list(self.libraries_in_code),
+            "libraries_in_deps": list(self.libraries_in_deps),
+            "all_libraries": list(self.all_libraries),
+            "new_libraries": list(self.new_libraries),
+            "stdlib_imports": list(self.stdlib_imports),
+            "external_libs": list(self.external_libs),
+            "dep_file_added": self.dep_file_added,
+            "dep_file_modified": self.dep_file_modified,
+            "dep_files_changed": list(self.dep_files_changed),
+            "libs_with_version": self.libs_with_version,
+            "libs_without_version": self.libs_without_version,
+            "version_operators": dict(self.version_operators),
+            "total_files_changed": self.total_files_changed,
+            "code_files_changed": self.code_files_changed,
+        }
         return d
 
 
@@ -126,8 +130,13 @@ class PRAnalyzer:
         # Process each file change
         for _, row in commits_df.iterrows():
             filename = row.get("filename", "")
-            content = row.get("content", "")
             patch = row.get("patch", "")
+
+            # Extract content from patch if content column doesn't exist
+            if "content" in row and row["content"]:
+                content = row["content"]
+            else:
+                content = self._extract_content_from_patch(patch) if patch else ""
 
             if not filename:
                 continue
@@ -204,6 +213,34 @@ class PRAnalyzer:
             total_files_changed=total_files,
             code_files_changed=code_files,
         )
+
+    def _extract_content_from_patch(self, patch: str) -> str:
+        """
+        Extract added content from a unified diff patch.
+
+        Args:
+            patch: Unified diff format patch string
+
+        Returns:
+            Content of added lines (without + prefix)
+        """
+        if not patch or not isinstance(patch, str):
+            return ""
+
+        lines = []
+        for line in patch.split("\n"):
+            # Skip diff headers
+            if (
+                line.startswith("@@")
+                or line.startswith("+++")
+                or line.startswith("---")
+            ):
+                continue
+            # Extract added lines (start with +)
+            if line.startswith("+"):
+                lines.append(line[1:])  # Remove the + prefix
+
+        return "\n".join(lines)
 
     def _is_dependency_file(self, filename: str, language: str) -> bool:
         """Check if a file is a dependency/package manager file."""

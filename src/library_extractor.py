@@ -311,7 +311,9 @@ class LibraryExtractor:
             packages_str = re.sub(r"\s-[a-zA-Z](?:\s|$)", " ", packages_str)
             # Remove long flags (double dash)
             # Only handle --flag and --flag=value, not --flag value (ambiguous with package names)
-            packages_str = re.sub(r"\s--[a-z][a-z0-9-]*(?:=\S+)?(?:\s|$)", " ", packages_str)
+            packages_str = re.sub(
+                r"\s--[a-z][a-z0-9-]*(?:=\S+)?(?:\s|$)", " ", packages_str
+            )
             # Split and clean
             packages = [
                 p.strip()
