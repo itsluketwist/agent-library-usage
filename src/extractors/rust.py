@@ -1,7 +1,7 @@
 """Rust library extraction logic."""
 
 import re
-from typing import Dict, List, Literal, Optional, Set, Tuple
+from typing import Literal
 
 from .base import BaseExtractor
 
@@ -27,7 +27,7 @@ class RustExtractor(BaseExtractor):
     }
 
     @staticmethod
-    def extract_imports(code: str) -> Set[str]:
+    def extract_imports(code: str) -> set[str]:
         """Extract Rust use statements from code."""
         imports = set()
 
@@ -52,9 +52,9 @@ class RustExtractor(BaseExtractor):
         return imports
 
     @staticmethod
-    def parse_cargo_toml(content: str) -> Dict[str, Optional[str]]:
+    def parse_cargo_toml(content: str) -> dict[str, str | None]:
         """Parse Cargo.toml and extract dependencies."""
-        packages = {}
+        packages: dict[str, str | None] = {}
 
         # Track which section we're in
         in_dependencies = False
@@ -128,7 +128,7 @@ class RustExtractor(BaseExtractor):
         return module in RustExtractor.STDLIB
 
     @staticmethod
-    def extract_install_commands(text: str) -> List[Tuple[str, str, List[str]]]:
+    def extract_install_commands(text: str) -> list[tuple[str, str, list[str]]]:
         """
         Extract Rust installation commands from PR body or commit messages.
 
@@ -145,7 +145,7 @@ class RustExtractor(BaseExtractor):
         cls,
         filename: str,
         content: str,
-    ) -> Tuple[Optional[Literal["code", "dependency"]], Dict[str, Optional[str]]]:
+    ) -> tuple[Literal["code", "dependency"] | None, dict[str, str | None]]:
         """
         Extract libraries from a Rust file based on its type.
 

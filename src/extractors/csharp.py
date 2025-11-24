@@ -2,7 +2,7 @@
 
 import re
 import xml.etree.ElementTree as ET
-from typing import Dict, List, Literal, Optional, Set, Tuple
+from typing import Literal
 
 from .base import BaseExtractor
 
@@ -49,7 +49,7 @@ class CSharpExtractor(BaseExtractor):
     }
 
     @staticmethod
-    def extract_imports(code: str) -> Set[str]:
+    def extract_imports(code: str) -> set[str]:
         """Extract C# using statements from code."""
         imports = set()
 
@@ -62,7 +62,7 @@ class CSharpExtractor(BaseExtractor):
         return imports
 
     @staticmethod
-    def parse_csproj(content: str) -> Dict[str, Optional[str]]:
+    def parse_csproj(content: str) -> dict[str, str | None]:
         """Parse .csproj file and extract PackageReference entries."""
         packages = {}
 
@@ -100,7 +100,7 @@ class CSharpExtractor(BaseExtractor):
         return packages
 
     @staticmethod
-    def parse_packages_config(content: str) -> Dict[str, Optional[str]]:
+    def parse_packages_config(content: str) -> dict[str, str | None]:
         """Parse packages.config file and extract package entries."""
         packages = {}
 
@@ -126,7 +126,7 @@ class CSharpExtractor(BaseExtractor):
         return packages
 
     @staticmethod
-    def parse_paket_dependencies(content: str) -> Dict[str, Optional[str]]:
+    def parse_paket_dependencies(content: str) -> dict[str, str | None]:
         """Parse paket.dependencies file."""
         packages = {}
 
@@ -154,7 +154,7 @@ class CSharpExtractor(BaseExtractor):
         )
 
     @staticmethod
-    def extract_install_commands(text: str) -> List[Tuple[str, str, List[str]]]:
+    def extract_install_commands(text: str) -> list[tuple[str, str, list[str]]]:
         """
         Extract C#/.NET installation commands from PR body or commit messages.
 
@@ -171,7 +171,7 @@ class CSharpExtractor(BaseExtractor):
         cls,
         filename: str,
         content: str,
-    ) -> Tuple[Optional[Literal["code", "dependency"]], Dict[str, Optional[str]]]:
+    ) -> tuple[Literal["code", "dependency"] | None, dict[str, str | None]]:
         """
         Extract libraries from a C# file based on its type.
 

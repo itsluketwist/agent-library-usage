@@ -235,7 +235,7 @@ nuget Newtonsoft.Json 13.0.1
 nuget Serilog 2.12.0
 nuget FSharp.Core
 """
-        result = CSharpExtractor.parse_packages_config(
+        _ = CSharpExtractor.parse_packages_config(
             content=content,
         )
         # Note: parse_packages_config doesn't handle paket format

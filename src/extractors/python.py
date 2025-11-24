@@ -2,7 +2,7 @@
 
 import re
 import sys
-from typing import Dict, List, Literal, Optional, Set, Tuple
+from typing import Literal
 
 from .base import BaseExtractor
 
@@ -33,7 +33,7 @@ class PythonExtractor(BaseExtractor):
     )  # use this below to categorise packages
 
     @staticmethod
-    def extract_imports(code: str) -> Set[str]:
+    def extract_imports(code: str) -> set[str]:
         """Extract Python imports from code."""
         imports = set()
 
@@ -50,7 +50,7 @@ class PythonExtractor(BaseExtractor):
         return imports
 
     @staticmethod
-    def parse_requirements_txt(content: str) -> Dict[str, Optional[str]]:
+    def parse_requirements_txt(content: str) -> dict[str, str | None]:
         """Parse requirements.txt file and extract packages with versions."""
         packages = {}
 
@@ -80,7 +80,7 @@ class PythonExtractor(BaseExtractor):
         return module in PythonExtractor.STDLIB
 
     @staticmethod
-    def extract_install_commands(text: str) -> List[Tuple[str, str, List[str]]]:
+    def extract_install_commands(text: str) -> list[tuple[str, str, list[str]]]:
         """
         Extract Python installation commands from PR body or commit messages.
 
@@ -123,7 +123,7 @@ class PythonExtractor(BaseExtractor):
         cls,
         filename: str,
         content: str,
-    ) -> Tuple[Optional[Literal["code", "dependency"]], Dict[str, Optional[str]]]:
+    ) -> tuple[Literal["code", "dependency"] | None, dict[str, str | None]]:
         """
         Extract libraries from a Python file based on its type.
 

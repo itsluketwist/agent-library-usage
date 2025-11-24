@@ -7,9 +7,11 @@ If this is the first time you encounter a new repository:
 - Set up a virtual environment if one doesn't exist. Environment should be Python3.12, and in the .venv directory.
 
 Style notes:
+- Use British English where relevant - for example "utilise not utilize".
+- You can run the linters with `.venv/bin/pre-commit run --all-files`, you should make sure they pass.
 - You should comprehensively use Python typings. When possible, do not use the classes from the `typing` module, use the lowercase builtins (for example use list not List), also favour `| None` over Optional.
 - Class and method docstrings should be concise but well explained, do not include parameter information, if there is a return then the last sentence should be on a separate line and begin "Returns ..." with an explanation.
 - Each non-empty file should have a short docstring on the first line.
 - Reusable code should be stored in `src`, one-off code should be in Jupyter notebooks and stored in `notebooks`.
 - Only use classes when it makes sense, it is not always necessary for every method in a file to be a part of the same class.
-- Always have a trailing comma in method arguments on definition, or the parameters when calling. You should prefer tall code over wide code.
+- Always have a trailing comma in method arguments on definition, or the parameters when calling, the only exception is when there is a single argument or parameter. You should prefer tall code over wide code.

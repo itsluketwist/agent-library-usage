@@ -1,7 +1,5 @@
 """Library extractors for different programming languages."""
 
-from typing import List, Optional, Tuple, Type
-
 from .base import BaseExtractor
 from .csharp import CSharpExtractor
 from .go import GoExtractor
@@ -23,7 +21,7 @@ __all__ = [
 ]
 
 
-def get_extractor(language: str) -> Optional[Type[BaseExtractor]]:
+def get_extractor(language: str) -> type[BaseExtractor] | None:
     """
     Get the appropriate extractor class for a given language.
 
@@ -42,7 +40,7 @@ def get_extractor(language: str) -> Optional[Type[BaseExtractor]]:
     return extractor_map.get(language.lower())
 
 
-def extract_install_commands(text: str) -> List[Tuple[str, str, List[str]]]:
+def extract_install_commands(text: str) -> list[tuple[str, str, list[str]]]:
     """
     Extract installation commands from PR body or commit messages.
 

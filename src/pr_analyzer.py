@@ -1,8 +1,7 @@
-"""Analyze pull requests for library usage patterns."""
+"""Analyse pull requests for library usage patterns."""
 
 from collections import Counter
 from dataclasses import dataclass
-from typing import Any, Dict, List
 
 import pandas as pd
 
@@ -26,8 +25,8 @@ class LibraryUsage:
     dep_no_version: set[str]
     dep_with_version: set[str]
 
-    def to_dict(self) -> Dict:
-        """Convert to dictionary for serialization."""
+    def to_dict(self) -> dict:
+        """Convert to dictionary for serialisation."""
         return {
             "pr_id": self.pr_id,
             "repo_id": self.repo_id,
@@ -41,15 +40,15 @@ class LibraryUsage:
 
 
 class PRAnalyzer:
-    """Analyze pull requests for library usage patterns."""
+    """Analyse pull requests for library usage patterns."""
 
-    def analyze_commit_details(
+    def analyse_commit_details(
         self,
         commit_details: pd.DataFrame,
         language: str,
-    ) -> Dict[int, LibraryUsage]:
+    ) -> dict[int, LibraryUsage]:
         """
-        Analyze commit details for library usage.
+        Analyse commit details for library usage.
 
         Returns:
             Dictionary mapping pr_id to LibraryUsage
@@ -60,7 +59,7 @@ class PRAnalyzer:
         for pr_id, pr_commits in commit_details.groupby("pull_request_id"):
             usage = self._analyze_pr_commits(
                 pr_id=pr_id,
-                pr_commits=pr_commits,
+                commits_df=pr_commits,
                 language=language,
             )
             results[pr_id] = usage
@@ -73,13 +72,13 @@ class PRAnalyzer:
         commits_df: pd.DataFrame,
         language: str,
     ) -> LibraryUsage:
-        """Analyze a single PR's commits for library usage."""
+        """Analyse a single PR's commits for library usage."""
 
         # Get the extractor for this language
-        extractor = get_extractor(
+        extractor_class = get_extractor(
             language=language,
         )
-        if not extractor:
+        if not extractor_class:
             raise ValueError(f"Unsupported language: {language}")
 
         # Extract basic info
@@ -104,7 +103,7 @@ class PRAnalyzer:
                 continue
 
             # Extract libraries using extractor
-            file_type, libs_dict = extractor.extract_from_file(
+            file_type, libs_dict = extractor_class.extract_from_file(
                 filename=filename,
                 content=content,
             )
@@ -113,7 +112,7 @@ class PRAnalyzer:
             if file_type == "code":
                 # Code file: categorize imports as stdlib or external
                 for lib in libs_dict.keys():
-                    if extractor.is_stdlib(module=lib):
+                    if extractor_class.is_stdlib(module=lib):
                         stdlib_imports.add(lib)
                     else:
                         extlib_imports.add(lib)
@@ -163,8 +162,8 @@ class PRAnalyzer:
 
     @staticmethod
     def aggregate_statistics(
-        usages: List[LibraryUsage],
-    ) -> Dict[str, Any]:
+        usages: list[LibraryUsage],
+    ) -> dict[str, int | float | list[tuple[str, int]]]:
         """Aggregate statistics across multiple PR library usages."""
 
         total_prs = len(usages)

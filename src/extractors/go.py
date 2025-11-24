@@ -1,7 +1,7 @@
 """Go library extraction logic."""
 
 import re
-from typing import Dict, List, Literal, Optional, Set, Tuple
+from typing import Literal
 
 from .base import BaseExtractor
 
@@ -62,7 +62,7 @@ class GoExtractor(BaseExtractor):
     }
 
     @staticmethod
-    def extract_imports(code: str) -> Set[str]:
+    def extract_imports(code: str) -> set[str]:
         """Extract Go imports from code."""
         imports = set()
 
@@ -103,9 +103,9 @@ class GoExtractor(BaseExtractor):
         return imports
 
     @staticmethod
-    def parse_go_mod(content: str) -> Dict[str, str]:
+    def parse_go_mod(content: str) -> dict[str, str | None]:
         """Parse go.mod file and extract dependencies."""
-        packages = {}
+        packages: dict[str, str | None] = {}
 
         in_require_block = False
         for line in content.split("\n"):
@@ -134,7 +134,7 @@ class GoExtractor(BaseExtractor):
         return module in GoExtractor.STDLIB or "/" not in module
 
     @staticmethod
-    def extract_install_commands(text: str) -> List[Tuple[str, str, List[str]]]:
+    def extract_install_commands(text: str) -> list[tuple[str, str, list[str]]]:
         """
         Extract Go installation commands from PR body or commit messages.
 
@@ -171,7 +171,7 @@ class GoExtractor(BaseExtractor):
         cls,
         filename: str,
         content: str,
-    ) -> Tuple[Optional[Literal["code", "dependency"]], Dict[str, Optional[str]]]:
+    ) -> tuple[Literal["code", "dependency"] | None, dict[str, str | None]]:
         """
         Extract libraries from a Go file based on its type.
 

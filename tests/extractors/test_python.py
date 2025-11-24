@@ -219,6 +219,5 @@ package3!=1.5.0
             content=content,
         )
         assert result["package1"] == "==1.2.3.4"
-        # Our simple parser might not handle multiple constraints perfectly
-        assert "package2" in result
+        assert result["package2"] == ">=1.0.0,<2.0.0"
         assert result["package3"] == "!=1.5.0"

@@ -2,7 +2,7 @@
 
 import json
 import re
-from typing import Dict, List, Literal, Optional, Set, Tuple
+from typing import Literal
 
 from .base import BaseExtractor
 
@@ -62,7 +62,7 @@ class JavaScriptExtractor(BaseExtractor):
     }
 
     @staticmethod
-    def extract_imports(code: str) -> Set[str]:
+    def extract_imports(code: str) -> set[str]:
         """Extract JavaScript/TypeScript imports from code."""
         imports = set()
 
@@ -81,11 +81,11 @@ class JavaScriptExtractor(BaseExtractor):
         return imports
 
     @staticmethod
-    def parse_package_json(content: str) -> Dict[str, str]:
+    def parse_package_json(content: str) -> dict[str, str | None]:
         """Parse package.json and extract dependencies."""
         try:
             data = json.loads(content)
-            packages = {}
+            packages: dict[str, str | None] = {}
 
             # Combine dependencies and devDependencies
             for dep_type in ["dependencies", "devDependencies", "peerDependencies"]:
@@ -104,7 +104,7 @@ class JavaScriptExtractor(BaseExtractor):
         return module_clean in JavaScriptExtractor.STDLIB
 
     @staticmethod
-    def extract_install_commands(text: str) -> List[Tuple[str, str, List[str]]]:
+    def extract_install_commands(text: str) -> list[tuple[str, str, list[str]]]:
         """
         Extract JavaScript/Node.js installation commands from PR body or commit messages.
 
@@ -149,7 +149,7 @@ class JavaScriptExtractor(BaseExtractor):
         cls,
         filename: str,
         content: str,
-    ) -> Tuple[Optional[Literal["code", "dependency"]], Dict[str, Optional[str]]]:
+    ) -> tuple[Literal["code", "dependency"] | None, dict[str, str | None]]:
         """
         Extract libraries from a JavaScript/TypeScript file based on its type.
 

@@ -1,7 +1,7 @@
 """Base extractor class with common functionality."""
 
 import re
-from typing import Dict, List, Literal, Optional, Tuple
+from typing import Literal
 
 
 class BaseExtractor:
@@ -11,14 +11,14 @@ class BaseExtractor:
     VERSION_PATTERN = re.compile(r"([=<>!~]+)?\s*(\d+(?:\.\d+)*(?:\.\*)?)")
 
     @staticmethod
-    def has_version_spec(version_str: Optional[str]) -> bool:
+    def has_version_spec(version_str: str | None) -> bool:
         """Check if a version string contains a version specification."""
         if not version_str:
             return False
         return bool(BaseExtractor.VERSION_PATTERN.search(version_str))
 
     @staticmethod
-    def extract_version_operator(version_str: str) -> Optional[str]:
+    def extract_version_operator(version_str: str) -> str | None:
         """Extract the version operator (e.g., ==, >=, ~, ^) from version string."""
         operators = ["==", ">=", "<=", ">", "<", "~=", "!=", "^", "~"]
         for op in operators:
@@ -27,7 +27,19 @@ class BaseExtractor:
         return None
 
     @staticmethod
-    def extract_install_commands(text: str) -> List[Tuple[str, str, List[str]]]:
+    def is_stdlib(module: str) -> bool:
+        """
+        Check if a module is part of the language's standard library.
+
+        This method should be overridden by language-specific extractors.
+
+        Returns:
+            True if the module is part of the standard library, False otherwise.
+        """
+        raise NotImplementedError()
+
+    @staticmethod
+    def extract_install_commands(text: str) -> list[tuple[str, str, list[str]]]:
         """
         Extract installation commands from PR body or commit messages.
 
@@ -43,7 +55,7 @@ class BaseExtractor:
     def extract_from_file(
         filename: str,
         content: str,
-    ) -> Tuple[Optional[Literal["code", "dependency"]], Dict[str, Optional[str]]]:
+    ) -> tuple[Literal["code", "dependency"] | None, dict[str, str | None]]:
         """
         Extract libraries from a file based on its type.
 
