@@ -1,6 +1,6 @@
 """Unit tests for Rust extractors."""
 
-from src.library_extractor import LibraryExtractor
+from src.extractors import RustExtractor
 
 
 class TestRustImportExtraction:
@@ -13,7 +13,9 @@ use serde;
 use tokio;
 use reqwest;
 """
-        result = LibraryExtractor.extract_rust_imports(code)
+        result = RustExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"serde", "tokio", "reqwest"}
 
     def test_use_with_path(self):
@@ -23,7 +25,9 @@ use serde::Deserialize;
 use tokio::runtime::Runtime;
 use std::collections::HashMap;
 """
-        result = LibraryExtractor.extract_rust_imports(code)
+        result = RustExtractor.extract_imports(
+            code=code,
+        )
         # std should be filtered as stdlib, others should get base crate
         assert result == {"serde", "tokio"}
 
@@ -33,7 +37,9 @@ use std::collections::HashMap;
 pub use serde::Serialize;
 pub use tokio;
 """
-        result = LibraryExtractor.extract_rust_imports(code)
+        result = RustExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"serde", "tokio"}
 
     def test_use_with_braces(self):
@@ -42,7 +48,9 @@ pub use tokio;
 use serde::{Serialize, Deserialize};
 use tokio::{task, time};
 """
-        result = LibraryExtractor.extract_rust_imports(code)
+        result = RustExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"serde", "tokio"}
 
     def test_relative_imports_excluded(self):
@@ -53,7 +61,9 @@ use self::submodule;
 use super::parent;
 use serde;
 """
-        result = LibraryExtractor.extract_rust_imports(code)
+        result = RustExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"serde"}
 
     def test_stdlib_excluded(self):
@@ -65,12 +75,19 @@ use core::fmt;
 use alloc::vec::Vec;
 use serde;
 """
-        result = LibraryExtractor.extract_rust_imports(code)
+        result = RustExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"serde"}
 
     def test_empty_code(self):
         """Test with empty string."""
-        assert LibraryExtractor.extract_rust_imports("") == set()
+        assert (
+            RustExtractor.extract_imports(
+                code="",
+            )
+            == set()
+        )
 
     def test_no_imports(self):
         """Test code without imports."""
@@ -79,7 +96,12 @@ fn main() {
     println!("Hello, World!");
 }
 """
-        assert LibraryExtractor.extract_rust_imports(code) == set()
+        assert (
+            RustExtractor.extract_imports(
+                code=code,
+            )
+            == set()
+        )
 
 
 class TestCargoTomlParsing:
@@ -93,7 +115,9 @@ serde = "1.0"
 tokio = "1.25"
 reqwest = "0.11"
 """
-        result = LibraryExtractor.parse_cargo_toml(content)
+        result = RustExtractor.parse_cargo_toml(
+            content=content,
+        )
         assert result == {
             "serde": "1.0",
             "tokio": "1.25",
@@ -107,7 +131,9 @@ reqwest = "0.11"
 serde = { version = "1.0", features = ["derive"] }
 tokio = { version = "1.25", features = ["full"] }
 """
-        result = LibraryExtractor.parse_cargo_toml(content)
+        result = RustExtractor.parse_cargo_toml(
+            content=content,
+        )
         assert result["serde"] == "1.0"
         assert result["tokio"] == "1.25"
 
@@ -121,7 +147,9 @@ serde = "1.0"
 tokio-test = "0.4"
 criterion = "0.5"
 """
-        result = LibraryExtractor.parse_cargo_toml(content)
+        result = RustExtractor.parse_cargo_toml(
+            content=content,
+        )
         assert "serde" in result
         assert "tokio-test" in result
         assert "criterion" in result
@@ -135,7 +163,9 @@ serde = "1.0"
 [build-dependencies]
 cc = "1.0"
 """
-        result = LibraryExtractor.parse_cargo_toml(content)
+        result = RustExtractor.parse_cargo_toml(
+            content=content,
+        )
         assert "serde" in result
         assert "cc" in result
 
@@ -156,7 +186,9 @@ criterion = "0.5"
 [build-dependencies]
 cc = "1.0"
 """
-        result = LibraryExtractor.parse_cargo_toml(content)
+        result = RustExtractor.parse_cargo_toml(
+            content=content,
+        )
         assert len(result) == 4
         assert "serde" in result
         assert "tokio" in result
@@ -170,7 +202,9 @@ cc = "1.0"
 name = "my-app"
 version = "0.1.0"
 """
-        result = LibraryExtractor.parse_cargo_toml(content)
+        result = RustExtractor.parse_cargo_toml(
+            content=content,
+        )
         assert result == {}
 
 
@@ -179,13 +213,27 @@ class TestRustStdlibDetection:
 
     def test_stdlib_crates(self):
         """Test standard library crate detection."""
-        assert LibraryExtractor.is_stdlib("std", "rust")
-        assert LibraryExtractor.is_stdlib("core", "rust")
-        assert LibraryExtractor.is_stdlib("alloc", "rust")
-        assert LibraryExtractor.is_stdlib("proc_macro", "rust")
+        assert RustExtractor.is_stdlib(
+            module="std",
+        )
+        assert RustExtractor.is_stdlib(
+            module="core",
+        )
+        assert RustExtractor.is_stdlib(
+            module="alloc",
+        )
+        assert RustExtractor.is_stdlib(
+            module="proc_macro",
+        )
 
     def test_external_crates(self):
         """Test external crate detection."""
-        assert not LibraryExtractor.is_stdlib("serde", "rust")
-        assert not LibraryExtractor.is_stdlib("tokio", "rust")
-        assert not LibraryExtractor.is_stdlib("reqwest", "rust")
+        assert not RustExtractor.is_stdlib(
+            module="serde",
+        )
+        assert not RustExtractor.is_stdlib(
+            module="tokio",
+        )
+        assert not RustExtractor.is_stdlib(
+            module="reqwest",
+        )

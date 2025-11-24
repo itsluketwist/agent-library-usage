@@ -1,6 +1,6 @@
 """Unit tests for base extractors."""
 
-from src.library_extractor import LibraryExtractor
+from src.extractors import BaseExtractor, extract_install_commands
 
 
 class TestVersionOperatorExtraction:
@@ -8,23 +8,23 @@ class TestVersionOperatorExtraction:
 
     def test_python_operators(self):
         """Test Python version operators."""
-        assert LibraryExtractor.extract_version_operator("==1.0.0") == "=="
-        assert LibraryExtractor.extract_version_operator(">=2.0.0") == ">="
-        assert LibraryExtractor.extract_version_operator("<=3.0.0") == "<="
-        assert LibraryExtractor.extract_version_operator(">1.0") == ">"
-        assert LibraryExtractor.extract_version_operator("<2.0") == "<"
-        assert LibraryExtractor.extract_version_operator("~=1.5") == "~="
-        assert LibraryExtractor.extract_version_operator("!=1.0.0") == "!="
+        assert BaseExtractor.extract_version_operator("==1.0.0") == "=="
+        assert BaseExtractor.extract_version_operator(">=2.0.0") == ">="
+        assert BaseExtractor.extract_version_operator("<=3.0.0") == "<="
+        assert BaseExtractor.extract_version_operator(">1.0") == ">"
+        assert BaseExtractor.extract_version_operator("<2.0") == "<"
+        assert BaseExtractor.extract_version_operator("~=1.5") == "~="
+        assert BaseExtractor.extract_version_operator("!=1.0.0") == "!="
 
     def test_js_operators(self):
         """Test JavaScript version operators."""
-        assert LibraryExtractor.extract_version_operator("^1.0.0") == "^"
-        assert LibraryExtractor.extract_version_operator("~1.5.0") == "~"
+        assert BaseExtractor.extract_version_operator("^1.0.0") == "^"
+        assert BaseExtractor.extract_version_operator("~1.5.0") == "~"
 
     def test_no_operator(self):
         """Test when no operator is present."""
-        assert LibraryExtractor.extract_version_operator("1.0.0") is None
-        assert LibraryExtractor.extract_version_operator("") is None
+        assert BaseExtractor.extract_version_operator("1.0.0") is None
+        assert BaseExtractor.extract_version_operator("") is None
 
 
 class TestInstallCommandExtraction:
@@ -33,26 +33,34 @@ class TestInstallCommandExtraction:
     def test_pip_install(self):
         """Test pip install commands."""
         text = "To install dependencies, run: pip install numpy pandas"
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         assert len(result) == 1
         assert result[0] == ("pip", "install", ["numpy", "pandas"])
 
     def test_pip3_install(self):
         """Test pip3 install commands."""
         text = "Install with: pip3 install scikit-learn matplotlib"
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         assert result[0] == ("pip", "install", ["scikit-learn", "matplotlib"])
 
     def test_python_m_pip(self):
         """Test python -m pip install."""
         text = "Run: python -m pip install requests flask"
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         assert result[0] == ("pip", "install", ["requests", "flask"])
 
     def test_pip_with_flags(self):
         """Test pip install with flags (should be removed)."""
         text = "pip install -U numpy --upgrade pandas -e ."
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         # Flags should be filtered out
         packages = result[0][2]
         assert "numpy" in packages
@@ -63,31 +71,41 @@ class TestInstallCommandExtraction:
     def test_npm_install(self):
         """Test npm install commands."""
         text = "Install dependencies: npm install react lodash"
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         assert result[0] == ("npm", "install", ["react", "lodash"])
 
     def test_yarn_add(self):
         """Test yarn add commands."""
         text = "Add packages: yarn add axios @mui/material"
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         assert result[0] == ("yarn", "install", ["axios", "@mui/material"])
 
     def test_pnpm_add(self):
         """Test pnpm add commands."""
         text = "Use: pnpm add express body-parser"
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         assert result[0] == ("pnpm", "install", ["express", "body-parser"])
 
     def test_go_get(self):
         """Test go get commands."""
         text = "Install with: go get github.com/gorilla/mux"
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         assert result[0] == ("go", "get", ["github.com/gorilla/mux"])
 
     def test_go_install(self):
         """Test go install commands."""
         text = "Run: go install github.com/spf13/cobra@latest"
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         assert result[0][0] == "go"
         assert result[0][1] == "install"
         assert "github.com/spf13/cobra@latest" in result[0][2]
@@ -106,7 +124,9 @@ npm install react lodash
 And Go deps:
 go get github.com/gorilla/mux
 """
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         assert len(result) == 3
         assert result[0] == ("pip", "install", ["numpy", "pandas"])
         assert result[1] == ("npm", "install", ["react", "lodash"])
@@ -120,19 +140,25 @@ pip install requests
 npm install axios
 ```
 """
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         assert len(result) == 2
 
     def test_case_insensitive(self):
         """Test case-insensitive matching."""
         text = "PIP INSTALL numpy\nNPM INSTALL react"
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         assert len(result) == 2
 
     def test_no_commands(self):
         """Test text with no install commands."""
         text = "This is just a regular PR description with no install commands."
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         assert result == []
 
     def test_version_specifiers_in_commands(self):
@@ -142,7 +168,9 @@ pip install numpy==1.24.0 pandas>=2.0.0
 npm install react@18.0.0 lodash@^4.17.21
 go get github.com/spf13/cobra@v1.8.0
 """
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         assert len(result) == 3
         # Should keep version specifiers with package names
         assert "numpy==1.24.0" in result[0][2]
@@ -160,7 +188,9 @@ pip install \
 """
         # Our current implementation treats each line separately
         # This should still work as newlines break the match
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         # Depending on implementation, this might capture partial lines
         assert len(result) >= 1
 
@@ -178,7 +208,9 @@ npm install
 go get github.com/gorilla/mux
 ```
 """
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         # Should extract from code blocks
         assert any("requirements.txt" in str(r) for r in result)
         assert any("mux" in str(r) for r in result)
@@ -186,7 +218,9 @@ go get github.com/gorilla/mux
     def test_install_with_extras(self):
         """Test pip install with extras."""
         text = "pip install requests[security] flask[async]"
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         assert result[0] == ("pip", "install", ["requests[security]", "flask[async]"])
 
     def test_install_with_git_urls(self):
@@ -195,7 +229,9 @@ go get github.com/gorilla/mux
 pip install git+https://github.com/user/repo.git
 npm install git+https://github.com/user/package.git
 """
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         # Should capture git URLs
         assert len(result) == 2
         assert "git+https://github.com/user/repo.git" in result[0][2]
@@ -203,7 +239,9 @@ npm install git+https://github.com/user/package.git
     def test_npm_install_save_flags(self):
         """Test npm install with --save and --save-dev flags."""
         text = "npm install --save react --save-dev jest"
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         packages = result[0][2]
         assert "react" in packages
         assert "jest" in packages
@@ -213,7 +251,9 @@ npm install git+https://github.com/user/package.git
     def test_pip_install_editable(self):
         """Test pip install -e for editable installs."""
         text = "pip install -e . numpy pandas"
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         packages = result[0][2]
         assert "numpy" in packages
         assert "pandas" in packages
@@ -226,21 +266,27 @@ npm install git+https://github.com/user/package.git
 pip install numpy  # for numerical computing
 npm install react  // UI framework
 """
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         # Comments might be included depending on newline handling
         assert len(result) >= 2
 
     def test_scoped_packages_with_versions(self):
         """Test scoped npm packages with version specs."""
         text = "npm install @angular/core@15.0.0 @mui/material@^5.0.0"
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         assert "@angular/core@15.0.0" in result[0][2]
         assert "@mui/material@^5.0.0" in result[0][2]
 
     def test_multiple_flags_combinations(self):
         """Test various flag combinations."""
         text = "pip install -U --user --no-cache-dir numpy pandas"
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         packages = result[0][2]
         assert "numpy" in packages
         assert "pandas" in packages
@@ -251,14 +297,18 @@ npm install react  // UI framework
     def test_yarn_workspace_install(self):
         """Test yarn with workspace packages."""
         text = "yarn add -W package-name"
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         assert "package-name" in result[0][2]
         assert "-W" not in result[0][2]
 
     def test_pnpm_with_workspace_flag(self):
         """Test pnpm with workspace protocol."""
         text = "pnpm add package-a package-b --workspace"
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         packages = result[0][2]
         assert "package-a" in packages
         assert "package-b" in packages
@@ -267,20 +317,26 @@ npm install react  // UI framework
     def test_go_get_with_update_flag(self):
         """Test go get with -u flag."""
         text = "go get -u github.com/gorilla/mux"
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         # Should extract package even with flag
         assert len(result) == 1
         assert "github.com/gorilla/mux" in result[0][2]
 
     def test_empty_string(self):
         """Test with empty string."""
-        result = LibraryExtractor.extract_install_commands("")
+        result = extract_install_commands(
+            text="",
+        )
         assert result == []
 
     def test_only_package_manager_name(self):
         """Test with just package manager name (no packages)."""
         text = "Run npm install to install dependencies.\nThen run pip install."
-        _result = LibraryExtractor.extract_install_commands(text)
+        _result = extract_install_commands(
+            text=text,
+        )
         # Should not match commands without actual package names
         # (might match words after "install" on same line)
         # This is acceptable behavior - hard to distinguish without more context
@@ -303,7 +359,9 @@ npm install chart.js d3
 ## Testing
 Run `pytest tests/` after installation.
 """
-        result = LibraryExtractor.extract_install_commands(text)
+        result = extract_install_commands(
+            text=text,
+        )
         assert len(result) == 2
         assert set(result[0][2]) == {"matplotlib", "seaborn", "plotly"}
         assert set(result[1][2]) == {"chart.js", "d3"}

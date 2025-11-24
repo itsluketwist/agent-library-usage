@@ -1,16 +1,16 @@
 """Library extractors for different programming languages."""
 
+from typing import List, Optional, Tuple, Type
+
 from .base import BaseExtractor
 from .csharp import CSharpExtractor
 from .go import GoExtractor
 from .javascript import JavaScriptExtractor, TypeScriptExtractor
-from .library_extractor import LibraryExtractor
 from .python import PythonExtractor
 from .rust import RustExtractor
 
 
 __all__ = [
-    "LibraryExtractor",
     "BaseExtractor",
     "PythonExtractor",
     "JavaScriptExtractor",
@@ -18,4 +18,66 @@ __all__ = [
     "GoExtractor",
     "CSharpExtractor",
     "RustExtractor",
+    "get_extractor",
+    "extract_install_commands",
 ]
+
+
+def get_extractor(language: str) -> Optional[Type[BaseExtractor]]:
+    """
+    Get the appropriate extractor class for a given language.
+
+    Returns:
+        The extractor class for the language, or None if not found.
+    """
+    extractor_map = {
+        "python": PythonExtractor,
+        "javascript": JavaScriptExtractor,
+        "typescript": TypeScriptExtractor,
+        "go": GoExtractor,
+        "rust": RustExtractor,
+        "csharp": CSharpExtractor,
+    }
+
+    return extractor_map.get(language.lower())
+
+
+def extract_install_commands(text: str) -> List[Tuple[str, str, List[str]]]:
+    """
+    Extract installation commands from PR body or commit messages.
+
+    Aggregates results from all language-specific extractors.
+
+    Returns:
+        List of tuples: (package_manager, command, [packages])
+    """
+    installations = []
+
+    # Aggregate from all language extractors
+    installations.extend(
+        PythonExtractor.extract_install_commands(
+            text=text,
+        )
+    )
+    installations.extend(
+        JavaScriptExtractor.extract_install_commands(
+            text=text,
+        )
+    )
+    installations.extend(
+        GoExtractor.extract_install_commands(
+            text=text,
+        )
+    )
+    installations.extend(
+        RustExtractor.extract_install_commands(
+            text=text,
+        )
+    )
+    installations.extend(
+        CSharpExtractor.extract_install_commands(
+            text=text,
+        )
+    )
+
+    return installations

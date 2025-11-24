@@ -1,6 +1,6 @@
 """Unit tests for python extractors."""
 
-from src.library_extractor import LibraryExtractor
+from src.extractors import PythonExtractor
 
 
 class TestPythonImportExtraction:
@@ -13,7 +13,9 @@ import os
 import sys
 import json
 """
-        result = LibraryExtractor.extract_python_imports(code)
+        result = PythonExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"os", "sys", "json"}
 
     def test_from_import(self):
@@ -23,7 +25,9 @@ from pathlib import Path
 from typing import Dict, List
 from collections.abc import Mapping
 """
-        result = LibraryExtractor.extract_python_imports(code)
+        result = PythonExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"pathlib", "typing", "collections"}
 
     def test_submodule_import(self):
@@ -33,7 +37,9 @@ import os.path
 import xml.etree.ElementTree
 from email.mime.text import MIMEText
 """
-        result = LibraryExtractor.extract_python_imports(code)
+        result = PythonExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"os", "xml", "email"}
 
     def test_aliased_import(self):
@@ -43,13 +49,17 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 """
-        result = LibraryExtractor.extract_python_imports(code)
+        result = PythonExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"numpy", "pandas", "matplotlib"}
 
     def test_multiple_imports_same_line(self):
         """Test multiple imports on one line."""
         code = "import os, sys, json, re"
-        result = LibraryExtractor.extract_python_imports(code)
+        result = PythonExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"os", "sys", "json", "re"}
 
     def test_mixed_import_styles(self):
@@ -60,7 +70,9 @@ from flask import Flask, render_template
 import numpy as np
 from django.db import models
 """
-        result = LibraryExtractor.extract_python_imports(code)
+        result = PythonExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"requests", "flask", "numpy", "django"}
 
     def test_underscore_and_dash_packages(self):
@@ -70,7 +82,9 @@ import python_dateutil
 from scikit_learn import preprocessing
 import some_package_name
 """
-        result = LibraryExtractor.extract_python_imports(code)
+        result = PythonExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"python_dateutil", "scikit_learn", "some_package_name"}
 
     def test_indented_imports(self):
@@ -83,13 +97,20 @@ def foo():
 class Bar:
     import itertools
 """
-        result = LibraryExtractor.extract_python_imports(code)
+        result = PythonExtractor.extract_imports(
+            code=code,
+        )
         # Should not match indented imports due to ^ anchor in regex
         assert result == set()
 
     def test_empty_code(self):
         """Test with empty string."""
-        assert LibraryExtractor.extract_python_imports("") == set()
+        assert (
+            PythonExtractor.extract_imports(
+                code="",
+            )
+            == set()
+        )
 
     def test_no_imports(self):
         """Test code without imports."""
@@ -97,7 +118,12 @@ class Bar:
 def hello():
     print("Hello, World!")
 """
-        assert LibraryExtractor.extract_python_imports(code) == set()
+        assert (
+            PythonExtractor.extract_imports(
+                code=code,
+            )
+            == set()
+        )
 
 
 class TestRequirementsTxtParsing:
@@ -110,7 +136,9 @@ requests
 flask
 django
 """
-        result = LibraryExtractor.parse_requirements_txt(content)
+        result = PythonExtractor.parse_requirements_txt(
+            content=content,
+        )
         assert "requests" in result
         assert "flask" in result
         assert "django" in result
@@ -125,7 +153,9 @@ numpy>1.20
 pandas<2.0
 pytest~=7.0
 """
-        result = LibraryExtractor.parse_requirements_txt(content)
+        result = PythonExtractor.parse_requirements_txt(
+            content=content,
+        )
         assert result["requests"] == "==2.28.0"
         assert result["flask"] == ">=2.0.0"
         assert result["django"] == "<=4.0"
@@ -143,7 +173,9 @@ requests==2.28.0
 flask>=2.0.0
 
 """
-        result = LibraryExtractor.parse_requirements_txt(content)
+        result = PythonExtractor.parse_requirements_txt(
+            content=content,
+        )
         assert result == {"requests": "==2.28.0", "flask": ">=2.0.0"}
 
     def test_package_with_dash_and_underscore(self):
@@ -154,7 +186,9 @@ python-dateutil>=2.8
 some_package==1.0
 my-cool_package>=2.0
 """
-        result = LibraryExtractor.parse_requirements_txt(content)
+        result = PythonExtractor.parse_requirements_txt(
+            content=content,
+        )
         assert "scikit-learn" in result
         assert "python-dateutil" in result
         assert "some_package" in result
@@ -169,7 +203,9 @@ git+https://github.com/user/repo.git
 -e git+https://github.com/user/repo.git#egg=package
 flask>=2.0.0
 """
-        result = LibraryExtractor.parse_requirements_txt(content)
+        result = PythonExtractor.parse_requirements_txt(
+            content=content,
+        )
         assert result == {"requests": "==2.28.0", "flask": ">=2.0.0"}
 
     def test_complex_version_specs(self):
@@ -179,7 +215,9 @@ package1==1.2.3.4
 package2>=1.0.0,<2.0.0
 package3!=1.5.0
 """
-        result = LibraryExtractor.parse_requirements_txt(content)
+        result = PythonExtractor.parse_requirements_txt(
+            content=content,
+        )
         assert result["package1"] == "==1.2.3.4"
         # Our simple parser might not handle multiple constraints perfectly
         assert "package2" in result

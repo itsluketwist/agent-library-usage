@@ -1,6 +1,6 @@
 """Unit tests for go extractors."""
 
-from src.library_extractor import LibraryExtractor
+from src.extractors import GoExtractor
 
 
 class TestGoImportExtraction:
@@ -15,7 +15,9 @@ import "fmt"
 import "os"
 import "strings"
 """
-        result = LibraryExtractor.extract_go_imports(code)
+        result = GoExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"fmt", "os", "strings"}
 
     def test_multi_import_block(self):
@@ -30,7 +32,9 @@ import (
     "encoding/json"
 )
 """
-        result = LibraryExtractor.extract_go_imports(code)
+        result = GoExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"fmt", "os", "net/http", "encoding/json"}
 
     def test_external_packages(self):
@@ -43,7 +47,9 @@ import (
     "golang.org/x/crypto/bcrypt"
 )
 """
-        result = LibraryExtractor.extract_go_imports(code)
+        result = GoExtractor.extract_imports(
+            code=code,
+        )
         assert result == {
             "fmt",
             "github.com/gorilla/mux",
@@ -60,7 +66,9 @@ import (
     mux "github.com/gorilla/mux"
 )
 """
-        result = LibraryExtractor.extract_go_imports(code)
+        result = GoExtractor.extract_imports(
+            code=code,
+        )
         # Note: Our current implementation doesn't handle aliases,
         # but it should at least get the package paths
         assert "github.com/lib/pq" in result
@@ -78,7 +86,9 @@ import (
     "text/template"
 )
 """
-        result = LibraryExtractor.extract_go_imports(code)
+        result = GoExtractor.extract_imports(
+            code=code,
+        )
         assert result == {
             "net/http",
             "net/url",
@@ -101,7 +111,9 @@ import (
 
 import "net/http"
 """
-        result = LibraryExtractor.extract_go_imports(code)
+        result = GoExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"fmt", "os", "strings", "net/http"}
 
     def test_empty_import_block(self):
@@ -112,7 +124,9 @@ import ()
 import (
 )
 """
-        result = LibraryExtractor.extract_go_imports(code)
+        result = GoExtractor.extract_imports(
+            code=code,
+        )
         assert result == set()
 
 
@@ -132,7 +146,9 @@ require (
     golang.org/x/crypto v0.5.0
 )
 """
-        result = LibraryExtractor.parse_go_mod(content)
+        result = GoExtractor.parse_go_mod(
+            content=content,
+        )
         assert result == {
             "github.com/gorilla/mux": "v1.8.0",
             "github.com/stretchr/testify": "v1.8.0",
@@ -147,7 +163,9 @@ module myapp
 require github.com/gorilla/mux v1.8.0
 require github.com/pkg/errors v0.9.1
 """
-        result = LibraryExtractor.parse_go_mod(content)
+        result = GoExtractor.parse_go_mod(
+            content=content,
+        )
         assert result == {
             "github.com/gorilla/mux": "v1.8.0",
             "github.com/pkg/errors": "v0.9.1",
@@ -167,7 +185,9 @@ require (
 
 require golang.org/x/crypto v0.5.0
 """
-        result = LibraryExtractor.parse_go_mod(content)
+        result = GoExtractor.parse_go_mod(
+            content=content,
+        )
         assert len(result) == 4
         assert "github.com/pkg/errors" in result
         assert "github.com/gorilla/mux" in result
@@ -182,7 +202,9 @@ require (
     github.com/stretchr/testify v1.8.0
 )
 """
-        result = LibraryExtractor.parse_go_mod(content)
+        result = GoExtractor.parse_go_mod(
+            content=content,
+        )
         assert "github.com/gorilla/mux" in result
         assert "github.com/stretchr/testify" in result
 
@@ -193,7 +215,9 @@ require github.com/gorilla/mux v1.8.0
 
 replace github.com/old/module => github.com/new/module v1.0.0
 """
-        result = LibraryExtractor.parse_go_mod(content)
+        result = GoExtractor.parse_go_mod(
+            content=content,
+        )
         # Should only get the required package, not the replaced one
         assert "github.com/gorilla/mux" in result
         assert len(result) == 1

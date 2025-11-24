@@ -2,10 +2,12 @@
 
 import json
 import re
-from typing import Dict, Set
+from typing import Dict, List, Optional, Set, Tuple
+
+from .base import BaseExtractor
 
 
-class JavaScriptExtractor:
+class JavaScriptExtractor(BaseExtractor):
     """Extract libraries from JavaScript/TypeScript code and dependency files."""
 
     # JavaScript/TypeScript import pattern
@@ -100,6 +102,71 @@ class JavaScriptExtractor:
         # Also check for node: prefix (e.g., node:path, node:fs)
         module_clean = module.replace("node:", "")
         return module_clean in JavaScriptExtractor.STDLIB
+
+    @staticmethod
+    def extract_install_commands(text: str) -> List[Tuple[str, str, List[str]]]:
+        """
+        Extract JavaScript/Node.js installation commands from PR body or commit messages.
+
+        Returns:
+            List of tuples: (package_manager, command, [packages])
+            Example: [("npm", "install", ["react", "lodash"])]
+        """
+        installations = []
+
+        # Node.js: npm install, yarn add, pnpm add
+        npm_pattern = re.compile(
+            r"(npm|yarn|pnpm)\s+(install|add|i)\s+([^\n]+)",
+            re.IGNORECASE,
+        )
+        for match in npm_pattern.finditer(text):
+            pkg_manager = match.group(1).lower()
+            packages_str = match.group(3)
+            # Remove flags (single dash followed by single letter)
+            packages_str = re.sub(r"\s-[a-zA-Z]\s+\S+", " ", packages_str)
+            packages_str = re.sub(r"\s-[a-zA-Z](?:\s|$)", " ", packages_str)
+            # Remove long flags (double dash)
+            packages_str = re.sub(
+                r"\s--[a-z-]+(?:=\S+)?(?:\s|$)",
+                " ",
+                packages_str,
+            )
+            # Split and clean
+            packages = [
+                p.strip()
+                for p in packages_str.split()
+                if p.strip()
+                and not p.startswith("-")
+                and p not in ["install", "add", "i"]
+            ]
+            if packages:
+                installations.append((pkg_manager, "install", packages))
+
+        return installations
+
+    @classmethod
+    def extract_from_file(cls, filename: str, content: str) -> Dict[str, Optional[str]]:
+        """
+        Extract libraries from a JavaScript/TypeScript file based on its type.
+
+        Returns:
+            Dictionary mapping library names to their version specifications.
+        """
+        filename_lower = filename.lower()
+
+        # Check for package manager files
+        if filename_lower == "package.json":
+            return cls.parse_package_json(
+                content=content,
+            )
+        # Check for JavaScript/TypeScript code files
+        elif filename.endswith((".js", ".jsx", ".mjs", ".cjs", ".ts", ".tsx")):
+            imports = cls.extract_imports(
+                code=content,
+            )
+            return {lib: None for lib in imports}
+
+        return {}
 
 
 class TypeScriptExtractor(JavaScriptExtractor):

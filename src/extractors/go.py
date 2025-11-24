@@ -1,10 +1,12 @@
 """Go library extraction logic."""
 
 import re
-from typing import Dict, Set
+from typing import Dict, List, Optional, Set, Tuple
+
+from .base import BaseExtractor
 
 
-class GoExtractor:
+class GoExtractor(BaseExtractor):
     """Extract libraries from Go code and dependency files."""
 
     # Go import pattern
@@ -130,3 +132,60 @@ class GoExtractor:
         # Stdlib packages don't have / in them (generally)
         # or they're in the known stdlib list
         return module in GoExtractor.STDLIB or "/" not in module
+
+    @staticmethod
+    def extract_install_commands(text: str) -> List[Tuple[str, str, List[str]]]:
+        """
+        Extract Go installation commands from PR body or commit messages.
+
+        Returns:
+            List of tuples: (package_manager, command, [packages])
+            Example: [("go", "get", ["github.com/user/repo"])]
+        """
+        installations = []
+
+        # Go: go get, go install
+        go_pattern = re.compile(
+            r"go\s+(get|install)\s+([^\n]+)",
+            re.IGNORECASE,
+        )
+        for match in go_pattern.finditer(text):
+            command = match.group(1).lower()
+            packages_str = match.group(2)
+            # Remove flags (single dash followed by letter)
+            packages_str = re.sub(r"\s-[a-zA-Z](?:\s|$)", " ", packages_str)
+            packages_str = re.sub(r"\s-[a-zA-Z]\s+\S+", " ", packages_str)
+            # Split and clean
+            packages = [
+                p.strip()
+                for p in packages_str.split()
+                if p.strip() and not p.startswith("-")
+            ]
+            if packages:
+                installations.append(("go", command, packages))
+
+        return installations
+
+    @classmethod
+    def extract_from_file(cls, filename: str, content: str) -> Dict[str, Optional[str]]:
+        """
+        Extract libraries from a Go file based on its type.
+
+        Returns:
+            Dictionary mapping library names to their version specifications.
+        """
+        filename_lower = filename.lower()
+
+        # Check for package manager files
+        if filename_lower == "go.mod":
+            return cls.parse_go_mod(
+                content=content,
+            )
+        # Check for Go code files
+        elif filename.endswith(".go"):
+            imports = cls.extract_imports(
+                code=content,
+            )
+            return {lib: None for lib in imports}
+
+        return {}

@@ -1,6 +1,6 @@
 """Unit tests for C# extractors."""
 
-from src.library_extractor import LibraryExtractor
+from src.extractors import CSharpExtractor
 
 
 class TestCSharpImportExtraction:
@@ -13,7 +13,9 @@ using System;
 using System.Collections;
 using System.Linq;
 """
-        result = LibraryExtractor.extract_csharp_imports(code)
+        result = CSharpExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"System"}
 
     def test_using_with_namespaces(self):
@@ -24,7 +26,9 @@ using System.IO;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore;
 """
-        result = LibraryExtractor.extract_csharp_imports(code)
+        result = CSharpExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"System", "Newtonsoft", "Microsoft"}
 
     def test_mixed_using(self):
@@ -36,7 +40,9 @@ using Newtonsoft.Json;
 using Serilog;
 using AutoMapper;
 """
-        result = LibraryExtractor.extract_csharp_imports(code)
+        result = CSharpExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"System", "Newtonsoft", "Serilog", "AutoMapper"}
 
     def test_indented_using(self):
@@ -48,13 +54,20 @@ namespace MyApp
     using System.Linq;
 }
 """
-        result = LibraryExtractor.extract_csharp_imports(code)
+        result = CSharpExtractor.extract_imports(
+            code=code,
+        )
         # Our regex should catch indented using statements
         assert "System" in result
 
     def test_empty_code(self):
         """Test with empty string."""
-        assert LibraryExtractor.extract_csharp_imports("") == set()
+        assert (
+            CSharpExtractor.extract_imports(
+                code="",
+            )
+            == set()
+        )
 
     def test_no_imports(self):
         """Test code without using statements."""
@@ -69,7 +82,12 @@ namespace MyApp
     }
 }
 """
-        assert LibraryExtractor.extract_csharp_imports(code) == set()
+        assert (
+            CSharpExtractor.extract_imports(
+                code=code,
+            )
+            == set()
+        )
 
 
 class TestCsprojParsing:
@@ -85,7 +103,9 @@ class TestCsprojParsing:
   </ItemGroup>
 </Project>
 """
-        result = LibraryExtractor.parse_csproj(content)
+        result = CSharpExtractor.parse_csproj(
+            content=content,
+        )
         assert result == {
             "Newtonsoft.Json": "13.0.1",
             "Serilog": "2.12.0",
@@ -102,7 +122,9 @@ class TestCsprojParsing:
   </ItemGroup>
 </Project>
 """
-        result = LibraryExtractor.parse_csproj(content)
+        result = CSharpExtractor.parse_csproj(
+            content=content,
+        )
         assert "EntityFramework" in result
         assert result["EntityFramework"] == "6.4.4"
 
@@ -115,7 +137,9 @@ class TestCsprojParsing:
   </ItemGroup>
 </Project>
 """
-        result = LibraryExtractor.parse_csproj(content)
+        result = CSharpExtractor.parse_csproj(
+            content=content,
+        )
         assert "MyLocalPackage" in result
         assert result["MyLocalPackage"] is None
 
@@ -131,7 +155,9 @@ class TestCsprojParsing:
   </ItemGroup>
 </Project>
 """
-        result = LibraryExtractor.parse_csproj(content)
+        result = CSharpExtractor.parse_csproj(
+            content=content,
+        )
         assert len(result) == 2
         assert "Newtonsoft.Json" in result
         assert "Serilog" in result
@@ -145,7 +171,9 @@ class TestCsprojParsing:
   </PropertyGroup>
 </Project>
 """
-        result = LibraryExtractor.parse_csproj(content)
+        result = CSharpExtractor.parse_csproj(
+            content=content,
+        )
         assert result == {}
 
 
@@ -161,7 +189,9 @@ class TestPackagesConfigParsing:
   <package id="Serilog" version="2.12.0" targetFramework="net472" />
 </packages>
 """
-        result = LibraryExtractor.parse_packages_config(content)
+        result = CSharpExtractor.parse_packages_config(
+            content=content,
+        )
         assert result == {
             "Newtonsoft.Json": "13.0.1",
             "Serilog": "2.12.0",
@@ -174,7 +204,9 @@ class TestPackagesConfigParsing:
   <package id="MyPackage" targetFramework="net472" />
 </packages>
 """
-        result = LibraryExtractor.parse_packages_config(content)
+        result = CSharpExtractor.parse_packages_config(
+            content=content,
+        )
         assert "MyPackage" in result
         assert result["MyPackage"] is None
 
@@ -185,7 +217,9 @@ class TestPackagesConfigParsing:
 <packages>
 </packages>
 """
-        result = LibraryExtractor.parse_packages_config(content)
+        result = CSharpExtractor.parse_packages_config(
+            content=content,
+        )
         assert result == {}
 
 
@@ -201,7 +235,9 @@ nuget Newtonsoft.Json 13.0.1
 nuget Serilog 2.12.0
 nuget FSharp.Core
 """
-        result = LibraryExtractor.parse_packages_config(content)
+        result = CSharpExtractor.parse_packages_config(
+            content=content,
+        )
         # Note: parse_packages_config doesn't handle paket format
         # We'd use parse_paket_dependencies if implemented
         # This test is a placeholder
@@ -212,14 +248,24 @@ class TestCSharpStdlibDetection:
 
     def test_system_namespace(self):
         """Test System namespace detection."""
-        assert LibraryExtractor.is_stdlib("System", "csharp")
+        assert CSharpExtractor.is_stdlib(
+            module="System",
+        )
 
     def test_microsoft_namespace(self):
         """Test Microsoft namespace detection."""
-        assert LibraryExtractor.is_stdlib("Microsoft", "csharp")
+        assert CSharpExtractor.is_stdlib(
+            module="Microsoft",
+        )
 
     def test_external_packages(self):
         """Test external package detection."""
-        assert not LibraryExtractor.is_stdlib("Newtonsoft", "csharp")
-        assert not LibraryExtractor.is_stdlib("Serilog", "csharp")
-        assert not LibraryExtractor.is_stdlib("AutoMapper", "csharp")
+        assert not CSharpExtractor.is_stdlib(
+            module="Newtonsoft",
+        )
+        assert not CSharpExtractor.is_stdlib(
+            module="Serilog",
+        )
+        assert not CSharpExtractor.is_stdlib(
+            module="AutoMapper",
+        )

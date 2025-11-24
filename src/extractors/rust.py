@@ -1,10 +1,12 @@
 """Rust library extraction logic."""
 
 import re
-from typing import Dict, Optional, Set
+from typing import Dict, List, Optional, Set, Tuple
+
+from .base import BaseExtractor
 
 
-class RustExtractor:
+class RustExtractor(BaseExtractor):
     """Extract libraries from Rust code and dependency files."""
 
     # Rust use statement pattern
@@ -121,6 +123,43 @@ class RustExtractor:
         return packages
 
     @staticmethod
-    def is_stdlib(crate: str) -> bool:
-        """Check if a crate is part of the Rust standard library."""
-        return crate in RustExtractor.STDLIB
+    def is_stdlib(module: str) -> bool:
+        """Check if a module is part of the Rust standard library."""
+        return module in RustExtractor.STDLIB
+
+    @staticmethod
+    def extract_install_commands(text: str) -> List[Tuple[str, str, List[str]]]:
+        """
+        Extract Rust installation commands from PR body or commit messages.
+
+        Currently Rust dependencies are typically managed through Cargo.toml,
+        so this returns an empty list. This method exists for consistency.
+
+        Returns:
+            List of tuples: (package_manager, command, [packages])
+        """
+        return []
+
+    @classmethod
+    def extract_from_file(cls, filename: str, content: str) -> Dict[str, Optional[str]]:
+        """
+        Extract libraries from a Rust file based on its type.
+
+        Returns:
+            Dictionary mapping library names to their version specifications.
+        """
+        filename_lower = filename.lower()
+
+        # Check for package manager files
+        if filename_lower == "cargo.toml":
+            return cls.parse_cargo_toml(
+                content=content,
+            )
+        # Check for Rust code files
+        elif filename.endswith(".rs"):
+            imports = cls.extract_imports(
+                code=content,
+            )
+            return {lib: None for lib in imports}
+
+        return {}

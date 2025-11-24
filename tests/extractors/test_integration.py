@@ -1,6 +1,6 @@
 """Unit tests for integration extractors."""
 
-from src.library_extractor import LibraryExtractor
+from src.extractors import get_extractor
 
 
 class TestExtractFromFile:
@@ -9,59 +9,107 @@ class TestExtractFromFile:
     def test_python_code_file(self):
         """Test extracting from Python code file."""
         content = "import requests\nfrom flask import Flask"
-        result = LibraryExtractor.extract_from_file("main.py", content, "python")
-        assert result == {"requests", "flask"}
+        extractor = get_extractor(
+            language="python",
+        )
+        result = extractor.extract_from_file(
+            filename="main.py",
+            content=content,
+        )
+        assert result == {"requests": None, "flask": None}
 
     def test_python_requirements_file(self):
         """Test extracting from requirements.txt."""
         content = "requests==2.28.0\nflask>=2.0.0"
-        result = LibraryExtractor.extract_from_file(
-            "requirements.txt", content, "python"
+        extractor = get_extractor(
+            language="python",
         )
-        assert result == {"requests", "flask"}
+        result = extractor.extract_from_file(
+            filename="requirements.txt",
+            content=content,
+        )
+        assert result == {"requests": "==2.28.0", "flask": ">=2.0.0"}
 
     def test_javascript_code_file(self):
         """Test extracting from JavaScript file."""
         content = "import React from 'react';\nconst express = require('express');"
-        result = LibraryExtractor.extract_from_file("app.js", content, "javascript")
-        assert result == {"react", "express"}
+        extractor = get_extractor(
+            language="javascript",
+        )
+        result = extractor.extract_from_file(
+            filename="app.js",
+            content=content,
+        )
+        assert result == {"react": None, "express": None}
 
     def test_typescript_code_file(self):
         """Test extracting from TypeScript file."""
         content = "import { Component } from '@angular/core';"
-        result = LibraryExtractor.extract_from_file("app.ts", content, "typescript")
-        assert result == {"@angular/core"}
+        extractor = get_extractor(
+            language="typescript",
+        )
+        result = extractor.extract_from_file(
+            filename="app.ts",
+            content=content,
+        )
+        assert result == {"@angular/core": None}
 
     def test_package_json_file(self):
         """Test extracting from package.json."""
         content = '{"dependencies": {"react": "^18.0.0"}}'
-        result = LibraryExtractor.extract_from_file(
-            "package.json", content, "javascript"
+        extractor = get_extractor(
+            language="javascript",
         )
-        assert result == {"react"}
+        result = extractor.extract_from_file(
+            filename="package.json",
+            content=content,
+        )
+        assert result == {"react": "^18.0.0"}
 
     def test_go_code_file(self):
         """Test extracting from Go file."""
         content = 'import "fmt"\nimport "github.com/gorilla/mux"'
-        result = LibraryExtractor.extract_from_file("main.go", content, "go")
-        assert result == {"fmt", "github.com/gorilla/mux"}
+        extractor = get_extractor(
+            language="go",
+        )
+        result = extractor.extract_from_file(
+            filename="main.go",
+            content=content,
+        )
+        assert result == {"fmt": None, "github.com/gorilla/mux": None}
 
     def test_go_mod_file(self):
         """Test extracting from go.mod."""
         content = "require github.com/gorilla/mux v1.8.0"
-        result = LibraryExtractor.extract_from_file("go.mod", content, "go")
-        assert result == {"github.com/gorilla/mux"}
+        extractor = get_extractor(
+            language="go",
+        )
+        result = extractor.extract_from_file(
+            filename="go.mod",
+            content=content,
+        )
+        assert result == {"github.com/gorilla/mux": "v1.8.0"}
 
     def test_unknown_file_type(self):
-        """Test unknown file type returns empty set."""
+        """Test unknown file type returns empty dict."""
         content = "some content"
-        result = LibraryExtractor.extract_from_file("unknown.txt", content, "python")
-        assert result == set()
+        extractor = get_extractor(
+            language="python",
+        )
+        result = extractor.extract_from_file(
+            filename="unknown.txt",
+            content=content,
+        )
+        assert result == {}
 
     def test_case_insensitive_filenames(self):
         """Test that filename matching is case-insensitive."""
         content = "requests==2.28.0"
-        result = LibraryExtractor.extract_from_file(
-            "REQUIREMENTS.TXT", content, "python"
+        extractor = get_extractor(
+            language="python",
         )
-        assert result == {"requests"}
+        result = extractor.extract_from_file(
+            filename="REQUIREMENTS.TXT",
+            content=content,
+        )
+        assert result == {"requests": "==2.28.0"}

@@ -1,15 +1,19 @@
 """Python library extraction logic."""
 
 import re
-from typing import Dict, Optional, Set
+import sys
+from typing import Dict, List, Optional, Set, Tuple
+
+from .base import BaseExtractor
 
 
-class PythonExtractor:
+class PythonExtractor(BaseExtractor):
     """Extract libraries from Python code and dependency files."""
 
     # Python import pattern
     IMPORT_PATTERN = re.compile(
-        r"^(?:from\s+([\w.]+)\s+import|import\s+([\w., ]+))", re.MULTILINE
+        pattern=r"^(?:from\s+([\w.]+)\s+import|import\s+([\w., ]+))",
+        flags=re.MULTILINE,
     )
 
     # Package manager files
@@ -24,60 +28,9 @@ class PythonExtractor:
     ]
 
     # Standard library modules
-    STDLIB = {
-        "os",
-        "sys",
-        "math",
-        "json",
-        "re",
-        "datetime",
-        "time",
-        "random",
-        "collections",
-        "itertools",
-        "functools",
-        "pathlib",
-        "typing",
-        "unittest",
-        "logging",
-        "argparse",
-        "subprocess",
-        "threading",
-        "multiprocessing",
-        "queue",
-        "socket",
-        "urllib",
-        "http",
-        "email",
-        "io",
-        "csv",
-        "xml",
-        "html",
-        "string",
-        "copy",
-        "pickle",
-        "shelve",
-        "sqlite3",
-        "enum",
-        "dataclasses",
-        "abc",
-        "contextlib",
-        "warnings",
-        "tempfile",
-        "shutil",
-        "glob",
-        "fnmatch",
-        "hashlib",
-        "base64",
-        "uuid",
-        "secrets",
-        "platform",
-        "traceback",
-        "inspect",
-        "ast",
-        "__future__",
-        "asyncio",
-    }
+    STDLIB = getattr(
+        sys, "stdlib_module_names", []
+    )  # use this below to categorise packages
 
     @staticmethod
     def extract_imports(code: str) -> Set[str]:
@@ -125,3 +78,72 @@ class PythonExtractor:
     def is_stdlib(module: str) -> bool:
         """Check if a module is part of the Python standard library."""
         return module in PythonExtractor.STDLIB
+
+    @staticmethod
+    def extract_install_commands(text: str) -> List[Tuple[str, str, List[str]]]:
+        """
+        Extract Python installation commands from PR body or commit messages.
+
+        Returns:
+            List of tuples: (package_manager, command, [packages])
+            Example: [("pip", "install", ["numpy", "pandas"])]
+        """
+        installations = []
+
+        # Python: pip install, pip3 install, python -m pip install
+        pip_pattern = re.compile(
+            r"(?:pip|pip3|python3?\s+-m\s+pip)\s+install\s+([^\n]+)",
+            re.IGNORECASE,
+        )
+        for match in pip_pattern.finditer(text):
+            packages_str = match.group(1)
+            # Remove common flags (single dash followed by single letter)
+            packages_str = re.sub(r"\s-[a-zA-Z]\s+\S+", " ", packages_str)
+            packages_str = re.sub(r"\s-[a-zA-Z](?:\s|$)", " ", packages_str)
+            # Remove long flags (double dash)
+            # Only handle --flag and --flag=value, not --flag value (ambiguous with package names)
+            packages_str = re.sub(
+                r"\s--[a-z][a-z0-9-]*(?:=\S+)?(?:\s|$)",
+                " ",
+                packages_str,
+            )
+            # Split and clean
+            packages = [
+                p.strip()
+                for p in packages_str.split()
+                if p.strip() and not p.startswith("-") and p != "."
+            ]
+            if packages:
+                installations.append(("pip", "install", packages))
+
+        return installations
+
+    @classmethod
+    def extract_from_file(cls, filename: str, content: str) -> Dict[str, Optional[str]]:
+        """
+        Extract libraries from a Python file based on its type.
+
+        Returns:
+            Dictionary mapping library names to their version specifications.
+        """
+        filename_lower = filename.lower()
+
+        # Check for package manager files
+        if "requirements" in filename_lower and filename_lower.endswith(".txt"):
+            return cls.parse_requirements_txt(
+                content=content,
+            )
+        elif filename_lower in ["setup.py", "pyproject.toml"]:
+            # For now, extract imports from these too (no version info)
+            imports = cls.extract_imports(
+                code=content,
+            )
+            return {lib: None for lib in imports}
+        # Check for Python code files
+        elif filename.endswith(".py"):
+            imports = cls.extract_imports(
+                code=content,
+            )
+            return {lib: None for lib in imports}
+
+        return {}

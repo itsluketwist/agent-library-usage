@@ -1,6 +1,6 @@
 """Unit tests for javascript extractors."""
 
-from src.library_extractor import LibraryExtractor
+from src.extractors import JavaScriptExtractor, TypeScriptExtractor
 
 
 class TestJavaScriptImportExtraction:
@@ -13,7 +13,9 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import * as utils from 'lodash';
 """
-        result = LibraryExtractor.extract_js_imports(code)
+        result = JavaScriptExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"react", "lodash"}
 
     def test_require_import(self):
@@ -23,7 +25,9 @@ const express = require('express');
 const fs = require('fs');
 const axios = require('axios');
 """
-        result = LibraryExtractor.extract_js_imports(code)
+        result = JavaScriptExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"express", "fs", "axios"}
 
     def test_scoped_packages(self):
@@ -33,7 +37,9 @@ import { Component } from '@angular/core';
 import { Button } from '@mui/material';
 const babel = require('@babel/core');
 """
-        result = LibraryExtractor.extract_js_imports(code)
+        result = JavaScriptExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"@angular/core", "@mui/material", "@babel/core"}
 
     def test_subpath_imports(self):
@@ -43,7 +49,9 @@ import Button from 'antd/lib/button';
 import 'lodash/fp/map';
 const router = require('express/lib/router');
 """
-        result = LibraryExtractor.extract_js_imports(code)
+        result = JavaScriptExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"antd", "lodash", "express"}
 
     def test_relative_imports_excluded(self):
@@ -54,7 +62,9 @@ import { helper } from '../utils/helper';
 import config from '../../config';
 const local = require('./local');
 """
-        result = LibraryExtractor.extract_js_imports(code)
+        result = JavaScriptExtractor.extract_imports(
+            code=code,
+        )
         assert result == set()
 
     def test_mixed_quotes(self):
@@ -65,7 +75,9 @@ import vue from 'vue';
 const axios = require("axios");
 const lodash = require('lodash');
 """
-        result = LibraryExtractor.extract_js_imports(code)
+        result = JavaScriptExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"react", "vue", "axios", "lodash"}
 
     def test_package_with_dash(self):
@@ -75,7 +87,9 @@ import moment from 'moment-timezone';
 const parser = require('body-parser');
 import validator from 'express-validator';
 """
-        result = LibraryExtractor.extract_js_imports(code)
+        result = JavaScriptExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"moment-timezone", "body-parser", "express-validator"}
 
     def test_type_imports(self):
@@ -84,13 +98,17 @@ import validator from 'express-validator';
 import type { User } from 'user-types';
 import { type Config } from 'config-types';
 """
-        result = LibraryExtractor.extract_js_imports(code)
+        result = JavaScriptExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"user-types", "config-types"}
 
     def test_typescript_uses_js_extractor(self):
         """Test that TypeScript extraction uses JS extraction."""
         code = "import React from 'react';"
-        result = LibraryExtractor.extract_typescript_imports(code)
+        result = TypeScriptExtractor.extract_imports(
+            code=code,
+        )
         assert result == {"react"}
 
 
@@ -108,7 +126,9 @@ class TestPackageJsonParsing:
   }
 }
 """
-        result = LibraryExtractor.parse_package_json(content)
+        result = JavaScriptExtractor.parse_package_json(
+            content=content,
+        )
         assert result == {
             "react": "^18.0.0",
             "lodash": "~4.17.21",
@@ -125,7 +145,9 @@ class TestPackageJsonParsing:
   }
 }
 """
-        result = LibraryExtractor.parse_package_json(content)
+        result = JavaScriptExtractor.parse_package_json(
+            content=content,
+        )
         assert result == {"jest": "^29.0.0", "eslint": "^8.0.0"}
 
     def test_peer_dependencies(self):
@@ -138,7 +160,9 @@ class TestPackageJsonParsing:
   }
 }
 """
-        result = LibraryExtractor.parse_package_json(content)
+        result = JavaScriptExtractor.parse_package_json(
+            content=content,
+        )
         assert result == {"react": ">=16.8.0", "react-dom": ">=16.8.0"}
 
     def test_all_dependency_types(self):
@@ -156,7 +180,9 @@ class TestPackageJsonParsing:
   }
 }
 """
-        result = LibraryExtractor.parse_package_json(content)
+        result = JavaScriptExtractor.parse_package_json(
+            content=content,
+        )
         assert result == {
             "react": "^18.0.0",
             "jest": "^29.0.0",
@@ -174,7 +200,9 @@ class TestPackageJsonParsing:
   }
 }
 """
-        result = LibraryExtractor.parse_package_json(content)
+        result = JavaScriptExtractor.parse_package_json(
+            content=content,
+        )
         assert "@angular/core" in result
         assert "@mui/material" in result
         assert "@babel/core" in result
@@ -189,18 +217,24 @@ class TestPackageJsonParsing:
   }
 }
 """
-        result = LibraryExtractor.parse_package_json(content)
+        result = JavaScriptExtractor.parse_package_json(
+            content=content,
+        )
         assert "body-parser" in result
         assert "express-validator" in result
 
     def test_invalid_json(self):
         """Test handling of invalid JSON."""
         content = "{ invalid json }"
-        result = LibraryExtractor.parse_package_json(content)
+        result = JavaScriptExtractor.parse_package_json(
+            content=content,
+        )
         assert result == {}
 
     def test_empty_dependencies(self):
         """Test package.json with no dependencies."""
         content = '{"name": "my-app", "version": "1.0.0"}'
-        result = LibraryExtractor.parse_package_json(content)
+        result = JavaScriptExtractor.parse_package_json(
+            content=content,
+        )
         assert result == {}
