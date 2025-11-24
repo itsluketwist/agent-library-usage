@@ -3,6 +3,7 @@
 from typing import Dict, Optional, Set
 
 from .base import BaseExtractor
+from .csharp import CSharpExtractor
 from .go import GoExtractor
 from .javascript import JavaScriptExtractor, TypeScriptExtractor
 from .python import PythonExtractor
@@ -19,10 +20,10 @@ class LibraryExtractor(BaseExtractor):
         "typescript": JavaScriptExtractor.PACKAGE_FILES,
         "go": GoExtractor.PACKAGE_FILES,
         "rust": RustExtractor.PACKAGE_FILES,
+        "csharp": CSharpExtractor.PACKAGE_FILES,
         "ruby": ["Gemfile", "Gemfile.lock", ".gemspec"],
         "java": ["pom.xml", "build.gradle", "build.gradle.kts"],
         "php": ["composer.json", "composer.lock"],
-        "csharp": ["*.csproj", "packages.config", "paket.dependencies"],
     }
 
     @staticmethod
@@ -46,6 +47,16 @@ class LibraryExtractor(BaseExtractor):
         return GoExtractor.extract_imports(code)
 
     @staticmethod
+    def extract_rust_imports(code: str) -> Set[str]:
+        """Extract Rust use statements from code."""
+        return RustExtractor.extract_imports(code)
+
+    @staticmethod
+    def extract_csharp_imports(code: str) -> Set[str]:
+        """Extract C# using statements from code."""
+        return CSharpExtractor.extract_imports(code)
+
+    @staticmethod
     def parse_requirements_txt(content: str) -> Dict[str, Optional[str]]:
         """Parse requirements.txt file and extract packages with versions."""
         return PythonExtractor.parse_requirements_txt(content)
@@ -61,9 +72,19 @@ class LibraryExtractor(BaseExtractor):
         return GoExtractor.parse_go_mod(content)
 
     @staticmethod
-    def parse_cargo_toml(content: str) -> Dict[str, str]:
+    def parse_cargo_toml(content: str) -> Dict[str, Optional[str]]:
         """Parse Cargo.toml and extract dependencies."""
         return RustExtractor.parse_cargo_toml(content)
+
+    @staticmethod
+    def parse_csproj(content: str) -> Dict[str, Optional[str]]:
+        """Parse .csproj file and extract PackageReference entries."""
+        return CSharpExtractor.parse_csproj(content)
+
+    @staticmethod
+    def parse_packages_config(content: str) -> Dict[str, Optional[str]]:
+        """Parse packages.config file and extract package entries."""
+        return CSharpExtractor.parse_packages_config(content)
 
     @classmethod
     def extract_from_file(cls, filename: str, content: str, language: str) -> Set[str]:
@@ -90,6 +111,12 @@ class LibraryExtractor(BaseExtractor):
             if filename_lower == "cargo.toml":
                 return set(cls.parse_cargo_toml(content).keys())
 
+        elif language.lower() == "csharp":
+            if filename_lower.endswith(".csproj"):
+                return set(cls.parse_csproj(content).keys())
+            elif filename_lower == "packages.config":
+                return set(cls.parse_packages_config(content).keys())
+
         # Extract from code files based on extension
         if filename.endswith(".py"):
             return cls.extract_python_imports(content)
@@ -99,6 +126,10 @@ class LibraryExtractor(BaseExtractor):
             return cls.extract_typescript_imports(content)
         elif filename.endswith(".go"):
             return cls.extract_go_imports(content)
+        elif filename.endswith(".rs"):
+            return cls.extract_rust_imports(content)
+        elif filename.endswith(".cs"):
+            return cls.extract_csharp_imports(content)
 
         return set()
 
@@ -111,5 +142,9 @@ class LibraryExtractor(BaseExtractor):
             return JavaScriptExtractor.is_stdlib(module)
         elif language.lower() == "go":
             return GoExtractor.is_stdlib(module)
+        elif language.lower() == "rust":
+            return RustExtractor.is_stdlib(module)
+        elif language.lower() == "csharp":
+            return CSharpExtractor.is_stdlib(module)
 
         return False

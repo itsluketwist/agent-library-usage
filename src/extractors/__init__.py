@@ -1,6 +1,7 @@
 """Library extractors for different programming languages."""
 
 from .base import BaseExtractor
+from .csharp import CSharpExtractor
 from .go import GoExtractor
 from .javascript import JavaScriptExtractor, TypeScriptExtractor
 from .library_extractor import LibraryExtractor
@@ -15,5 +16,6 @@ __all__ = [
     "JavaScriptExtractor",
     "TypeScriptExtractor",
     "GoExtractor",
+    "CSharpExtractor",
     "RustExtractor",
 ]
