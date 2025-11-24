@@ -7,7 +7,7 @@ If this is the first time you encounter a new repository:
 - Set up a virtual environment if one doesn't exist. Environment should be Python3.12, and in the .venv directory.
 
 Style notes:
-- You should comprehensively use Python typings
+- You should comprehensively use Python typings. When possible, do not use the classes from the `typing` module, use the lowercase builtins (for example use list not List), also favour `| None` over Optional.
 - Class and method docstrings should be concise but well explained, do not include parameter information, if there is a return then the last sentence should be on a separate line and begin "Returns ..." with an explanation.
 - Each non-empty file should have a short docstring on the first line.
 - Reusable code should be stored in `src`, one-off code should be in Jupyter notebooks and stored in `notebooks`.

@@ -2,7 +2,7 @@
 
 import json
 import re
-from typing import Dict, List, Optional, Set, Tuple
+from typing import Dict, List, Literal, Optional, Set, Tuple
 
 from .base import BaseExtractor
 
@@ -145,28 +145,35 @@ class JavaScriptExtractor(BaseExtractor):
         return installations
 
     @classmethod
-    def extract_from_file(cls, filename: str, content: str) -> Dict[str, Optional[str]]:
+    def extract_from_file(
+        cls,
+        filename: str,
+        content: str,
+    ) -> Tuple[Optional[Literal["code", "dependency"]], Dict[str, Optional[str]]]:
         """
         Extract libraries from a JavaScript/TypeScript file based on its type.
 
         Returns:
-            Dictionary mapping library names to their version specifications.
+            Tuple of (file_type, libraries) where file_type is "code", "dependency", or None.
         """
         filename_lower = filename.lower()
 
         # Check for package manager files
         if filename_lower == "package.json":
-            return cls.parse_package_json(
-                content=content,
+            return (
+                "dependency",
+                cls.parse_package_json(
+                    content=content,
+                ),
             )
         # Check for JavaScript/TypeScript code files
         elif filename.endswith((".js", ".jsx", ".mjs", ".cjs", ".ts", ".tsx")):
             imports = cls.extract_imports(
                 code=content,
             )
-            return {lib: None for lib in imports}
+            return ("code", {lib: None for lib in imports})
 
-        return {}
+        return (None, {})
 
 
 class TypeScriptExtractor(JavaScriptExtractor):

@@ -2,7 +2,7 @@
 
 import re
 import sys
-from typing import Dict, List, Optional, Set, Tuple
+from typing import Dict, List, Literal, Optional, Set, Tuple
 
 from .base import BaseExtractor
 
@@ -119,31 +119,38 @@ class PythonExtractor(BaseExtractor):
         return installations
 
     @classmethod
-    def extract_from_file(cls, filename: str, content: str) -> Dict[str, Optional[str]]:
+    def extract_from_file(
+        cls,
+        filename: str,
+        content: str,
+    ) -> Tuple[Optional[Literal["code", "dependency"]], Dict[str, Optional[str]]]:
         """
         Extract libraries from a Python file based on its type.
 
         Returns:
-            Dictionary mapping library names to their version specifications.
+            Tuple of (file_type, libraries) where file_type is "code", "dependency", or None.
         """
         filename_lower = filename.lower()
 
         # Check for package manager files
         if "requirements" in filename_lower and filename_lower.endswith(".txt"):
-            return cls.parse_requirements_txt(
-                content=content,
+            return (
+                "dependency",
+                cls.parse_requirements_txt(
+                    content=content,
+                ),
             )
         elif filename_lower in ["setup.py", "pyproject.toml"]:
             # For now, extract imports from these too (no version info)
             imports = cls.extract_imports(
                 code=content,
             )
-            return {lib: None for lib in imports}
+            return ("code", {lib: None for lib in imports})
         # Check for Python code files
         elif filename.endswith(".py"):
             imports = cls.extract_imports(
                 code=content,
             )
-            return {lib: None for lib in imports}
+            return ("code", {lib: None for lib in imports})
 
-        return {}
+        return (None, {})

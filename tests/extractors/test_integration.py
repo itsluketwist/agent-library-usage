@@ -12,10 +12,11 @@ class TestExtractFromFile:
         extractor = get_extractor(
             language="python",
         )
-        result = extractor.extract_from_file(
+        file_type, result = extractor.extract_from_file(
             filename="main.py",
             content=content,
         )
+        assert file_type == "code"
         assert result == {"requests": None, "flask": None}
 
     def test_python_requirements_file(self):
@@ -24,10 +25,11 @@ class TestExtractFromFile:
         extractor = get_extractor(
             language="python",
         )
-        result = extractor.extract_from_file(
+        file_type, result = extractor.extract_from_file(
             filename="requirements.txt",
             content=content,
         )
+        assert file_type == "dependency"
         assert result == {"requests": "==2.28.0", "flask": ">=2.0.0"}
 
     def test_javascript_code_file(self):
@@ -36,10 +38,11 @@ class TestExtractFromFile:
         extractor = get_extractor(
             language="javascript",
         )
-        result = extractor.extract_from_file(
+        file_type, result = extractor.extract_from_file(
             filename="app.js",
             content=content,
         )
+        assert file_type == "code"
         assert result == {"react": None, "express": None}
 
     def test_typescript_code_file(self):
@@ -48,10 +51,11 @@ class TestExtractFromFile:
         extractor = get_extractor(
             language="typescript",
         )
-        result = extractor.extract_from_file(
+        file_type, result = extractor.extract_from_file(
             filename="app.ts",
             content=content,
         )
+        assert file_type == "code"
         assert result == {"@angular/core": None}
 
     def test_package_json_file(self):
@@ -60,10 +64,11 @@ class TestExtractFromFile:
         extractor = get_extractor(
             language="javascript",
         )
-        result = extractor.extract_from_file(
+        file_type, result = extractor.extract_from_file(
             filename="package.json",
             content=content,
         )
+        assert file_type == "dependency"
         assert result == {"react": "^18.0.0"}
 
     def test_go_code_file(self):
@@ -72,10 +77,11 @@ class TestExtractFromFile:
         extractor = get_extractor(
             language="go",
         )
-        result = extractor.extract_from_file(
+        file_type, result = extractor.extract_from_file(
             filename="main.go",
             content=content,
         )
+        assert file_type == "code"
         assert result == {"fmt": None, "github.com/gorilla/mux": None}
 
     def test_go_mod_file(self):
@@ -84,22 +90,24 @@ class TestExtractFromFile:
         extractor = get_extractor(
             language="go",
         )
-        result = extractor.extract_from_file(
+        file_type, result = extractor.extract_from_file(
             filename="go.mod",
             content=content,
         )
+        assert file_type == "dependency"
         assert result == {"github.com/gorilla/mux": "v1.8.0"}
 
     def test_unknown_file_type(self):
-        """Test unknown file type returns empty dict."""
+        """Test unknown file type returns None and empty dict."""
         content = "some content"
         extractor = get_extractor(
             language="python",
         )
-        result = extractor.extract_from_file(
+        file_type, result = extractor.extract_from_file(
             filename="unknown.txt",
             content=content,
         )
+        assert file_type is None
         assert result == {}
 
     def test_case_insensitive_filenames(self):
@@ -108,8 +116,9 @@ class TestExtractFromFile:
         extractor = get_extractor(
             language="python",
         )
-        result = extractor.extract_from_file(
+        file_type, result = extractor.extract_from_file(
             filename="REQUIREMENTS.TXT",
             content=content,
         )
+        assert file_type == "dependency"
         assert result == {"requests": "==2.28.0"}

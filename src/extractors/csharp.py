@@ -2,7 +2,7 @@
 
 import re
 import xml.etree.ElementTree as ET
-from typing import Dict, List, Optional, Set, Tuple
+from typing import Dict, List, Literal, Optional, Set, Tuple
 
 from .base import BaseExtractor
 
@@ -167,29 +167,39 @@ class CSharpExtractor(BaseExtractor):
         return []
 
     @classmethod
-    def extract_from_file(cls, filename: str, content: str) -> Dict[str, Optional[str]]:
+    def extract_from_file(
+        cls,
+        filename: str,
+        content: str,
+    ) -> Tuple[Optional[Literal["code", "dependency"]], Dict[str, Optional[str]]]:
         """
         Extract libraries from a C# file based on its type.
 
         Returns:
-            Dictionary mapping library names to their version specifications.
+            Tuple of (file_type, libraries) where file_type is "code", "dependency", or None.
         """
         filename_lower = filename.lower()
 
         # Check for package manager files
         if filename_lower.endswith(".csproj"):
-            return cls.parse_csproj(
-                content=content,
+            return (
+                "dependency",
+                cls.parse_csproj(
+                    content=content,
+                ),
             )
         elif filename_lower == "packages.config":
-            return cls.parse_packages_config(
-                content=content,
+            return (
+                "dependency",
+                cls.parse_packages_config(
+                    content=content,
+                ),
             )
         # Check for C# code files
         elif filename.endswith(".cs"):
             imports = cls.extract_imports(
                 code=content,
             )
-            return {lib: None for lib in imports}
+            return ("code", {lib: None for lib in imports})
 
-        return {}
+        return (None, {})

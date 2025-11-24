@@ -1,7 +1,7 @@
 """Base extractor class with common functionality."""
 
 import re
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Literal, Optional, Tuple
 
 
 class BaseExtractor:
@@ -40,7 +40,10 @@ class BaseExtractor:
         raise NotImplementedError()
 
     @staticmethod
-    def extract_from_file(filename: str, content: str) -> Dict[str, Optional[str]]:
+    def extract_from_file(
+        filename: str,
+        content: str,
+    ) -> Tuple[Optional[Literal["code", "dependency"]], Dict[str, Optional[str]]]:
         """
         Extract libraries from a file based on its type.
 
@@ -48,7 +51,9 @@ class BaseExtractor:
         their own file type detection and extraction logic.
 
         Returns:
-            Dictionary mapping library names to their version specifications (if available).
-            For code files, version will be None. For dependency files, version will be the specified version.
+            Tuple of (file_type, libraries) where:
+            - file_type: "code" for code files, "dependency" for dependency files, None for unknown files
+            - libraries: Dictionary mapping library names to their version specifications
+              For code files, version will be None. For dependency files, version will be the specified version.
         """
         raise NotImplementedError()
