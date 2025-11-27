@@ -100,8 +100,7 @@ class Bar:
         result = PythonExtractor.extract_imports(
             code=code,
         )
-        # Should not match indented imports due to ^ anchor in regex
-        assert result == set()
+        assert result == {"tempfile", "collections", "itertools"}
 
     def test_empty_code(self):
         """Test with empty string."""
@@ -221,3 +220,114 @@ package3!=1.5.0
         assert result["package1"] == "==1.2.3.4"
         assert result["package2"] == ">=1.0.0,<2.0.0"
         assert result["package3"] == "!=1.5.0"
+
+
+class TestPyprojectTomlParsing:
+    """Test pyproject.toml parsing."""
+
+    def test_pep621_dependencies(self):
+        """Test PEP 621 style dependencies."""
+        content = """
+[project]
+name = "my-project"
+dependencies = [
+    "requests>=2.28.0",
+    "flask",
+    "numpy==1.24.0",
+]
+"""
+        result = PythonExtractor.parse_pyproject_toml(
+            content=content,
+        )
+        assert result["requests"] == ">=2.28.0"
+        assert result["flask"] is None
+        assert result["numpy"] == "==1.24.0"
+
+    def test_poetry_dependencies(self):
+        """Test Poetry style dependencies."""
+        content = """
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.28.0"
+flask = ">=2.0.0"
+numpy = "1.24.0"
+"""
+        result = PythonExtractor.parse_pyproject_toml(
+            content=content,
+        )
+        # Python should be excluded
+        assert "python" not in result
+        assert result["requests"] == "^2.28.0"
+        assert result["flask"] == ">=2.0.0"
+        assert result["numpy"] == "1.24.0"
+
+    def test_poetry_dict_format(self):
+        """Test Poetry dict format for dependencies."""
+        content = """
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = {version = "^2.28.0", extras = ["security"]}
+flask = {version = ">=2.0.0"}
+pandas = {git = "https://github.com/pandas-dev/pandas.git"}
+"""
+        result = PythonExtractor.parse_pyproject_toml(
+            content=content,
+        )
+        assert result["requests"] == "^2.28.0"
+        assert result["flask"] == ">=2.0.0"
+        assert result["pandas"] is None  # No version specified for git dep
+
+    def test_poetry_dev_dependencies(self):
+        """Test Poetry dev-dependencies."""
+        content = """
+[tool.poetry.dependencies]
+requests = "^2.28.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.0.0"
+black = "22.10.0"
+"""
+        result = PythonExtractor.parse_pyproject_toml(
+            content=content,
+        )
+        assert result["requests"] == "^2.28.0"
+        assert result["pytest"] == "^7.0.0"
+        assert result["black"] == "22.10.0"
+
+    def test_mixed_pep621_and_poetry(self):
+        """Test file with both PEP 621 and Poetry sections."""
+        content = """
+[project]
+dependencies = [
+    "requests>=2.28.0",
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+flask = "^2.0.0"
+"""
+        result = PythonExtractor.parse_pyproject_toml(
+            content=content,
+        )
+        # Both should be extracted
+        assert result["requests"] == ">=2.28.0"
+        assert result["flask"] == "^2.0.0"
+
+    def test_empty_pyproject(self):
+        """Test empty pyproject.toml."""
+        content = """
+[build-system]
+requires = ["setuptools"]
+"""
+        result = PythonExtractor.parse_pyproject_toml(
+            content=content,
+        )
+        assert result == {}
+
+    def test_invalid_toml(self):
+        """Test invalid TOML returns empty dict."""
+        content = "this is not valid toml [[[["
+        result = PythonExtractor.parse_pyproject_toml(
+            content=content,
+        )
+        assert result == {}

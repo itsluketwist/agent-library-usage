@@ -195,6 +195,13 @@ class CSharpExtractor(BaseExtractor):
                     content=content,
                 ),
             )
+        elif filename_lower == "paket.dependencies":
+            return (
+                "dependency",
+                cls.parse_paket_dependencies(
+                    content=content,
+                ),
+            )
         # Check for C# code files
         elif filename.endswith(".cs"):
             imports = cls.extract_imports(

@@ -122,3 +122,22 @@ class TestExtractFromFile:
         )
         assert file_type == "dependency"
         assert result == {"requests": "==2.28.0"}
+
+    def test_python_pyproject_toml_file(self):
+        """Test extracting from pyproject.toml."""
+        content = """
+[project]
+dependencies = [
+    "requests>=2.28.0",
+    "flask",
+]
+"""
+        extractor = get_extractor(
+            language="python",
+        )
+        file_type, result = extractor.extract_from_file(
+            filename="pyproject.toml",
+            content=content,
+        )
+        assert file_type == "dependency"
+        assert result == {"requests": ">=2.28.0", "flask": None}

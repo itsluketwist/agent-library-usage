@@ -2,6 +2,7 @@
 
 import re
 import sys
+import tomllib
 from typing import Literal
 
 from .base import BaseExtractor
@@ -12,7 +13,7 @@ class PythonExtractor(BaseExtractor):
 
     # Python import pattern
     IMPORT_PATTERN = re.compile(
-        pattern=r"^(?:from\s+([\w.]+)\s+import|import\s+([\w., ]+))",
+        pattern=r"^\s*(?:from\s+([\w.]+)\s+import|import\s+([\w., ]+))",
         flags=re.MULTILINE,
     )
 
@@ -71,6 +72,61 @@ class PythonExtractor(BaseExtractor):
                 pkg_name = match.group(1)
                 version_spec = match.group(2).strip() if match.group(2) else None
                 packages[pkg_name.lower()] = version_spec
+
+        return packages
+
+    @staticmethod
+    def parse_pyproject_toml(content: str) -> dict[str, str | None]:
+        """Parse pyproject.toml file and extract dependencies."""
+        packages: dict[str, str | None] = {}
+
+        try:
+            data = tomllib.loads(content)
+
+            # PEP 621 style: [project.dependencies]
+            if "project" in data and "dependencies" in data["project"]:
+                for dep in data["project"]["dependencies"]:
+                    # Dependencies are in format: "package>=1.0.0" or "package"
+                    match = re.match(r"^([a-zA-Z0-9_-]+)(.*)$", dep.strip())
+                    if match:
+                        pkg_name = match.group(1)
+                        version_spec = (
+                            match.group(2).strip() if match.group(2) else None
+                        )
+                        packages[pkg_name.lower()] = version_spec
+
+            # Poetry style: [tool.poetry.dependencies]
+            if "tool" in data and "poetry" in data["tool"]:
+                poetry_deps = data["tool"]["poetry"].get("dependencies", {})
+                for pkg_name, version_spec in poetry_deps.items():
+                    # Skip python version constraint
+                    if pkg_name.lower() == "python":
+                        continue
+
+                    # Version can be a string or a dict
+                    if isinstance(version_spec, str):
+                        packages[pkg_name.lower()] = version_spec
+                    elif isinstance(version_spec, dict):
+                        # Handle dict format: {version = "^1.0", extras = [...]}
+                        version = version_spec.get("version")
+                        packages[pkg_name.lower()] = version
+                    else:
+                        packages[pkg_name.lower()] = None
+
+                # Also check dev-dependencies
+                poetry_dev_deps = data["tool"]["poetry"].get("dev-dependencies", {})
+                for pkg_name, version_spec in poetry_dev_deps.items():
+                    if isinstance(version_spec, str):
+                        packages[pkg_name.lower()] = version_spec
+                    elif isinstance(version_spec, dict):
+                        version = version_spec.get("version")
+                        packages[pkg_name.lower()] = version
+                    else:
+                        packages[pkg_name.lower()] = None
+
+        except (tomllib.TOMLDecodeError, KeyError, AttributeError):
+            # If parsing fails, return empty dict
+            pass
 
         return packages
 
@@ -140,8 +196,15 @@ class PythonExtractor(BaseExtractor):
                     content=content,
                 ),
             )
-        elif filename_lower in ["setup.py", "pyproject.toml"]:
-            # For now, extract imports from these too (no version info)
+        elif filename_lower == "pyproject.toml":
+            return (
+                "dependency",
+                cls.parse_pyproject_toml(
+                    content=content,
+                ),
+            )
+        elif filename_lower == "setup.py":
+            # For setup.py, extract imports from code (no version info)
             imports = cls.extract_imports(
                 code=content,
             )
