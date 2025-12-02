@@ -163,7 +163,7 @@ class PRAnalyzer:
     @staticmethod
     def aggregate_statistics(
         usages: list[LibraryUsage],
-    ) -> dict[str, int | float | list[tuple[str, int]]]:
+    ) -> dict[str, int | float | list[tuple[str, int]] | list[tuple[str, int, float]]]:
         """Aggregate statistics across multiple PR library usages."""
 
         total_prs = len(usages)
@@ -175,39 +175,62 @@ class PRAnalyzer:
         all_extlib = set().union(*[u.extlib_imports for u in usages])
         all_dep_with_ver = set().union(*[u.dep_with_version for u in usages])
         all_dep_no_ver = set().union(*[u.dep_no_version for u in usages])
+        all_new_deps = all_dep_with_ver | all_dep_no_ver
 
-        # Count PRs with dependencies
+        # RQ1: Library Usage - Count PRs with stdlib/extlib imports
+        prs_with_stdlib = sum(1 for u in usages if u.stdlib_imports)
+        prs_with_extlib = sum(1 for u in usages if u.extlib_imports)
+
+        # RQ2: New Dependencies - Count PRs with dependencies
         prs_with_deps = sum(1 for u in usages if u.dep_with_version or u.dep_no_version)
+        total_new_deps = sum(
+            len(u.dep_with_version) + len(u.dep_no_version) for u in usages
+        )
+        total_new_deps_with_ver = sum(len(u.dep_with_version) for u in usages)
+
+        # RQ3: Choosing Libraries - Count PRs per new dependency
+        new_dep_counter = Counter(
+            lib for u in usages for lib in (u.dep_with_version | u.dep_no_version)
+        )
+        top_new_deps = [
+            (lib, count, 100 * count / total_prs)
+            for lib, count in new_dep_counter.most_common(20)
+        ]
 
         stats = {
+            # General stats
             "total_prs": total_prs,
-            # Import counts
-            "total_stdlib_imports": len(all_stdlib),
-            "total_extlib_imports": len(all_extlib),
-            # Dependency counts
-            "total_deps_with_version": len(all_dep_with_ver),
-            "total_deps_without_version": len(all_dep_no_ver),
-            # PRs with dependencies
-            "prs_with_deps": prs_with_deps,
-            "pct_prs_with_deps": 100 * prs_with_deps / total_prs
+            # RQ1: Library Usage
+            "prs_with_stdlib": prs_with_stdlib,
+            "pct_prs_with_stdlib": 100 * prs_with_stdlib / total_prs
             if total_prs > 0
             else 0,
-            # Averages
+            "prs_with_extlib": prs_with_extlib,
+            "pct_prs_with_extlib": 100 * prs_with_extlib / total_prs
+            if total_prs > 0
+            else 0,
             "avg_stdlib_per_pr": sum(len(u.stdlib_imports) for u in usages) / total_prs,
             "avg_extlib_per_pr": sum(len(u.extlib_imports) for u in usages) / total_prs,
-            "avg_deps_per_pr": sum(
-                len(u.dep_with_version) + len(u.dep_no_version) for u in usages
-            )
-            / total_prs,
-            # Most common
+            # RQ2: New Dependencies
+            "prs_with_new_deps": prs_with_deps,
+            "pct_prs_with_new_deps": 100 * prs_with_deps / total_prs
+            if total_prs > 0
+            else 0,
+            "avg_new_deps_per_pr": total_new_deps / total_prs,
+            "pct_new_deps_with_version": 100 * total_new_deps_with_ver / total_new_deps
+            if total_new_deps > 0
+            else 0,
+            "total_unique_new_deps": len(all_new_deps),
+            # RQ3: Choosing Libraries
+            "top_new_deps": top_new_deps,  # List of (lib, count, pct)
+            # Legacy stats for backwards compatibility
+            "total_stdlib_imports": len(all_stdlib),
+            "total_extlib_imports": len(all_extlib),
             "most_common_stdlib": Counter(
                 lib for u in usages for lib in u.stdlib_imports
             ).most_common(20),
             "most_common_extlib": Counter(
                 lib for u in usages for lib in u.extlib_imports
-            ).most_common(20),
-            "most_common_deps": Counter(
-                lib for u in usages for lib in u.dep_with_version | u.dep_no_version
             ).most_common(20),
         }
 
