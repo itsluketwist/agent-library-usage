@@ -40,13 +40,21 @@ class PythonExtractor(BaseExtractor):
 
         for match in PythonExtractor.IMPORT_PATTERN.finditer(code):
             if match.group(1):  # from X import
-                module = match.group(1).split(".")[0]
-                imports.add(module)
+                module_path = match.group(1)
+                # Skip relative imports (starting with .)
+                if module_path.startswith("."):
+                    continue
+                module = module_path.split(".")[0]
+                # Skip empty module names
+                if module:
+                    imports.add(module)
             elif match.group(2):  # import X
                 modules = match.group(2).split(",")
                 for module in modules:
                     module = module.strip().split(".")[0].split(" as ")[0]
-                    imports.add(module)
+                    # Skip empty module names
+                    if module:
+                        imports.add(module)
 
         return imports
 

@@ -124,6 +124,38 @@ def hello():
             == set()
         )
 
+    def test_relative_imports_excluded(self):
+        """Test that relative imports are excluded."""
+        code = """
+from . import something
+from .. import another
+from .submodule import func
+from ..parent.module import Class
+import os
+"""
+        result = PythonExtractor.extract_imports(
+            code=code,
+        )
+        # Should only contain os, not the relative imports
+        assert result == {"os"}
+
+    def test_multiline_relative_import(self):
+        """Test that multiline relative imports don't create blank imports."""
+        code = """
+from .providers import (
+    provider1,
+    provider2,
+    provider3,
+)
+import sys
+"""
+        result = PythonExtractor.extract_imports(
+            code=code,
+        )
+        # Should only contain sys, no blank strings
+        assert result == {"sys"}
+        assert "" not in result
+
 
 class TestRequirementsTxtParsing:
     """Test requirements.txt parsing."""

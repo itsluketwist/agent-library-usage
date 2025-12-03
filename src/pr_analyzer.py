@@ -93,6 +93,9 @@ class PRAnalyzer:
         dep_with_version = set()
         dep_no_version = set()
 
+        # Infer project package names from file paths
+        project_packages = self._infer_project_packages(commits_df)
+
         # Process each file change
         for _, row in commits_df.iterrows():
             filename = row.get("filename", "")
@@ -112,6 +115,10 @@ class PRAnalyzer:
             if file_type == "code":
                 # Code file: categorize imports as stdlib or external
                 for lib in libs_dict.keys():
+                    # Skip project's own packages
+                    if lib in project_packages:
+                        continue
+                    # Categorize as stdlib or external
                     if extractor_class.is_stdlib(module=lib):
                         stdlib_imports.add(lib)
                     else:
@@ -134,6 +141,37 @@ class PRAnalyzer:
             dep_no_version=dep_no_version,
             dep_with_version=dep_with_version,
         )
+
+    def _infer_project_packages(self, commits_df: pd.DataFrame) -> set[str]:
+        """
+        Infer project package names from file paths in the PR.
+
+        Looks for top-level Python packages (directories with __init__.py files).
+
+        Returns:
+            Set of inferred package names
+        """
+        project_packages = set()
+
+        # Look for patterns like: package_name/__init__.py or package_name/submodule/file.py
+        for filename in commits_df["filename"]:
+            if not isinstance(filename, str):
+                continue
+
+            parts = filename.split("/")
+            # Check if this looks like a Python package structure
+            if len(parts) >= 2 and (
+                parts[1] == "__init__.py" or filename.endswith(".py")
+            ):
+                # The first part might be a package name
+                potential_package = parts[0]
+                # Valid Python package names contain only letters, numbers, underscores
+                if potential_package and all(
+                    c.isalnum() or c == "_" for c in potential_package
+                ):
+                    project_packages.add(potential_package)
+
+        return project_packages
 
     def _extract_content_from_patch(self, patch: str) -> str:
         """
