@@ -71,6 +71,9 @@ class JavaScriptExtractor(BaseExtractor):
             if module:
                 # Remove relative imports (starting with . or /)
                 if not module.startswith(".") and not module.startswith("/"):
+                    # Skip path aliases (e.g., @/components, @/lib)
+                    if module.startswith("@/"):
+                        continue
                     # Get the package name (first part before /)
                     pkg_name = module.split("/")[0]
                     # Handle scoped packages (@scope/package)

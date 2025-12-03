@@ -75,10 +75,27 @@ class GoExtractor(BaseExtractor):
                 parts = pkg.split("/")
                 if len(parts) >= 3:
                     # For paths like github.com/user/repo
-                    imports.add("/".join(parts[:3]))
+                    base = "/".join(parts[:3])
+                    # Only include if it looks like an external package (has domain)
+                    if "." in parts[0]:  # Domain like github.com, golang.org
+                        imports.add(base)
                 else:
-                    # Standard library or short import
-                    imports.add(pkg)
+                    # Short imports (< 3 parts): could be stdlib or local packages
+                    # Filter local package patterns (internal/ and multi-part without domain)
+                    if pkg.startswith("internal/"):
+                        # Skip internal/ packages
+                        pass
+                    elif (
+                        "/" in pkg
+                        and "." not in parts[0]
+                        and not GoExtractor.is_stdlib(pkg)
+                    ):
+                        # Skip multi-part local packages (e.g., mochi/parser, project/utils)
+                        # These don't have a domain and aren't stdlib, so they're local
+                        pass
+                    else:
+                        # Include: stdlib (single or multi-part), or anything with domain
+                        imports.add(pkg)
             elif match.group(2):
                 # Multiple imports: import ( ... )
                 import_block = match.group(2)
@@ -96,9 +113,27 @@ class GoExtractor(BaseExtractor):
 
                     parts = pkg.split("/")
                     if len(parts) >= 3:
-                        imports.add("/".join(parts[:3]))
+                        base = "/".join(parts[:3])
+                        # Only include if it looks like an external package (has domain)
+                        if "." in parts[0]:  # Domain like github.com, golang.org
+                            imports.add(base)
                     else:
-                        imports.add(pkg)
+                        # Short imports (< 3 parts): could be stdlib or local packages
+                        # Filter local package patterns (internal/ and multi-part without domain)
+                        if pkg.startswith("internal/"):
+                            # Skip internal/ packages
+                            pass
+                        elif (
+                            "/" in pkg
+                            and "." not in parts[0]
+                            and not GoExtractor.is_stdlib(pkg)
+                        ):
+                            # Skip multi-part local packages (e.g., mochi/parser, project/utils)
+                            # These don't have a domain and aren't stdlib, so they're local
+                            pass
+                        else:
+                            # Include: stdlib (single or multi-part), or anything with domain
+                            imports.add(pkg)
 
         return imports
 

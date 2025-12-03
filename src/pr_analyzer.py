@@ -94,7 +94,7 @@ class PRAnalyzer:
         dep_no_version = set()
 
         # Infer project package names from file paths
-        project_packages = self._infer_project_packages(commits_df)
+        project_packages = self._infer_project_packages(commits_df, language)
 
         # Process each file change
         for _, row in commits_df.iterrows():
@@ -116,7 +116,7 @@ class PRAnalyzer:
                 # Code file: categorize imports as stdlib or external
                 for lib in libs_dict.keys():
                     # Skip project's own packages
-                    if lib in project_packages:
+                    if self._is_project_package(lib, project_packages, language):
                         continue
                     # Categorize as stdlib or external
                     if extractor_class.is_stdlib(module=lib):
@@ -142,34 +142,133 @@ class PRAnalyzer:
             dep_with_version=dep_with_version,
         )
 
-    def _infer_project_packages(self, commits_df: pd.DataFrame) -> set[str]:
+    def _is_project_package(
+        self,
+        lib: str,
+        project_packages: set[str],
+        language: str,
+    ) -> bool:
+        """
+        Check if a library is a project package.
+
+        For Go, uses prefix matching (e.g., "mochi" matches "mochi/parser").
+        For other languages, uses exact matching.
+        """
+        if language == "go":
+            # For Go, check if the library starts with any project package prefix
+            for pkg in project_packages:
+                if lib == pkg or lib.startswith(f"{pkg}/"):
+                    return True
+            return False
+        else:
+            # For other languages, use exact matching
+            return lib in project_packages
+
+    def _infer_project_packages(
+        self,
+        commits_df: pd.DataFrame,
+        language: str,
+    ) -> set[str]:
         """
         Infer project package names from file paths in the PR.
 
-        Looks for top-level Python packages (directories with __init__.py files).
+        Language-specific heuristics:
+        - Python: Top-level directories with .py files
+        - Go: Package paths extracted from .go file paths
+        - Rust: Top-level crate names from file paths
+        - C#: Sample/test applications in specific directories
+        - JavaScript/TypeScript: Already filtered in extractor via @/ pattern
 
         Returns:
             Set of inferred package names
         """
         project_packages = set()
 
-        # Look for patterns like: package_name/__init__.py or package_name/submodule/file.py
-        for filename in commits_df["filename"]:
-            if not isinstance(filename, str):
-                continue
+        if language == "python":
+            # Look for patterns like: package_name/__init__.py, package_name/submodule/file.py
+            # or any directory containing files
+            for filename in commits_df["filename"]:
+                if not isinstance(filename, str):
+                    continue
 
-            parts = filename.split("/")
-            # Check if this looks like a Python package structure
-            if len(parts) >= 2 and (
-                parts[1] == "__init__.py" or filename.endswith(".py")
-            ):
-                # The first part might be a package name
-                potential_package = parts[0]
-                # Valid Python package names contain only letters, numbers, underscores
-                if potential_package and all(
-                    c.isalnum() or c == "_" for c in potential_package
-                ):
-                    project_packages.add(potential_package)
+                parts = filename.split("/")
+                # Check if this is in a subdirectory
+                if len(parts) >= 2:
+                    # The first part might be a package name
+                    potential_package = parts[0]
+                    # Valid Python package names contain only letters, numbers, underscores
+                    if potential_package and all(
+                        c.isalnum() or c == "_" for c in potential_package
+                    ):
+                        # Add if it's a Python file in a subdirectory
+                        if filename.endswith(".py"):
+                            project_packages.add(potential_package)
+                        # Or if the directory name looks like a Python package (contains underscore)
+                        # This catches cases like alpha_factory_v1/README.md
+                        elif "_" in potential_package:
+                            project_packages.add(potential_package)
+
+        elif language == "rust":
+            # Look for crate names from file paths like: crates/glaredb_error/src/lib.rs
+            # or any directory containing Rust files
+            for filename in commits_df["filename"]:
+                if not isinstance(filename, str):
+                    continue
+
+                parts = filename.split("/")
+                # Pattern: crates/CRATE_NAME/... or just CRATE_NAME/src/...
+                if len(parts) >= 2:
+                    if parts[0] == "crates" and len(parts) >= 3:
+                        project_packages.add(parts[1])
+                    elif filename.endswith(".rs") and parts[1] in (
+                        "src",
+                        "tests",
+                        "benches",
+                        "examples",
+                    ):
+                        # First part is likely the crate name
+                        if all(c.isalnum() or c == "_" for c in parts[0]):
+                            project_packages.add(parts[0])
+                    elif filename.endswith(".rs"):
+                        # For any Rust file in a subdirectory, the first part is likely a crate name
+                        if all(c.isalnum() or c == "_" for c in parts[0]):
+                            project_packages.add(parts[0])
+
+        elif language == "go":
+            # Look for Go package paths from .go files
+            # Pattern: package_path/file.go -> extract base project name
+            # If we see "mochi/parser/lexer.go", infer that anything starting with "mochi/" is a project package
+            base_packages = set()
+            for filename in commits_df["filename"]:
+                if not isinstance(filename, str) or not filename.endswith(".go"):
+                    continue
+
+                parts = filename.split("/")
+                if len(parts) >= 2:
+                    # Get the base package (first part before any slashes)
+                    # "mochi/parser/lexer.go" -> "mochi"
+                    # "cmd/tool/main.go" -> "cmd"
+                    base_packages.add(parts[0])
+
+            # Now add these base packages to project_packages
+            # We'll use these as prefixes when filtering
+            project_packages.update(base_packages)
+
+        elif language == "csharp":
+            # Look for sample/test applications in paths
+            for filename in commits_df["filename"]:
+                if not isinstance(filename, str):
+                    continue
+
+                parts = filename.split("/")
+                if len(parts) >= 2:
+                    # Check for samples/ or tests/ directories
+                    if parts[0] in ("samples", "test", "tests", "examples"):
+                        # Next part is the sample/test app name
+                        if all(c.isalnum() or c in (".", "_") for c in parts[1]):
+                            project_packages.add(parts[1])
+
+        # JavaScript/TypeScript already filtered in extractor
 
         return project_packages
 

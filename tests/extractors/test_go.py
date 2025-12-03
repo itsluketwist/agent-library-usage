@@ -129,6 +129,49 @@ import (
         )
         assert result == set()
 
+    def test_local_packages_excluded(self):
+        """Test that local packages are excluded at extractor level."""
+        code = """
+import (
+    "fmt"
+    "internal/utils"
+    "internal/config"
+    "mochi/parser"
+    "mochi/types"
+    "github.com/stretchr/testify/assert"
+    "golang.org/x/tools/go/packages"
+)
+"""
+        result = GoExtractor.extract_imports(
+            code=code,
+        )
+        # Should include stdlib (fmt) and external packages with domains
+        assert "github.com/stretchr/testify" in result
+        assert "golang.org/x/tools" in result
+        assert "fmt" in result
+        # Should NOT include internal/ packages or local multi-part packages
+        assert "internal/utils" not in result
+        assert "internal/config" not in result
+        assert "mochi/parser" not in result
+        assert "mochi/types" not in result
+
+    def test_external_packages_with_domain_included(self):
+        """Test that packages with domains are included correctly."""
+        code = """
+import (
+    "github.com/user/repo/pkg"
+    "golang.org/x/tools"
+    "gopkg.in/yaml.v3"
+)
+"""
+        result = GoExtractor.extract_imports(
+            code=code,
+        )
+        # Should normalize to base package (first 3 parts)
+        assert "github.com/user/repo" in result
+        assert "golang.org/x/tools" in result
+        assert "gopkg.in/yaml.v3" in result
+
 
 class TestGoModParsing:
     """Test go.mod parsing."""

@@ -111,6 +111,23 @@ import { type Config } from 'config-types';
         )
         assert result == {"react"}
 
+    def test_path_alias_excluded(self):
+        """Test that @/ path aliases are excluded."""
+        code = """
+import { Component } from '@/components/ui/button'
+import { lib } from '@/lib/utils'
+import { hook } from '@/hooks/useData'
+import React from 'react'
+import { toast } from 'sonner'
+"""
+        result = JavaScriptExtractor.extract_imports(
+            code=code,
+        )
+        assert result == {"react", "sonner"}
+        assert "@/components" not in result
+        assert "@/lib" not in result
+        assert "@/hooks" not in result
+
 
 class TestPackageJsonParsing:
     """Test package.json parsing."""
