@@ -197,6 +197,13 @@ class PRAnalyzer:
             for lib, count in new_dep_counter.most_common(20)
         ]
 
+        # RQ3: External library imports - Count PRs per external library
+        extlib_counter = Counter(lib for u in usages for lib in u.extlib_imports)
+        top_extlib_imports = [
+            (lib, count, 100 * count / total_prs)
+            for lib, count in extlib_counter.most_common(20)
+        ]
+
         stats = {
             # General stats
             "total_prs": total_prs,
@@ -217,12 +224,19 @@ class PRAnalyzer:
             if total_prs > 0
             else 0,
             "avg_new_deps_per_pr": total_new_deps / total_prs,
+            "total_new_deps": total_new_deps,  # Total count of dependency additions
+            "total_new_deps_with_version": total_new_deps_with_ver,  # Count with version
             "pct_new_deps_with_version": 100 * total_new_deps_with_ver / total_new_deps
             if total_new_deps > 0
             else 0,
             "total_unique_new_deps": len(all_new_deps),
+            "pct_unique_new_deps": 100 * len(all_new_deps) / total_new_deps
+            if total_new_deps > 0
+            else 0,
             # RQ3: Choosing Libraries
             "top_new_deps": top_new_deps,  # List of (lib, count, pct)
+            "top_extlib_imports": top_extlib_imports,  # List of (lib, count, pct)
+            "total_unique_extlib_imports": len(all_extlib),
             # Legacy stats for backwards compatibility
             "total_stdlib_imports": len(all_stdlib),
             "total_extlib_imports": len(all_extlib),
