@@ -8,6 +8,57 @@ import pandas as pd
 from .extractors import get_extractor
 
 
+# Known self-import packages that slip through our filters
+# These are project-specific packages that appear in PRs but shouldn't count as external libraries
+KNOWN_SELF_IMPORTS = {
+    "python": {
+        "alpha_factory_v1",
+        "meta_agent",
+        "src",
+        "app",
+        "backend",
+        "frontend",
+    },
+    "rust": {
+        "glaredb_error",
+        "near_primitives",
+        "near_primitives_core",
+        "near_async",
+        "near_epoch_manager",
+        "near_chain_configs",
+        "near_chain",
+        "near_vm_runner",
+        "near_crypto",
+        "near_o11y",
+        "near_network",
+        "web_pages",
+        "daisy_rsx",
+        "db",
+        "core",
+        "common",
+    },
+    "typescript": {
+        "@calcom/lib",
+        "@calcom/prisma",
+        "@calcom/features",
+        "@calcom/ui",
+        "src",
+    },
+    "go": {
+        "github.com/tphakala/birdnet-go",
+        "code.vikunja.io/api",
+        "code.vikunja.io/api/pkg",  # Sometimes extracted with /pkg suffix
+    },
+    "csharp": {
+        "StaticViewLocator",
+        "Analyzer",
+        "UITest",
+        "AzureMcp",
+        "TestFramework",
+    },
+}
+
+
 @dataclass
 class LibraryUsage:
     """Statistics about library usage in a PR."""
@@ -126,6 +177,9 @@ class PRAnalyzer:
             elif file_type == "dependency":
                 # Dependency file: categorize by whether version is specified
                 for lib, version in libs_dict.items():
+                    # Skip project's own packages
+                    if self._is_project_package(lib, project_packages, language):
+                        continue
                     if version:
                         dep_with_version.add(lib)
                     else:
@@ -153,7 +207,12 @@ class PRAnalyzer:
 
         For Go, uses prefix matching (e.g., "mochi" matches "mochi/parser").
         For other languages, uses exact matching.
+        Also checks against a hardcoded blocklist of known self-imports.
         """
+        # Check hardcoded blocklist first
+        if language in KNOWN_SELF_IMPORTS and lib in KNOWN_SELF_IMPORTS[language]:
+            return True
+
         if language == "go":
             # For Go, check if the library starts with any project package prefix
             for pkg in project_packages:
@@ -317,6 +376,9 @@ class PRAnalyzer:
         # RQ1: Library Usage - Count PRs with stdlib/extlib imports
         prs_with_stdlib = sum(1 for u in usages if u.stdlib_imports)
         prs_with_extlib = sum(1 for u in usages if u.extlib_imports)
+        prs_with_any_import = sum(
+            1 for u in usages if u.stdlib_imports or u.extlib_imports
+        )
 
         # RQ2: New Dependencies - Count PRs with dependencies
         prs_with_deps = sum(1 for u in usages if u.dep_with_version or u.dep_no_version)
@@ -351,6 +413,10 @@ class PRAnalyzer:
             else 0,
             "prs_with_extlib": prs_with_extlib,
             "pct_prs_with_extlib": 100 * prs_with_extlib / total_prs
+            if total_prs > 0
+            else 0,
+            "prs_with_any_import": prs_with_any_import,
+            "pct_prs_with_any_import": 100 * prs_with_any_import / total_prs
             if total_prs > 0
             else 0,
             "avg_stdlib_per_pr": sum(len(u.stdlib_imports) for u in usages) / total_prs,
