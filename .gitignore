@@ -172,5 +172,4 @@ output/archive
 data/raw
 
 # temporary ignore
-output/*
 data/*

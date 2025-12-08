@@ -1,0 +1,1223 @@
+{
+  "csharp": {
+    "total_prs": 1983,
+    "prs_with_stdlib": 743,
+    "pct_prs_with_stdlib": 37.46848209783157,
+    "prs_with_extlib": 738,
+    "pct_prs_with_extlib": 37.216338880484116,
+    "prs_with_any_import": 902,
+    "pct_prs_with_any_import": 45.48663640948058,
+    "avg_stdlib_per_pr": 0.49016641452344933,
+    "avg_extlib_per_pr": 0.7281896116994453,
+    "prs_with_new_deps": 120,
+    "pct_prs_with_new_deps": 6.05143721633888,
+    "avg_new_deps_per_pr": 0.29904185577407966,
+    "total_new_deps": 593,
+    "total_new_deps_with_version": 278,
+    "pct_new_deps_with_version": 46.880269814502526,
+    "total_unique_new_deps": 294,
+    "pct_unique_new_deps": 49.57841483979764,
+    "top_new_deps": [
+      {
+        "library": "Microsoft.NET.Test.Sdk",
+        "count": 26,
+        "pct_of_prs": 1.3111447302067574
+      },
+      {
+        "library": "xunit.runner.visualstudio",
+        "count": 22,
+        "pct_of_prs": 1.1094301563287947
+      },
+      {
+        "library": "xunit",
+        "count": 20,
+        "pct_of_prs": 1.0085728693898135
+      },
+      {
+        "library": "Moq",
+        "count": 20,
+        "pct_of_prs": 1.0085728693898135
+      },
+      {
+        "library": "coverlet.collector",
+        "count": 15,
+        "pct_of_prs": 0.75642965204236
+      },
+      {
+        "library": "Microsoft.AspNetCore.Mvc.Testing",
+        "count": 11,
+        "pct_of_prs": 0.5547150781643974
+      },
+      {
+        "library": "NUnit",
+        "count": 9,
+        "pct_of_prs": 0.45385779122541603
+      },
+      {
+        "library": "NUnit3TestAdapter",
+        "count": 9,
+        "pct_of_prs": 0.45385779122541603
+      },
+      {
+        "library": "Azure.Identity",
+        "count": 7,
+        "pct_of_prs": 0.3530005042864347
+      },
+      {
+        "library": "Microsoft.Extensions.DependencyInjection.Abstractions",
+        "count": 7,
+        "pct_of_prs": 0.3530005042864347
+      },
+      {
+        "library": "Azure.Core",
+        "count": 7,
+        "pct_of_prs": 0.3530005042864347
+      },
+      {
+        "library": "Newtonsoft.Json",
+        "count": 7,
+        "pct_of_prs": 0.3530005042864347
+      },
+      {
+        "library": "Microsoft.Extensions.Logging.Abstractions",
+        "count": 6,
+        "pct_of_prs": 0.30257186081694404
+      },
+      {
+        "library": "System.Text.Json",
+        "count": 6,
+        "pct_of_prs": 0.30257186081694404
+      },
+      {
+        "library": "Microsoft.Windows.CsWin32",
+        "count": 6,
+        "pct_of_prs": 0.30257186081694404
+      },
+      {
+        "library": "Microsoft.CodeAnalysis.CSharp",
+        "count": 5,
+        "pct_of_prs": 0.2521432173474534
+      },
+      {
+        "library": "Avalonia",
+        "count": 5,
+        "pct_of_prs": 0.2521432173474534
+      },
+      {
+        "library": "Microsoft.Extensions.Configuration.Binder",
+        "count": 5,
+        "pct_of_prs": 0.2521432173474534
+      },
+      {
+        "library": "System.Collections.Immutable",
+        "count": 5,
+        "pct_of_prs": 0.2521432173474534
+      },
+      {
+        "library": "MSTest.TestFramework",
+        "count": 5,
+        "pct_of_prs": 0.2521432173474534
+      }
+    ],
+    "top_extlib_imports": [
+      {
+        "library": "Avalonia",
+        "count": 275,
+        "pct_of_prs": 13.867876954109935
+      },
+      {
+        "library": "Xunit",
+        "count": 243,
+        "pct_of_prs": 12.254160363086234
+      },
+      {
+        "library": "Dock",
+        "count": 131,
+        "pct_of_prs": 6.606152294503278
+      },
+      {
+        "library": "Aspire",
+        "count": 55,
+        "pct_of_prs": 2.773575390821987
+      },
+      {
+        "library": "Azure",
+        "count": 50,
+        "pct_of_prs": 2.5214321734745337
+      },
+      {
+        "library": "NUnit",
+        "count": 48,
+        "pct_of_prs": 2.4205748865355523
+      },
+      {
+        "library": "FluentAssertions",
+        "count": 30,
+        "pct_of_prs": 1.51285930408472
+      },
+      {
+        "library": "ReactiveUI",
+        "count": 28,
+        "pct_of_prs": 1.4120020171457388
+      },
+      {
+        "library": "Newtonsoft",
+        "count": 27,
+        "pct_of_prs": 1.361573373676248
+      },
+      {
+        "library": "Svg",
+        "count": 27,
+        "pct_of_prs": 1.361573373676248
+      },
+      {
+        "library": "Moq",
+        "count": 24,
+        "pct_of_prs": 1.2102874432677762
+      },
+      {
+        "library": "MSTest",
+        "count": 18,
+        "pct_of_prs": 0.9077155824508321
+      },
+      {
+        "library": "Elsa",
+        "count": 15,
+        "pct_of_prs": 0.75642965204236
+      },
+      {
+        "library": "NSubstitute",
+        "count": 14,
+        "pct_of_prs": 0.7060010085728694
+      },
+      {
+        "library": "Spectre",
+        "count": 13,
+        "pct_of_prs": 0.6555723651033787
+      },
+      {
+        "library": "ShimSkiaSharp",
+        "count": 13,
+        "pct_of_prs": 0.6555723651033787
+      },
+      {
+        "library": "Valour",
+        "count": 9,
+        "pct_of_prs": 0.45385779122541603
+      },
+      {
+        "library": "Windows",
+        "count": 9,
+        "pct_of_prs": 0.45385779122541603
+      },
+      {
+        "library": "YamlDotNet",
+        "count": 9,
+        "pct_of_prs": 0.45385779122541603
+      },
+      {
+        "library": "Xamarin",
+        "count": 8,
+        "pct_of_prs": 0.40342914775592537
+      }
+    ],
+    "total_unique_extlib_imports": 231,
+    "total_stdlib_imports": 2,
+    "total_extlib_imports": 231,
+    "most_common_stdlib": {
+      "System": 684,
+      "Microsoft": 288
+    },
+    "most_common_extlib": {
+      "Avalonia": 275,
+      "Xunit": 243,
+      "Dock": 131,
+      "Aspire": 55,
+      "Azure": 50,
+      "NUnit": 48,
+      "FluentAssertions": 30,
+      "ReactiveUI": 28,
+      "Newtonsoft": 27,
+      "Svg": 27,
+      "Moq": 24,
+      "MSTest": 18,
+      "Elsa": 15,
+      "NSubstitute": 14,
+      "Spectre": 13,
+      "ShimSkiaSharp": 13,
+      "Valour": 9,
+      "Windows": 9,
+      "YamlDotNet": 9,
+      "Xamarin": 8
+    },
+    "num_repos": 220
+  },
+  "go": {
+    "total_prs": 10107,
+    "prs_with_stdlib": 1244,
+    "pct_prs_with_stdlib": 12.3083011774018,
+    "prs_with_extlib": 324,
+    "pct_prs_with_extlib": 3.205699020480855,
+    "prs_with_any_import": 1273,
+    "pct_prs_with_any_import": 12.595231028000395,
+    "avg_stdlib_per_pr": 0.6346096764618581,
+    "avg_extlib_per_pr": 0.07776788364499852,
+    "prs_with_new_deps": 16,
+    "pct_prs_with_new_deps": 0.15830612446819037,
+    "avg_new_deps_per_pr": 0.020085089541901652,
+    "total_new_deps": 203,
+    "total_new_deps_with_version": 203,
+    "pct_new_deps_with_version": 100.0,
+    "total_unique_new_deps": 188,
+    "pct_unique_new_deps": 92.61083743842364,
+    "top_new_deps": [
+      {
+        "library": "github.com/golang/snappy",
+        "count": 6,
+        "pct_of_prs": 0.05936479667557139
+      },
+      {
+        "library": "github.com/stretchr/testify",
+        "count": 3,
+        "pct_of_prs": 0.029682398337785694
+      },
+      {
+        "library": "gopkg.in/yaml.v3",
+        "count": 3,
+        "pct_of_prs": 0.029682398337785694
+      },
+      {
+        "library": "github.com/klauspost/reedsolomon",
+        "count": 3,
+        "pct_of_prs": 0.029682398337785694
+      },
+      {
+        "library": "github.com/gogo/protobuf",
+        "count": 3,
+        "pct_of_prs": 0.029682398337785694
+      },
+      {
+        "library": "go.uber.org/atomic",
+        "count": 2,
+        "pct_of_prs": 0.019788265558523796
+      },
+      {
+        "library": "github.com/smacker/go-tree-sitter",
+        "count": 2,
+        "pct_of_prs": 0.019788265558523796
+      },
+      {
+        "library": "github.com/leonklingele/grouper",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      },
+      {
+        "library": "github.com/sashamelentyev/usestdlibvars",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      },
+      {
+        "library": "github.com/breml/bidichk",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      },
+      {
+        "library": "github.com/ghostiam/protogetter",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      },
+      {
+        "library": "github.com/hashicorp/go-immutable-radix/v2",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      },
+      {
+        "library": "go.uber.org/automaxprocs",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      },
+      {
+        "library": "github.com/ultraware/funlen",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      },
+      {
+        "library": "github.com/go-toolsmith/astcopy",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      },
+      {
+        "library": "github.com/mattn/go-isatty",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      },
+      {
+        "library": "github.com/maratori/testpackage",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      },
+      {
+        "library": "github.com/quasilyte/gogrep",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      },
+      {
+        "library": "github.com/sivchari/containedctx",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      },
+      {
+        "library": "4d63.com/gochecknoglobals",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      }
+    ],
+    "top_extlib_imports": [
+      {
+        "library": "github.com/stretchr/testify",
+        "count": 108,
+        "pct_of_prs": 1.068566340160285
+      },
+      {
+        "library": "github.com/smacker/go-tree-sitter",
+        "count": 21,
+        "pct_of_prs": 0.20777678836449986
+      },
+      {
+        "library": "github.com/spf13/cobra",
+        "count": 20,
+        "pct_of_prs": 0.19788265558523796
+      },
+      {
+        "library": "github.com/cometbft/cometbft",
+        "count": 13,
+        "pct_of_prs": 0.12862372613040468
+      },
+      {
+        "library": "github.com/microsoft/typescript-go",
+        "count": 13,
+        "pct_of_prs": 0.12862372613040468
+      },
+      {
+        "library": "github.com/tliron/glsp",
+        "count": 13,
+        "pct_of_prs": 0.12862372613040468
+      },
+      {
+        "library": "go.uber.org/zap",
+        "count": 12,
+        "pct_of_prs": 0.11872959335114278
+      },
+      {
+        "library": "github.com/gofiber/fiber",
+        "count": 11,
+        "pct_of_prs": 0.10883546057188087
+      },
+      {
+        "library": "k8s.io/apimachinery/pkg",
+        "count": 10,
+        "pct_of_prs": 0.09894132779261898
+      },
+      {
+        "library": "github.com/onsi/gomega",
+        "count": 9,
+        "pct_of_prs": 0.08904719501335707
+      },
+      {
+        "library": "github.com/alecthomas/participle",
+        "count": 9,
+        "pct_of_prs": 0.08904719501335707
+      },
+      {
+        "library": "k8s.io/api/core",
+        "count": 8,
+        "pct_of_prs": 0.07915306223409518
+      },
+      {
+        "library": "github.com/onsi/ginkgo",
+        "count": 8,
+        "pct_of_prs": 0.07915306223409518
+      },
+      {
+        "library": "github.com/google/uuid",
+        "count": 7,
+        "pct_of_prs": 0.06925892945483328
+      },
+      {
+        "library": "github.com/cosmos/cosmos-sdk",
+        "count": 6,
+        "pct_of_prs": 0.05936479667557139
+      },
+      {
+        "library": "sigs.k8s.io/controller-runtime/pkg",
+        "count": 6,
+        "pct_of_prs": 0.05936479667557139
+      },
+      {
+        "library": "github.com/pkg/errors",
+        "count": 6,
+        "pct_of_prs": 0.05936479667557139
+      },
+      {
+        "library": "github.com/valyala/fasthttp",
+        "count": 6,
+        "pct_of_prs": 0.05936479667557139
+      },
+      {
+        "library": "github.com/hashicorp/terraform-plugin-sdk",
+        "count": 6,
+        "pct_of_prs": 0.05936479667557139
+      },
+      {
+        "library": "github.com/carverauto/serviceradar",
+        "count": 6,
+        "pct_of_prs": 0.05936479667557139
+      }
+    ],
+    "total_unique_extlib_imports": 314,
+    "total_stdlib_imports": 56,
+    "total_extlib_imports": 314,
+    "most_common_stdlib": {
+      "fmt": 853,
+      "testing": 726,
+      "os": 715,
+      "strings": 685,
+      "path/filepath": 602,
+      "bytes": 559,
+      "os/exec": 495,
+      "time": 247,
+      "encoding/json": 204,
+      "context": 154,
+      "strconv": 141,
+      "sort": 137,
+      "io": 130,
+      "flag": 102,
+      "runtime": 76,
+      "regexp": 71,
+      "reflect": 65,
+      "net/http": 64,
+      "errors": 55,
+      "sync": 52
+    },
+    "most_common_extlib": {
+      "github.com/stretchr/testify": 108,
+      "github.com/smacker/go-tree-sitter": 21,
+      "github.com/spf13/cobra": 20,
+      "github.com/cometbft/cometbft": 13,
+      "github.com/microsoft/typescript-go": 13,
+      "github.com/tliron/glsp": 13,
+      "go.uber.org/zap": 12,
+      "github.com/gofiber/fiber": 11,
+      "k8s.io/apimachinery/pkg": 10,
+      "github.com/onsi/gomega": 9,
+      "github.com/alecthomas/participle": 9,
+      "k8s.io/api/core": 8,
+      "github.com/onsi/ginkgo": 8,
+      "github.com/google/uuid": 7,
+      "github.com/cosmos/cosmos-sdk": 6,
+      "sigs.k8s.io/controller-runtime/pkg": 6,
+      "github.com/pkg/errors": 6,
+      "github.com/valyala/fasthttp": 6,
+      "github.com/hashicorp/terraform-plugin-sdk": 6,
+      "github.com/carverauto/serviceradar": 6
+    },
+    "num_repos": 242
+  },
+  "python": {
+    "total_prs": 7190,
+    "prs_with_stdlib": 2383,
+    "pct_prs_with_stdlib": 33.1432545201669,
+    "prs_with_extlib": 1914,
+    "pct_prs_with_extlib": 26.62030598052851,
+    "prs_with_any_import": 2720,
+    "pct_prs_with_any_import": 37.83031988873435,
+    "avg_stdlib_per_pr": 1.2776077885952712,
+    "avg_extlib_per_pr": 0.7278164116828929,
+    "prs_with_new_deps": 200,
+    "pct_prs_with_new_deps": 2.7816411682892905,
+    "avg_new_deps_per_pr": 0.17204450625869264,
+    "total_new_deps": 1237,
+    "total_new_deps_with_version": 1020,
+    "pct_new_deps_with_version": 82.4575586095392,
+    "total_unique_new_deps": 552,
+    "pct_unique_new_deps": 44.62409054163298,
+    "top_new_deps": [
+      {
+        "library": "requests",
+        "count": 24,
+        "pct_of_prs": 0.3337969401947149
+      },
+      {
+        "library": "openai-agents",
+        "count": 22,
+        "pct_of_prs": 0.30598052851182195
+      },
+      {
+        "library": "openai",
+        "count": 21,
+        "pct_of_prs": 0.29207232267037553
+      },
+      {
+        "library": "numpy",
+        "count": 21,
+        "pct_of_prs": 0.29207232267037553
+      },
+      {
+        "library": "pandas",
+        "count": 18,
+        "pct_of_prs": 0.25034770514603616
+      },
+      {
+        "library": "pytest",
+        "count": 14,
+        "pct_of_prs": 0.19471488178025034
+      },
+      {
+        "library": "python-dotenv",
+        "count": 13,
+        "pct_of_prs": 0.1808066759388039
+      },
+      {
+        "library": "uvicorn",
+        "count": 13,
+        "pct_of_prs": 0.1808066759388039
+      },
+      {
+        "library": "pydantic",
+        "count": 12,
+        "pct_of_prs": 0.16689847009735745
+      },
+      {
+        "library": "aiohttp",
+        "count": 12,
+        "pct_of_prs": 0.16689847009735745
+      },
+      {
+        "library": "torch",
+        "count": 12,
+        "pct_of_prs": 0.16689847009735745
+      },
+      {
+        "library": "fastapi",
+        "count": 12,
+        "pct_of_prs": 0.16689847009735745
+      },
+      {
+        "library": "packaging",
+        "count": 10,
+        "pct_of_prs": 0.13908205841446453
+      },
+      {
+        "library": "-r",
+        "count": 10,
+        "pct_of_prs": 0.13908205841446453
+      },
+      {
+        "library": "rich",
+        "count": 9,
+        "pct_of_prs": 0.12517385257301808
+      },
+      {
+        "library": "pyyaml",
+        "count": 9,
+        "pct_of_prs": 0.12517385257301808
+      },
+      {
+        "library": "streamlit",
+        "count": 9,
+        "pct_of_prs": 0.12517385257301808
+      },
+      {
+        "library": "urllib3",
+        "count": 8,
+        "pct_of_prs": 0.11126564673157163
+      },
+      {
+        "library": "protobuf",
+        "count": 8,
+        "pct_of_prs": 0.11126564673157163
+      },
+      {
+        "library": "anthropic",
+        "count": 8,
+        "pct_of_prs": 0.11126564673157163
+      }
+    ],
+    "top_extlib_imports": [
+      {
+        "library": "pytest",
+        "count": 812,
+        "pct_of_prs": 11.29346314325452
+      },
+      {
+        "library": "pydantic",
+        "count": 279,
+        "pct_of_prs": 3.8803894297635604
+      },
+      {
+        "library": "crewai",
+        "count": 264,
+        "pct_of_prs": 3.6717663421418636
+      },
+      {
+        "library": "requests",
+        "count": 125,
+        "pct_of_prs": 1.7385257301808066
+      },
+      {
+        "library": "numpy",
+        "count": 125,
+        "pct_of_prs": 1.7385257301808066
+      },
+      {
+        "library": "fastapi",
+        "count": 114,
+        "pct_of_prs": 1.5855354659248957
+      },
+      {
+        "library": "openai",
+        "count": 65,
+        "pct_of_prs": 0.9040333796940194
+      },
+      {
+        "library": "pandas",
+        "count": 60,
+        "pct_of_prs": 0.8344923504867872
+      },
+      {
+        "library": "httpx",
+        "count": 53,
+        "pct_of_prs": 0.7371349095966621
+      },
+      {
+        "library": "yaml",
+        "count": 52,
+        "pct_of_prs": 0.7232267037552156
+      },
+      {
+        "library": "litellm",
+        "count": 49,
+        "pct_of_prs": 0.6815020862308763
+      },
+      {
+        "library": "google",
+        "count": 49,
+        "pct_of_prs": 0.6815020862308763
+      },
+      {
+        "library": "playwright",
+        "count": 48,
+        "pct_of_prs": 0.6675938803894298
+      },
+      {
+        "library": "torch",
+        "count": 44,
+        "pct_of_prs": 0.6119610570236439
+      },
+      {
+        "library": "typing_extensions",
+        "count": 43,
+        "pct_of_prs": 0.5980528511821975
+      },
+      {
+        "library": "sqlalchemy",
+        "count": 43,
+        "pct_of_prs": 0.5980528511821975
+      },
+      {
+        "library": "dotenv",
+        "count": 41,
+        "pct_of_prs": 0.5702364394993046
+      },
+      {
+        "library": "rich",
+        "count": 41,
+        "pct_of_prs": 0.5702364394993046
+      },
+      {
+        "library": "openai_agents",
+        "count": 40,
+        "pct_of_prs": 0.5563282336578581
+      },
+      {
+        "library": "click",
+        "count": 39,
+        "pct_of_prs": 0.5424200278164116
+      }
+    ],
+    "total_unique_extlib_imports": 948,
+    "total_stdlib_imports": 122,
+    "total_extlib_imports": 948,
+    "most_common_stdlib": {
+      "typing": 1056,
+      "os": 704,
+      "unittest": 651,
+      "pathlib": 620,
+      "sys": 506,
+      "__future__": 476,
+      "json": 422,
+      "logging": 324,
+      "asyncio": 323,
+      "time": 282,
+      "subprocess": 241,
+      "importlib": 232,
+      "re": 226,
+      "tempfile": 225,
+      "datetime": 218,
+      "dataclasses": 187,
+      "collections": 152,
+      "shutil": 146,
+      "argparse": 133,
+      "types": 121
+    },
+    "most_common_extlib": {
+      "pytest": 812,
+      "pydantic": 279,
+      "crewai": 264,
+      "requests": 125,
+      "numpy": 125,
+      "fastapi": 114,
+      "openai": 65,
+      "pandas": 60,
+      "httpx": 53,
+      "yaml": 52,
+      "litellm": 49,
+      "google": 49,
+      "playwright": 48,
+      "torch": 44,
+      "typing_extensions": 43,
+      "sqlalchemy": 43,
+      "dotenv": 41,
+      "rich": 41,
+      "openai_agents": 40,
+      "click": 39
+    },
+    "num_repos": 530
+  },
+  "rust": {
+    "total_prs": 1079,
+    "prs_with_stdlib": 0,
+    "pct_prs_with_stdlib": 0.0,
+    "prs_with_extlib": 380,
+    "pct_prs_with_extlib": 35.217794253938834,
+    "prs_with_any_import": 380,
+    "pct_prs_with_any_import": 35.217794253938834,
+    "avg_stdlib_per_pr": 0.0,
+    "avg_extlib_per_pr": 1.6524559777571826,
+    "prs_with_new_deps": 1,
+    "pct_prs_with_new_deps": 0.09267840593141798,
+    "avg_new_deps_per_pr": 0.0009267840593141798,
+    "total_new_deps": 1,
+    "total_new_deps_with_version": 1,
+    "pct_new_deps_with_version": 100.0,
+    "total_unique_new_deps": 1,
+    "pct_unique_new_deps": 100.0,
+    "top_new_deps": [
+      {
+        "library": "criterion",
+        "count": 1,
+        "pct_of_prs": 0.09267840593141798
+      }
+    ],
+    "top_extlib_imports": [
+      {
+        "library": "tokio",
+        "count": 61,
+        "pct_of_prs": 5.653382761816497
+      },
+      {
+        "library": "tracing",
+        "count": 52,
+        "pct_of_prs": 4.819277108433735
+      },
+      {
+        "library": "serde",
+        "count": 51,
+        "pct_of_prs": 4.726598702502317
+      },
+      {
+        "library": "anyhow",
+        "count": 48,
+        "pct_of_prs": 4.448563484708063
+      },
+      {
+        "library": "serde_json",
+        "count": 42,
+        "pct_of_prs": 3.892493049119555
+      },
+      {
+        "library": "rand",
+        "count": 38,
+        "pct_of_prs": 3.5217794253938832
+      },
+      {
+        "library": "futures",
+        "count": 33,
+        "pct_of_prs": 3.0583873957367933
+      },
+      {
+        "library": "tempfile",
+        "count": 25,
+        "pct_of_prs": 2.3169601482854496
+      },
+      {
+        "library": "itertools",
+        "count": 21,
+        "pct_of_prs": 1.9462465245597775
+      },
+      {
+        "library": "clap",
+        "count": 21,
+        "pct_of_prs": 1.9462465245597775
+      },
+      {
+        "library": "async_trait",
+        "count": 20,
+        "pct_of_prs": 1.8535681186283597
+      },
+      {
+        "library": "dioxus",
+        "count": 19,
+        "pct_of_prs": 1.7608897126969416
+      },
+      {
+        "library": "chrono",
+        "count": 16,
+        "pct_of_prs": 1.4828544949026876
+      },
+      {
+        "library": "num_rational",
+        "count": 14,
+        "pct_of_prs": 1.2974976830398517
+      },
+      {
+        "library": "reqwest",
+        "count": 14,
+        "pct_of_prs": 1.2974976830398517
+      },
+      {
+        "library": "ratatui",
+        "count": 14,
+        "pct_of_prs": 1.2974976830398517
+      },
+      {
+        "library": "num_traits",
+        "count": 13,
+        "pct_of_prs": 1.2048192771084338
+      },
+      {
+        "library": "axum",
+        "count": 13,
+        "pct_of_prs": 1.2048192771084338
+      },
+      {
+        "library": "criterion",
+        "count": 13,
+        "pct_of_prs": 1.2048192771084338
+      },
+      {
+        "library": "tracing_subscriber",
+        "count": 13,
+        "pct_of_prs": 1.2048192771084338
+      }
+    ],
+    "total_unique_extlib_imports": 699,
+    "total_stdlib_imports": 0,
+    "total_extlib_imports": 699,
+    "most_common_stdlib": {},
+    "most_common_extlib": {
+      "tokio": 61,
+      "tracing": 52,
+      "serde": 51,
+      "anyhow": 48,
+      "serde_json": 42,
+      "rand": 38,
+      "futures": 33,
+      "tempfile": 25,
+      "itertools": 21,
+      "clap": 21,
+      "async_trait": 20,
+      "dioxus": 19,
+      "chrono": 16,
+      "num_rational": 14,
+      "reqwest": 14,
+      "ratatui": 14,
+      "num_traits": 13,
+      "axum": 13,
+      "criterion": 13,
+      "tracing_subscriber": 13
+    },
+    "num_repos": 159
+  },
+  "typescript": {
+    "total_prs": 7480,
+    "prs_with_stdlib": 828,
+    "pct_prs_with_stdlib": 11.06951871657754,
+    "prs_with_extlib": 2847,
+    "pct_prs_with_extlib": 38.06149732620321,
+    "prs_with_any_import": 2993,
+    "pct_prs_with_any_import": 40.01336898395722,
+    "avg_stdlib_per_pr": 0.25975935828877006,
+    "avg_extlib_per_pr": 1.8683155080213905,
+    "prs_with_new_deps": 9,
+    "pct_prs_with_new_deps": 0.12032085561497326,
+    "avg_new_deps_per_pr": 0.01270053475935829,
+    "total_new_deps": 95,
+    "total_new_deps_with_version": 95,
+    "pct_new_deps_with_version": 100.0,
+    "total_unique_new_deps": 85,
+    "pct_unique_new_deps": 89.47368421052632,
+    "top_new_deps": [
+      {
+        "library": "typescript",
+        "count": 3,
+        "pct_of_prs": 0.040106951871657755
+      },
+      {
+        "library": "vite",
+        "count": 3,
+        "pct_of_prs": 0.040106951871657755
+      },
+      {
+        "library": "husky",
+        "count": 2,
+        "pct_of_prs": 0.026737967914438502
+      },
+      {
+        "library": "@biomejs/biome",
+        "count": 2,
+        "pct_of_prs": 0.026737967914438502
+      },
+      {
+        "library": "zod",
+        "count": 2,
+        "pct_of_prs": 0.026737967914438502
+      },
+      {
+        "library": "prettier",
+        "count": 2,
+        "pct_of_prs": 0.026737967914438502
+      },
+      {
+        "library": "@types/node",
+        "count": 2,
+        "pct_of_prs": 0.026737967914438502
+      },
+      {
+        "library": "three",
+        "count": 2,
+        "pct_of_prs": 0.026737967914438502
+      },
+      {
+        "library": "@electron-forge/plugin-auto-unpack-natives",
+        "count": 1,
+        "pct_of_prs": 0.013368983957219251
+      },
+      {
+        "library": "eslint-plugin-react-compiler",
+        "count": 1,
+        "pct_of_prs": 0.013368983957219251
+      },
+      {
+        "library": "clsx",
+        "count": 1,
+        "pct_of_prs": 0.013368983957219251
+      },
+      {
+        "library": "@types/react-dom",
+        "count": 1,
+        "pct_of_prs": 0.013368983957219251
+      },
+      {
+        "library": "@electron-forge/maker-rpm",
+        "count": 1,
+        "pct_of_prs": 0.013368983957219251
+      },
+      {
+        "library": "class-variance-authority",
+        "count": 1,
+        "pct_of_prs": 0.013368983957219251
+      },
+      {
+        "library": "eslint",
+        "count": 1,
+        "pct_of_prs": 0.013368983957219251
+      },
+      {
+        "library": "@electron-forge/shared-types",
+        "count": 1,
+        "pct_of_prs": 0.013368983957219251
+      },
+      {
+        "library": "@testing-library/user-event",
+        "count": 1,
+        "pct_of_prs": 0.013368983957219251
+      },
+      {
+        "library": "typescript-eslint",
+        "count": 1,
+        "pct_of_prs": 0.013368983957219251
+      },
+      {
+        "library": "@tanstack/react-query",
+        "count": 1,
+        "pct_of_prs": 0.013368983957219251
+      },
+      {
+        "library": "@types/eslint-config-prettier",
+        "count": 1,
+        "pct_of_prs": 0.013368983957219251
+      }
+    ],
+    "top_extlib_imports": [
+      {
+        "library": "react",
+        "count": 1013,
+        "pct_of_prs": 13.542780748663102
+      },
+      {
+        "library": "vitest",
+        "count": 483,
+        "pct_of_prs": 6.457219251336898
+      },
+      {
+        "library": "zod",
+        "count": 313,
+        "pct_of_prs": 4.184491978609626
+      },
+      {
+        "library": "next",
+        "count": 303,
+        "pct_of_prs": 4.050802139037433
+      },
+      {
+        "library": "lucide-react",
+        "count": 261,
+        "pct_of_prs": 3.4893048128342246
+      },
+      {
+        "library": "@testing-library/react",
+        "count": 136,
+        "pct_of_prs": 1.8181818181818181
+      },
+      {
+        "library": "@tanstack/react-query",
+        "count": 111,
+        "pct_of_prs": 1.4839572192513368
+      },
+      {
+        "library": "lodash",
+        "count": 107,
+        "pct_of_prs": 1.4304812834224598
+      },
+      {
+        "library": "drizzle-orm",
+        "count": 97,
+        "pct_of_prs": 1.2967914438502675
+      },
+      {
+        "library": "chai",
+        "count": 92,
+        "pct_of_prs": 1.2299465240641712
+      },
+      {
+        "library": "clsx",
+        "count": 85,
+        "pct_of_prs": 1.1363636363636365
+      },
+      {
+        "library": "express",
+        "count": 83,
+        "pct_of_prs": 1.1096256684491979
+      },
+      {
+        "library": "uuid",
+        "count": 82,
+        "pct_of_prs": 1.0962566844919786
+      },
+      {
+        "library": "dotenv",
+        "count": 82,
+        "pct_of_prs": 1.0962566844919786
+      },
+      {
+        "library": "@playwright/test",
+        "count": 72,
+        "pct_of_prs": 0.9625668449197861
+      },
+      {
+        "library": "ai",
+        "count": 67,
+        "pct_of_prs": 0.8957219251336899
+      },
+      {
+        "library": "valibot",
+        "count": 65,
+        "pct_of_prs": 0.8689839572192514
+      },
+      {
+        "library": "@prisma/client",
+        "count": 63,
+        "pct_of_prs": 0.8422459893048129
+      },
+      {
+        "library": "axios",
+        "count": 59,
+        "pct_of_prs": 0.7887700534759359
+      },
+      {
+        "library": "react-dom",
+        "count": 57,
+        "pct_of_prs": 0.7620320855614974
+      }
+    ],
+    "total_unique_extlib_imports": 2495,
+    "total_stdlib_imports": 48,
+    "total_extlib_imports": 2495,
+    "most_common_stdlib": {
+      "path": 383,
+      "fs": 319,
+      "node:path": 154,
+      "node:fs": 138,
+      "child_process": 129,
+      "assert": 86,
+      "crypto": 81,
+      "os": 77,
+      "url": 76,
+      "node:url": 55,
+      "node:child_process": 53,
+      "util": 46,
+      "http": 35,
+      "node:crypto": 34,
+      "node:util": 32,
+      "events": 26,
+      "node:os": 26,
+      "https": 22,
+      "node:assert": 18,
+      "stream": 17
+    },
+    "most_common_extlib": {
+      "react": 1013,
+      "vitest": 483,
+      "zod": 313,
+      "next": 303,
+      "lucide-react": 261,
+      "@testing-library/react": 136,
+      "@tanstack/react-query": 111,
+      "lodash": 107,
+      "drizzle-orm": 97,
+      "chai": 92,
+      "clsx": 85,
+      "express": 83,
+      "uuid": 82,
+      "dotenv": 82,
+      "@playwright/test": 72,
+      "ai": 67,
+      "valibot": 65,
+      "@prisma/client": 63,
+      "axios": 59,
+      "react-dom": 57
+    },
+    "num_repos": 840
+  }
+}
