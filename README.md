@@ -1,5 +1,7 @@
 # **research-template**
 
+This repository contains the artifacts and full results for the research paper **...**.
+
 <div>
     <!-- badges from : https://shields.io/ -->
     <!-- logos available : https://simpleicons.org/ -->
@@ -11,35 +13,9 @@
     </a>
 </div>
 
-## *about*
+## *abstract*
 
-This repository contains the research code and analysis for investigating how AI coding agents use external libraries in the code they write. This work is being prepared for submission to the MSR 2026 Mining Challenge.
-
-### Research Questions
-
-1. **Library Adoption**: Do agents happily import and install new libraries?
-2. **Existing Dependencies**: Do agents willingly use external libraries that are already installed, or do they avoid them?
-3. **Invalid Libraries**: Do agents try to commit invalid or non-existent libraries?
-4. **Version Specifications**: Do agents specify library versions in their PRs?
-5. **Common Libraries**: What are the most frequently used libraries by agents across different programming languages?
-
-### Dataset
-
-We analyze the [AIDev dataset](https://huggingface.co/datasets/hao-li/AIDev) from the MSR 2026 Mining Challenge, which contains:
-- 33,596 curated agent-authored pull requests (Agentic-PRs)
-- Data from 2,807 popular GitHub repositories (100+ stars)
-- Contributions from 5 AI agents: Claude Code, Cursor, Devin, GitHub Copilot, OpenAI Codex
-- PR metadata, commits, comments, reviews, and file-level changes
-
-### Methodology
-
-Our analysis focuses on the **top 3 most popular programming languages** in the dataset (TypeScript, Python, JavaScript) and examines:
-
-- Library imports in code files
-- Package manager file changes (package.json, requirements.txt, etc.)
-- Version specification patterns
-- Comparison of standard library vs external library usage
-- New dependencies added vs existing dependencies used
+todo
 
 ## *installation*
 
@@ -69,35 +45,39 @@ pip install .
 
 ## *usage*
 
-After [*installation*](#installation), there are 2 ways to run the experiment code.
-The easiest of which is via the the [`main.ipynb`](main.ipynb) notebook, which fully describes
-each experiment and provides the methods to run them.
+After [*installation*](#installation), all analysis is run through Jupyter notebooks in the [`notebooks/`](notebooks/) directory. Run the notebooks in order:
 
-You can also use the `run` command from your terminal - this is likely best if you want to
-reproduce the experiments on an external server or in a [docker](https://www.docker.com/)
-container.
+1. **`01_download_dataset.ipynb`** - Download and prepare the AIDev dataset
+2. **`02_explore_languages.ipynb`** - Identify programming languages in the dataset
+3. **`03_analyze_library_usage.ipynb`** - Analyse library usage patterns across all languages
+4. **`04_generate_latex_tables.ipynb`** - Generate LaTeX tables for the research paper
 
-```shell
-run --dataset-file data/example.json
-```
-
-All other non-experiment code that likely only needed to be ran a single time is explained in,
-and can be interfaced with, via it's corresponding Jupyter notebook.
-These notebooks are contained in the [`notebooks/`](notebooks/) directory, and are described in the
-[*structure*](#structure) section.
+Each notebook is self-contained and documents its purpose and outputs.
 
 ## *structure*
 
-- [`data/`](data/) - Downloaded AIDev dataset files (parquet format)
-- [`output/`](output/) - Generated analysis results, statistics, and visualizations
+- [`data/`](data/) - Downloaded AIDev dataset files (parquet format, git-ignored)
+- [`output/`](output/) - Generated analysis results:
+  - `*_library_usage.json` - Per-language library usage data
+  - `aggregated_statistics.json` - Summary statistics across all languages
+  - `latex_tables.tex` - Generated LaTeX tables for the paper
 - [`src/`](src/) - Main project code:
-  - `library_extractor.py` - Extract library imports from code files
-  - `pr_analyzer.py` - Analyze PRs for library usage patterns
-  - `cli.py` - Command-line interface
-- [`notebooks/`](notebooks/) - Jupyter notebooks for analysis:
-  - `01_download_dataset.ipynb` - Download the AIDev dataset
-  - `02_explore_languages.ipynb` - Identify top programming languages
-  - `03_analyze_library_usage.ipynb` - Main analysis and visualizations
+  - [`extractors/`](src/extractors/) - Language-specific library extractors:
+    - `base.py` - Base extractor interface
+    - `python.py` - Python import and requirements.txt extraction
+    - `javascript.py` - JavaScript/TypeScript import and package.json extraction
+    - `go.py` - Go import and go.mod extraction
+    - `csharp.py` - C# using statements and .csproj extraction
+    - `rust.py` - Rust use statements and Cargo.toml extraction
+  - `pr_analyzer.py` - Analyse PRs for library usage patterns
+  - `constants.py` - Shared constants and configurations
+  - `main.py` - Main analysis entry point
+- [`notebooks/`](notebooks/) - Jupyter notebooks for the analysis pipeline:
+  - `01_download_dataset.ipynb` - Download and prepare the AIDev dataset
+  - `02_explore_languages.ipynb` - Identify programming languages in the dataset
+  - `03_analyze_library_usage.ipynb` - Analyse library usage patterns (generates output/*.json)
+  - `04_generate_latex_tables.ipynb` - Generate LaTeX tables for the paper (4 languages: TypeScript, Python, Go, C#)
+- [`tests/`](tests/) - Unit tests for extractors and analyser
 
 ## *development*
 
@@ -135,11 +115,3 @@ Then version lock with [`uv`](https://astral.sh/blog/uv) using:
 ```shell
 uv pip compile requirements.in --output-file requirements.txt --upgrade
 ```
-
-## *paper*
-
-todo
-
-## *citation*
-
-todo
