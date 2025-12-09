@@ -1,6 +1,6 @@
 # **research-template**
 
-This repository contains the artifacts and full results for the research paper **...**.
+This repository contains the artifacts and full results for the research paper **A Study of Library Usage in Agent-Authored Pull Requests**.
 
 <div>
     <!-- badges from : https://shields.io/ -->
