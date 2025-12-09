@@ -455,36 +455,44 @@ class PRAnalyzer:
         # PR Acceptance statistics (if merge status provided)
         if pr_merge_status:
             # General: Overall acceptance
-            prs_merged_total = sum(1 for u in usages if pr_merge_status.get(u.pr_id, False))
+            prs_merged_total = sum(
+                1 for u in usages if pr_merge_status.get(u.pr_id, False)
+            )
             pct_prs_merged = 100 * prs_merged_total / total_prs if total_prs > 0 else 0
 
             # RQ1: PRs with imports that were merged
             prs_with_imports_merged = sum(
-                1 for u in usages
-                if (u.stdlib_imports or u.extlib_imports) and pr_merge_status.get(u.pr_id, False)
+                1
+                for u in usages
+                if (u.stdlib_imports or u.extlib_imports)
+                and pr_merge_status.get(u.pr_id, False)
             )
             pct_prs_with_imports_merged = (
                 100 * prs_with_imports_merged / prs_with_any_import
-                if prs_with_any_import > 0 else 0
+                if prs_with_any_import > 0
+                else 0
             )
 
             # RQ2: PRs with new deps that were merged
             prs_with_deps_merged = sum(
-                1 for u in usages
-                if (u.dep_with_version or u.dep_no_version) and pr_merge_status.get(u.pr_id, False)
+                1
+                for u in usages
+                if (u.dep_with_version or u.dep_no_version)
+                and pr_merge_status.get(u.pr_id, False)
             )
             pct_prs_with_deps_merged = (
-                100 * prs_with_deps_merged / prs_with_deps
-                if prs_with_deps > 0 else 0
+                100 * prs_with_deps_merged / prs_with_deps if prs_with_deps > 0 else 0
             )
 
-            stats.update({
-                "prs_merged_total": prs_merged_total,
-                "pct_prs_merged": pct_prs_merged,
-                "prs_with_imports_merged": prs_with_imports_merged,
-                "pct_prs_with_imports_merged": pct_prs_with_imports_merged,
-                "prs_with_deps_merged": prs_with_deps_merged,
-                "pct_prs_with_deps_merged": pct_prs_with_deps_merged,
-            })
+            stats.update(
+                {
+                    "prs_merged_total": prs_merged_total,
+                    "pct_prs_merged": pct_prs_merged,
+                    "prs_with_imports_merged": prs_with_imports_merged,
+                    "pct_prs_with_imports_merged": pct_prs_with_imports_merged,
+                    "prs_with_deps_merged": prs_with_deps_merged,
+                    "pct_prs_with_deps_merged": pct_prs_with_deps_merged,
+                }
+            )
 
         return stats
