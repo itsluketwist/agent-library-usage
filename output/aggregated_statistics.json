@@ -59,17 +59,17 @@
         "pct_of_prs": 0.45385779122541603
       },
       {
-        "library": "Azure.Identity",
-        "count": 7,
-        "pct_of_prs": 0.3530005042864347
-      },
-      {
         "library": "Microsoft.Extensions.DependencyInjection.Abstractions",
         "count": 7,
         "pct_of_prs": 0.3530005042864347
       },
       {
         "library": "Azure.Core",
+        "count": 7,
+        "pct_of_prs": 0.3530005042864347
+      },
+      {
+        "library": "Azure.Identity",
         "count": 7,
         "pct_of_prs": 0.3530005042864347
       },
@@ -114,7 +114,7 @@
         "pct_of_prs": 0.2521432173474534
       },
       {
-        "library": "MSTest.TestFramework",
+        "library": "Microsoft.Extensions.Configuration",
         "count": 5,
         "pct_of_prs": 0.2521432173474534
       }
@@ -250,6 +250,12 @@
       "YamlDotNet": 9,
       "Xamarin": 8
     },
+    "prs_merged_total": 1146,
+    "pct_prs_merged": 57.79122541603631,
+    "prs_with_imports_merged": 467,
+    "pct_prs_with_imports_merged": 51.77383592017738,
+    "prs_with_deps_merged": 56,
+    "pct_prs_with_deps_merged": 46.666666666666664,
     "num_repos": 220
   },
   "go": {
@@ -287,12 +293,12 @@
         "pct_of_prs": 0.029682398337785694
       },
       {
-        "library": "github.com/klauspost/reedsolomon",
+        "library": "github.com/gogo/protobuf",
         "count": 3,
         "pct_of_prs": 0.029682398337785694
       },
       {
-        "library": "github.com/gogo/protobuf",
+        "library": "github.com/klauspost/reedsolomon",
         "count": 3,
         "pct_of_prs": 0.029682398337785694
       },
@@ -307,57 +313,22 @@
         "pct_of_prs": 0.019788265558523796
       },
       {
-        "library": "github.com/leonklingele/grouper",
+        "library": "github.com/ashanbrown/makezero",
         "count": 1,
         "pct_of_prs": 0.009894132779261898
       },
       {
-        "library": "github.com/sashamelentyev/usestdlibvars",
+        "library": "github.com/GaijinEntertainment/go-exhaustruct/v3",
         "count": 1,
         "pct_of_prs": 0.009894132779261898
       },
       {
-        "library": "github.com/breml/bidichk",
+        "library": "honnef.co/go/tools",
         "count": 1,
         "pct_of_prs": 0.009894132779261898
       },
       {
-        "library": "github.com/ghostiam/protogetter",
-        "count": 1,
-        "pct_of_prs": 0.009894132779261898
-      },
-      {
-        "library": "github.com/hashicorp/go-immutable-radix/v2",
-        "count": 1,
-        "pct_of_prs": 0.009894132779261898
-      },
-      {
-        "library": "go.uber.org/automaxprocs",
-        "count": 1,
-        "pct_of_prs": 0.009894132779261898
-      },
-      {
-        "library": "github.com/ultraware/funlen",
-        "count": 1,
-        "pct_of_prs": 0.009894132779261898
-      },
-      {
-        "library": "github.com/go-toolsmith/astcopy",
-        "count": 1,
-        "pct_of_prs": 0.009894132779261898
-      },
-      {
-        "library": "github.com/mattn/go-isatty",
-        "count": 1,
-        "pct_of_prs": 0.009894132779261898
-      },
-      {
-        "library": "github.com/maratori/testpackage",
-        "count": 1,
-        "pct_of_prs": 0.009894132779261898
-      },
-      {
-        "library": "github.com/quasilyte/gogrep",
+        "library": "golang.org/x/tools",
         "count": 1,
         "pct_of_prs": 0.009894132779261898
       },
@@ -367,7 +338,42 @@
         "pct_of_prs": 0.009894132779261898
       },
       {
+        "library": "github.com/tetafro/godot",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      },
+      {
         "library": "4d63.com/gochecknoglobals",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      },
+      {
+        "library": "github.com/ryanrolds/sqlclosecheck",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      },
+      {
+        "library": "github.com/hexops/gotextdiff",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      },
+      {
+        "library": "gitlab.com/bosi/decorder",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      },
+      {
+        "library": "github.com/ldez/gomoddirectives",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      },
+      {
+        "library": "github.com/go-toolsmith/astcopy",
+        "count": 1,
+        "pct_of_prs": 0.009894132779261898
+      },
+      {
+        "library": "github.com/go-toolsmith/astequal",
         "count": 1,
         "pct_of_prs": 0.009894132779261898
       }
@@ -521,6 +527,12 @@
       "github.com/hashicorp/terraform-plugin-sdk": 6,
       "github.com/carverauto/serviceradar": 6
     },
+    "prs_merged_total": 8361,
+    "pct_prs_merged": 82.72484416740873,
+    "prs_with_imports_merged": 918,
+    "pct_prs_with_imports_merged": 72.11311861743911,
+    "prs_with_deps_merged": 5,
+    "pct_prs_with_deps_merged": 31.25,
     "num_repos": 242
   },
   "python": {
@@ -792,6 +804,12 @@
       "openai_agents": 40,
       "click": 39
     },
+    "prs_merged_total": 5468,
+    "pct_prs_merged": 76.0500695410292,
+    "prs_with_imports_merged": 1768,
+    "pct_prs_with_imports_merged": 65.0,
+    "prs_with_deps_merged": 131,
+    "pct_prs_with_deps_merged": 65.5,
     "num_repos": 530
   },
   "rust": {
@@ -947,6 +965,12 @@
       "criterion": 13,
       "tracing_subscriber": 13
     },
+    "prs_merged_total": 692,
+    "pct_prs_merged": 64.13345690454125,
+    "prs_with_imports_merged": 217,
+    "pct_prs_with_imports_merged": 57.10526315789474,
+    "prs_with_deps_merged": 1,
+    "pct_prs_with_deps_merged": 100.0,
     "num_repos": 159
   },
   "typescript": {
@@ -969,12 +993,12 @@
     "pct_unique_new_deps": 89.47368421052632,
     "top_new_deps": [
       {
-        "library": "typescript",
+        "library": "vite",
         "count": 3,
         "pct_of_prs": 0.040106951871657755
       },
       {
-        "library": "vite",
+        "library": "typescript",
         "count": 3,
         "pct_of_prs": 0.040106951871657755
       },
@@ -1009,37 +1033,7 @@
         "pct_of_prs": 0.026737967914438502
       },
       {
-        "library": "@electron-forge/plugin-auto-unpack-natives",
-        "count": 1,
-        "pct_of_prs": 0.013368983957219251
-      },
-      {
-        "library": "eslint-plugin-react-compiler",
-        "count": 1,
-        "pct_of_prs": 0.013368983957219251
-      },
-      {
-        "library": "clsx",
-        "count": 1,
-        "pct_of_prs": 0.013368983957219251
-      },
-      {
-        "library": "@types/react-dom",
-        "count": 1,
-        "pct_of_prs": 0.013368983957219251
-      },
-      {
-        "library": "@electron-forge/maker-rpm",
-        "count": 1,
-        "pct_of_prs": 0.013368983957219251
-      },
-      {
-        "library": "class-variance-authority",
-        "count": 1,
-        "pct_of_prs": 0.013368983957219251
-      },
-      {
-        "library": "eslint",
+        "library": "@tanstack/react-router",
         "count": 1,
         "pct_of_prs": 0.013368983957219251
       },
@@ -1049,22 +1043,52 @@
         "pct_of_prs": 0.013368983957219251
       },
       {
+        "library": "@electron-forge/maker-squirrel",
+        "count": 1,
+        "pct_of_prs": 0.013368983957219251
+      },
+      {
+        "library": "react-dom",
+        "count": 1,
+        "pct_of_prs": 0.013368983957219251
+      },
+      {
+        "library": "@tailwindcss/vite",
+        "count": 1,
+        "pct_of_prs": 0.013368983957219251
+      },
+      {
+        "library": "eslint-plugin-prettier",
+        "count": 1,
+        "pct_of_prs": 0.013368983957219251
+      },
+      {
+        "library": "@eslint/js",
+        "count": 1,
+        "pct_of_prs": 0.013368983957219251
+      },
+      {
         "library": "@testing-library/user-event",
         "count": 1,
         "pct_of_prs": 0.013368983957219251
       },
       {
-        "library": "typescript-eslint",
+        "library": "electron-devtools-installer",
         "count": 1,
         "pct_of_prs": 0.013368983957219251
       },
       {
-        "library": "@tanstack/react-query",
+        "library": "globals",
         "count": 1,
         "pct_of_prs": 0.013368983957219251
       },
       {
-        "library": "@types/eslint-config-prettier",
+        "library": "@radix-ui/react-dialog",
+        "count": 1,
+        "pct_of_prs": 0.013368983957219251
+      },
+      {
+        "library": "@electron-forge/plugin-fuses",
         "count": 1,
         "pct_of_prs": 0.013368983957219251
       }
@@ -1218,6 +1242,12 @@
       "axios": 59,
       "react-dom": 57
     },
+    "prs_merged_total": 4428,
+    "pct_prs_merged": 59.19786096256684,
+    "prs_with_imports_merged": 1595,
+    "pct_prs_with_imports_merged": 53.291012362178414,
+    "prs_with_deps_merged": 6,
+    "pct_prs_with_deps_merged": 66.66666666666667,
     "num_repos": 840
   }
 }

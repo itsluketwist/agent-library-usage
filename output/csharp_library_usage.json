@@ -203,8 +203,8 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Avalonia"
@@ -228,8 +228,8 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [
@@ -253,17 +253,17 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [
-      "ReactiveUI",
       "Microsoft.CodeAnalysis.CSharp.Scripting",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_with_version": []
   },
@@ -273,8 +273,8 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Avalonia"
@@ -364,9 +364,9 @@
       "System"
     ],
     "extlib_imports": [
-      "NUnit",
       "HarmonyLibTests",
-      "HarmonyLib"
+      "HarmonyLib",
+      "NUnit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -380,8 +380,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -415,14 +415,14 @@
       "System"
     ],
     "extlib_imports": [
-      "Android",
       "Avalonia",
-      "AndroidX"
+      "AndroidX",
+      "Android"
     ],
     "dep_no_version": [],
     "dep_with_version": [
-      "Xamarin.AndroidX.AppCompat",
-      "Xamarin.AndroidX.Window"
+      "Xamarin.AndroidX.Window",
+      "Xamarin.AndroidX.AppCompat"
     ]
   },
   {
@@ -445,8 +445,8 @@
     ],
     "extlib_imports": [
       "Splat",
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -629,8 +629,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -692,8 +692,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Xunit"
@@ -707,8 +707,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "AppControlManager"
@@ -843,8 +843,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Rapicgen",
-      "Xunit"
+      "Xunit",
+      "Rapicgen"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -858,9 +858,9 @@
       "System"
     ],
     "extlib_imports": [
-      "Rapicgen",
       "FluentAssertions",
-      "Xunit"
+      "Xunit",
+      "Rapicgen"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -891,23 +891,23 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Bogus",
+      "Equinox",
       "Xunit",
-      "Equinox"
+      "Bogus"
     ],
     "dep_no_version": [],
     "dep_with_version": [
-      "Bogus",
+      "Microsoft.NET.Test.Sdk",
       "xunit",
       "xunit.runner.visualstudio",
-      "coverlet.collector",
       "Microsoft.AspNetCore.Mvc.Testing",
+      "Bogus",
       "Moq",
-      "Microsoft.NET.Test.Sdk"
+      "coverlet.collector"
     ]
   },
   {
@@ -916,8 +916,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "NSubstitute",
@@ -932,12 +932,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "NUnit",
-      "Xunit"
+      "Xunit",
+      "NUnit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1008,21 +1008,21 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Foundation",
-      "CoreMedia",
-      "NUnit",
       "AudioToolbox",
       "Xunit",
-      "Xamarin",
-      "Security",
+      "ObjCRuntime",
       "CoreGraphics",
-      "AVFoundation",
       "ObjCBindings",
-      "ObjCRuntime"
+      "NUnit",
+      "AVFoundation",
+      "Security",
+      "Xamarin",
+      "CoreMedia",
+      "Foundation"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1131,8 +1131,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -1220,16 +1220,16 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": [
-      "Microsoft.CodeAnalysis.Analyzers",
-      "Microsoft.CodeAnalysis.CSharp"
+      "Microsoft.CodeAnalysis.CSharp",
+      "Microsoft.CodeAnalysis.Analyzers"
     ]
   },
   {
@@ -1251,10 +1251,10 @@
       "System"
     ],
     "extlib_imports": [
-      "ReactiveUI",
-      "VerifyXunit",
+      "Xunit",
       "Avalonia",
-      "Xunit"
+      "VerifyXunit",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1435,8 +1435,8 @@
     ],
     "extlib_imports": [
       "Splat",
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1476,8 +1476,8 @@
       "System"
     ],
     "extlib_imports": [
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1528,8 +1528,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -1541,8 +1541,8 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -1564,8 +1564,8 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -1701,8 +1701,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -1744,12 +1744,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Newtonsoft",
-      "Moq"
+      "Moq",
+      "Newtonsoft"
     ],
     "dep_no_version": [],
     "dep_with_version": [
@@ -1805,8 +1805,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Orleans"
@@ -1928,8 +1928,8 @@
     ],
     "extlib_imports": [
       "Docfx",
-      "Newtonsoft",
-      "Xunit"
+      "Xunit",
+      "Newtonsoft"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2026,8 +2026,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Xunit"
@@ -2041,17 +2041,17 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Cosmos",
-      "MongoDB"
+      "MongoDB",
+      "Cosmos"
     ],
     "dep_no_version": [
-      "Microsoft.Extensions.Configuration.Binder",
+      "mongocsharpdriver",
       "System.ComponentModel.Composition",
-      "mongocsharpdriver"
+      "Microsoft.Extensions.Configuration.Binder"
     ],
     "dep_with_version": [
       "MongoDB.Driver"
@@ -2141,8 +2141,8 @@
     ],
     "extlib_imports": [
       "AngleSharp",
-      "PreMailer",
-      "Xunit"
+      "Xunit",
+      "PreMailer"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2173,15 +2173,15 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "NuGet"
     ],
     "dep_no_version": [
-      "Microsoft.Build",
-      "System.Collections.Immutable"
+      "System.Collections.Immutable",
+      "Microsoft.Build"
     ],
     "dep_with_version": []
   },
@@ -2215,8 +2215,8 @@
     ],
     "extlib_imports": [
       "AngleSharp",
-      "PreMailer",
-      "Xunit"
+      "Xunit",
+      "PreMailer"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2327,8 +2327,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -2350,8 +2350,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -2482,8 +2482,8 @@
       "System"
     ],
     "extlib_imports": [
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2494,20 +2494,20 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Moq",
       "Xunit"
     ],
     "dep_no_version": [
-      "Microsoft.CodeAnalysis.Common",
-      "Microsoft.CodeAnalysis.CSharp"
+      "Microsoft.CodeAnalysis.CSharp",
+      "Microsoft.CodeAnalysis.Common"
     ],
     "dep_with_version": [
-      "Microsoft.CodeAnalysis.Common",
-      "Microsoft.CodeAnalysis.CSharp"
+      "Microsoft.CodeAnalysis.CSharp",
+      "Microsoft.CodeAnalysis.Common"
     ]
   },
   {
@@ -2519,8 +2519,8 @@
       "System"
     ],
     "extlib_imports": [
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2548,8 +2548,8 @@
       "System"
     ],
     "extlib_imports": [
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2617,8 +2617,8 @@
       "System"
     ],
     "extlib_imports": [
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2632,8 +2632,8 @@
       "System"
     ],
     "extlib_imports": [
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2647,8 +2647,8 @@
       "System"
     ],
     "extlib_imports": [
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2662,8 +2662,8 @@
       "System"
     ],
     "extlib_imports": [
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2717,8 +2717,8 @@
       "System"
     ],
     "extlib_imports": [
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2751,8 +2751,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Moq",
@@ -2771,8 +2771,8 @@
     ],
     "extlib_imports": [
       "FluentAssertions",
-      "Xunit",
-      "Azure"
+      "Azure",
+      "Xunit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2803,16 +2803,16 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "WebFrontEnd",
-      "OpenTelemetry",
       "Aspire",
       "GitHubModelsEndToEnd",
-      "AzureAIFoundryEndToEnd",
+      "OpenTelemetry",
       "Spectre",
+      "AzureAIFoundryEndToEnd",
+      "WebFrontEnd",
       "StreamJsonRpc"
     ],
     "dep_no_version": [
@@ -2831,8 +2831,8 @@
     ],
     "extlib_imports": [
       "FluentAssertions",
-      "Xunit",
-      "Azure"
+      "Azure",
+      "Xunit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2985,8 +2985,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -3136,14 +3136,14 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Aspire",
-      "ModelContextProtocol",
       "Xunit",
       "Azure",
+      "ModelContextProtocol",
       "Spectre"
     ],
     "dep_no_version": [
@@ -3262,11 +3262,11 @@
     ],
     "dep_no_version": [],
     "dep_with_version": [
+      "Microsoft.NET.Test.Sdk",
       "xunit",
       "xunit.runner.visualstudio",
-      "coverlet.collector",
       "Moq",
-      "Microsoft.NET.Test.Sdk"
+      "coverlet.collector"
     ]
   },
   {
@@ -3275,26 +3275,26 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Elsa",
       "Xunit",
+      "Elsa",
       "JetBrains"
     ],
     "dep_no_version": [
       "System.Linq.Async"
     ],
     "dep_with_version": [
+      "Microsoft.NET.Test.Sdk",
       "xunit",
-      "Microsoft.PowerFx.Core",
       "xunit.runner.visualstudio",
-      "coverlet.collector",
-      "Microsoft.PowerFx.Interpreter",
+      "Microsoft.PowerFx.Core",
       "Microsoft.AspNetCore.Mvc.Testing",
+      "coverlet.collector",
       "Moq",
-      "Microsoft.NET.Test.Sdk"
+      "Microsoft.PowerFx.Interpreter"
     ]
   },
   {
@@ -3420,12 +3420,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Elsa",
-      "Xunit"
+      "Xunit",
+      "Elsa"
     ],
     "dep_no_version": [],
     "dep_with_version": [
@@ -3463,16 +3463,16 @@
       "Microsoft"
     ],
     "extlib_imports": [
-      "MassTransit",
-      "Elsa"
+      "Elsa",
+      "MassTransit"
     ],
     "dep_no_version": [
-      "MassTransit.RabbitMQ",
       "Elsa.ServiceBus.MassTransit.AzureServiceBus",
-      "MassTransit",
       "Elsa.ServiceBus.MassTransit.RabbitMq",
-      "Elsa.ServiceBus.MassTransit",
-      "MassTransit.Azure.ServiceBus.Core"
+      "MassTransit.Azure.ServiceBus.Core",
+      "MassTransit",
+      "MassTransit.RabbitMQ",
+      "Elsa.ServiceBus.MassTransit"
     ],
     "dep_with_version": []
   },
@@ -3485,8 +3485,8 @@
       "System"
     ],
     "extlib_imports": [
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -3523,8 +3523,8 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Valour"
@@ -3717,8 +3717,8 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Valour"
@@ -3802,13 +3802,13 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Docker",
       "Aspire",
-      "Xunit"
+      "Xunit",
+      "Docker"
     ],
     "dep_no_version": [],
     "dep_with_version": [
@@ -3854,10 +3854,10 @@
     "extlib_imports": [],
     "dep_no_version": [],
     "dep_with_version": [
+      "Microsoft.Extensions.AI.OpenAI",
       "Microsoft.Extensions.AI.AzureAIInference",
       "Microsoft.Extensions.AI.Ollama",
-      "Microsoft.Extensions.AI",
-      "Microsoft.Extensions.AI.OpenAI"
+      "Microsoft.Extensions.AI"
     ]
   },
   {
@@ -4070,8 +4070,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -4103,8 +4103,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Moq"
@@ -4144,13 +4144,13 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Aspire",
-      "Xunit",
-      "Azure"
+      "Azure",
+      "Xunit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4164,8 +4164,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4232,30 +4232,30 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Moq",
-      "NUnit",
-      "Azure"
+      "Azure",
+      "NUnit"
     ],
     "dep_no_version": [
-      "Microsoft.Extensions.Logging",
-      "Azure.Identity",
-      "NUnit",
-      "Microsoft.Extensions.Configuration.Abstractions",
-      "MSTest.TestFramework",
-      "Microsoft.Extensions.Logging.Abstractions",
-      "Microsoft.Extensions.Configuration.Binder",
-      "Microsoft.Extensions.Options",
       "Microsoft.Extensions.DependencyInjection.Abstractions",
-      "NUnit3TestAdapter",
       "Microsoft.Extensions.Configuration",
-      "Moq",
-      "Azure.Core",
+      "Microsoft.Extensions.Logging.Abstractions",
+      "Microsoft.Extensions.Logging",
       "Microsoft.NET.Test.Sdk",
-      "System.IdentityModel.Tokens.Jwt"
+      "NUnit",
+      "MSTest.TestFramework",
+      "System.IdentityModel.Tokens.Jwt",
+      "Microsoft.Extensions.Configuration.Binder",
+      "Azure.Core",
+      "Microsoft.Extensions.Configuration.Abstractions",
+      "NUnit3TestAdapter",
+      "Microsoft.Extensions.Options",
+      "Moq",
+      "Azure.Identity"
     ],
     "dep_with_version": []
   },
@@ -4310,8 +4310,8 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "Refitter",
       "FluentAssertions",
+      "Refitter",
       "Xunit"
     ],
     "dep_no_version": [],
@@ -4336,16 +4336,16 @@
       "System"
     ],
     "extlib_imports": [
-      "Moq",
       "FluentAssertions",
-      "Xunit",
-      "Azure"
+      "Moq",
+      "Azure",
+      "Xunit"
     ],
     "dep_no_version": [
-      "xunit",
-      "Moq",
       "FluentAssertions",
-      "xunit.runner.visualstudio"
+      "xunit.runner.visualstudio",
+      "Moq",
+      "xunit"
     ],
     "dep_with_version": []
   },
@@ -4368,8 +4368,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Xunit",
-      "Azure"
+      "Azure",
+      "Xunit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4382,8 +4382,8 @@
     "stdlib_imports": [],
     "extlib_imports": [
       "FluentAssertions",
-      "Xunit",
-      "Azure"
+      "Azure",
+      "Xunit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4422,32 +4422,32 @@
     "dep_no_version": [],
     "dep_with_version": [
       "Microsoft.AspNetCore.Identity.UI",
-      "Swashbuckle.AspNetCore",
-      "xunit",
-      "Microsoft.EntityFrameworkCore.Sqlite",
-      "Microsoft.EntityFrameworkCore.InMemory",
-      "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
-      "Microsoft.AspNetCore.Authentication.OpenIdConnect",
-      "Microsoft.AspNetCore.Components.WebAssembly.Authentication",
-      "Microsoft.AspNetCore.Mvc.Testing",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design",
-      "xunit.runner.visualstudio",
-      "Microsoft.EntityFrameworkCore.SqlServer",
-      "coverlet.collector",
-      "Moq",
-      "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore",
-      "OpenTelemetry.Instrumentation.Http",
-      "OpenTelemetry.Extensions.Hosting",
-      "IdentityServer4.AspNetIdentity",
-      "System.Net.Http.Json",
       "Microsoft.Extensions.Logging.Debug",
-      "OpenTelemetry.Exporter.Zipkin",
-      "Microsoft.AspNetCore.Components.WebAssembly.DevServer",
-      "Microsoft.AspNet.WebApi.Client",
-      "Microsoft.EntityFrameworkCore.Tools",
+      "xunit",
+      "xunit.runner.visualstudio",
+      "Swashbuckle.AspNetCore",
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+      "Microsoft.EntityFrameworkCore.Sqlite",
+      "OpenTelemetry.Extensions.Hosting",
+      "System.Net.Http.Json",
+      "Microsoft.AspNetCore.Authentication.OpenIdConnect",
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design",
       "Microsoft.AspNetCore.Components.WebAssembly",
+      "Microsoft.NET.Test.Sdk",
+      "OpenTelemetry.Exporter.Zipkin",
+      "Microsoft.AspNet.WebApi.Client",
+      "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore",
+      "Microsoft.AspNetCore.Components.WebAssembly.Authentication",
+      "Moq",
+      "IdentityServer4.AspNetIdentity",
+      "Microsoft.AspNetCore.Components.WebAssembly.DevServer",
+      "Microsoft.EntityFrameworkCore.SqlServer",
       "OpenTelemetry.Instrumentation.AspNetCore",
-      "Microsoft.NET.Test.Sdk"
+      "OpenTelemetry.Instrumentation.Http",
+      "Microsoft.AspNetCore.Mvc.Testing",
+      "Microsoft.EntityFrameworkCore.InMemory",
+      "Microsoft.EntityFrameworkCore.Tools",
+      "coverlet.collector"
     ]
   },
   {
@@ -4471,8 +4471,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4540,23 +4540,23 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Confluent",
-      "NBB"
+      "NBB",
+      "Confluent"
     ],
     "dep_no_version": [],
     "dep_with_version": [
-      "Microsoft.Extensions.Configuration.Abstractions",
-      "Microsoft.Extensions.Hosting.Abstractions",
+      "Microsoft.Extensions.DependencyInjection.Abstractions",
       "Microsoft.Extensions.Logging.Abstractions",
-      "Microsoft.Extensions.Configuration.Binder",
+      "Newtonsoft.Json",
       "Microsoft.Extensions.Options.ConfigurationExtensions",
       "Confluent.Kafka",
-      "Microsoft.Extensions.DependencyInjection.Abstractions",
-      "Newtonsoft.Json"
+      "Microsoft.Extensions.Configuration.Binder",
+      "Microsoft.Extensions.Hosting.Abstractions",
+      "Microsoft.Extensions.Configuration.Abstractions"
     ]
   },
   {
@@ -4565,8 +4565,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -4723,8 +4723,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Moq",
@@ -4825,8 +4825,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4840,8 +4840,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4855,8 +4855,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4870,8 +4870,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4885,8 +4885,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4900,8 +4900,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4915,8 +4915,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4930,8 +4930,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4945,8 +4945,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4972,8 +4972,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4987,8 +4987,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5016,8 +5016,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5031,8 +5031,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5060,8 +5060,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5075,8 +5075,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5090,8 +5090,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5105,8 +5105,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5120,8 +5120,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5135,8 +5135,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5164,8 +5164,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5179,8 +5179,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [
       "Avalonia"
@@ -5279,20 +5279,20 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "OpenTelemetry",
-      "Semver",
       "Aspire",
       "Xunit",
+      "OpenTelemetry",
       "Azure",
-      "Yarp"
+      "Yarp",
+      "Semver"
     ],
     "dep_no_version": [
-      "Yarp.ReverseProxy",
-      "Microsoft.Extensions.FileProviders.Embedded"
+      "Microsoft.Extensions.FileProviders.Embedded",
+      "Yarp.ReverseProxy"
     ],
     "dep_with_version": []
   },
@@ -5638,12 +5638,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Bunit",
-      "Xunit"
+      "Xunit",
+      "Bunit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5664,12 +5664,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "PerfViewTests",
       "EventSources",
+      "PerfViewTests",
       "PerfView",
       "Xunit"
     ],
@@ -5705,8 +5705,8 @@
       "System"
     ],
     "extlib_imports": [
-      "RulesEngine",
-      "Xunit"
+      "Xunit",
+      "RulesEngine"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5746,9 +5746,9 @@
       "System"
     ],
     "extlib_imports": [
+      "SshNet",
       "Renci",
-      "Duplicati",
-      "SshNet"
+      "Duplicati"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5789,8 +5789,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -5808,8 +5808,8 @@
       "Xunit"
     ],
     "dep_no_version": [
-      "xunit.v3.extensibility.core",
-      "xunit.v3.common"
+      "xunit.v3.common",
+      "xunit.v3.extensibility.core"
     ],
     "dep_with_version": []
   },
@@ -5819,8 +5819,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Aspire",
@@ -5885,8 +5885,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Newtonsoft"
@@ -5923,8 +5923,8 @@
       "System"
     ],
     "extlib_imports": [
-      "NUnit",
-      "ESPresense"
+      "ESPresense",
+      "NUnit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5935,13 +5935,13 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Aspire",
-      "Xunit",
-      "Spectre"
+      "Spectre",
+      "Xunit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5972,13 +5972,13 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "SQLite",
+      "ESPresense",
       "Moq",
-      "ESPresense"
+      "SQLite"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -6257,12 +6257,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "VerifyXunit",
-      "Xunit"
+      "Xunit",
+      "VerifyXunit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -6622,8 +6622,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Aspire",
@@ -6641,14 +6641,14 @@
     "extlib_imports": [],
     "dep_no_version": [],
     "dep_with_version": [
-      "CommunityToolkit.Maui",
+      "Mopups",
       "Microsoft.Extensions.Logging.Debug",
       "Microsoft.Maui.Controls",
-      "CommunityToolkit.Mvvm",
-      "AdamE.MemoryToolkit.Maui",
+      "CommunityToolkit.Maui",
       "Microsoft.SourceLink.GitHub",
       "Microsoft.Maui.Controls.Compatibility",
-      "Mopups"
+      "AdamE.MemoryToolkit.Maui",
+      "CommunityToolkit.Mvvm"
     ]
   },
   {
@@ -6715,9 +6715,9 @@
     "dep_no_version": [],
     "dep_with_version": [
       "Microsoft.Bcl.AsyncInterfaces",
-      "xunit",
+      "xunit.runner.visualstudio",
       "Microsoft.NET.Test.Sdk",
-      "xunit.runner.visualstudio"
+      "xunit"
     ]
   },
   {
@@ -6749,19 +6749,19 @@
       "System"
     ],
     "extlib_imports": [
-      "Plugin",
       "FluentAssertions",
+      "Plugin",
       "Xunit"
     ],
     "dep_no_version": [],
     "dep_with_version": [
-      "xunit",
-      "FluentAssertions",
-      "xunit.runner.visualstudio",
       "Microsoft.Maui.Controls",
+      "Microsoft.NET.Test.Sdk",
+      "xunit",
+      "xunit.runner.visualstudio",
       "CommunityToolkit.Mvvm",
-      "coverlet.collector",
-      "Microsoft.NET.Test.Sdk"
+      "FluentAssertions",
+      "coverlet.collector"
     ]
   },
   {
@@ -6868,8 +6868,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Xunit"
@@ -6964,16 +6964,16 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "FluentAssertions",
       "Xunit",
-      "OctoshiftCLI",
-      "Newtonsoft",
       "Octoshift",
-      "Moq"
+      "FluentAssertions",
+      "Moq",
+      "OctoshiftCLI",
+      "Newtonsoft"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -6987,8 +6987,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Newtonsoft",
-      "OctoshiftCLI"
+      "OctoshiftCLI",
+      "Newtonsoft"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -7124,8 +7124,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "MSTest"
@@ -7242,8 +7242,8 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "Newtonsoft",
-      "FluentAssertions"
+      "FluentAssertions",
+      "Newtonsoft"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -7385,8 +7385,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "Ecng",
-      "StockSharp"
+      "StockSharp",
+      "Ecng"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -7503,20 +7503,20 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Refit",
-      "Rapicgen",
+      "Spectre",
       "NJsonSchema",
-      "Spectre"
+      "Refit",
+      "Rapicgen"
     ],
     "dep_no_version": [],
     "dep_with_version": [
-      "Microsoft.Extensions.DependencyInjection",
       "Spectre.Console",
-      "Spectre.Console.Cli"
+      "Spectre.Console.Cli",
+      "Microsoft.Extensions.DependencyInjection"
     ]
   },
   {
@@ -7557,18 +7557,18 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "NUnit",
       "Autorest",
-      "Azure"
+      "Azure",
+      "NUnit"
     ],
     "dep_no_version": [
-      "NUnit",
+      "NUnit3TestAdapter",
       "Azure.Identity",
-      "NUnit3TestAdapter"
+      "NUnit"
     ],
     "dep_with_version": []
   },
@@ -7620,8 +7620,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "NuGet",
@@ -7629,8 +7629,8 @@
     ],
     "dep_no_version": [],
     "dep_with_version": [
-      "NuGet.Protocol",
-      "System.Reflection.Metadata"
+      "System.Reflection.Metadata",
+      "NuGet.Protocol"
     ]
   },
   {
@@ -7639,12 +7639,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "k8s",
-      "Aspire"
+      "Aspire",
+      "k8s"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -7655,21 +7655,21 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Xunit",
-      "Equinox"
+      "Equinox",
+      "Xunit"
     ],
     "dep_no_version": [],
     "dep_with_version": [
+      "Microsoft.NET.Test.Sdk",
       "xunit",
       "xunit.runner.visualstudio",
-      "Microsoft.EntityFrameworkCore.InMemory",
-      "coverlet.collector",
       "Microsoft.AspNetCore.Mvc.Testing",
-      "Microsoft.NET.Test.Sdk"
+      "Microsoft.EntityFrameworkCore.InMemory",
+      "coverlet.collector"
     ]
   },
   {
@@ -7721,9 +7721,9 @@
       "Microsoft"
     ],
     "extlib_imports": [
+      "CloudNative",
       "Orleans",
-      "Dapr",
-      "CloudNative"
+      "Dapr"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -7734,17 +7734,17 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Azure"
     ],
     "dep_no_version": [
       "Microsoft.NET.Sdk.Functions",
-      "Microsoft.Azure.Functions.Worker.Extensions.Http",
-      "Microsoft.Azure.Functions.Worker",
       "Azure.Storage.Blobs",
+      "Microsoft.Azure.Functions.Worker",
+      "Microsoft.Azure.Functions.Worker.Extensions.Http",
       "Microsoft.Azure.Functions.Worker.Sdk"
     ],
     "dep_with_version": []
@@ -7800,8 +7800,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Newtonsoft",
-      "NuGet"
+      "NuGet",
+      "Newtonsoft"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -7812,29 +7812,29 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "NuGet",
-      "ModelContextProtocol",
-      "Xunit",
-      "Newtonsoft",
-      "IssueLabeler",
-      "Octokit",
-      "Azure",
-      "ApiView",
       "APIViewWeb",
-      "APIView"
+      "Xunit",
+      "NuGet",
+      "Azure",
+      "Octokit",
+      "ApiView",
+      "IssueLabeler",
+      "APIView",
+      "ModelContextProtocol",
+      "Newtonsoft"
     ],
     "dep_no_version": [],
     "dep_with_version": [
       "NuGet.Packaging",
-      "System.CommandLine",
-      "NuGet.Protocol",
       "System.Reflection.Metadata",
+      "NuGet.Configuration",
       "NuGet.Common",
-      "NuGet.Configuration"
+      "System.CommandLine",
+      "NuGet.Protocol"
     ]
   },
   {
@@ -7917,8 +7917,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -7965,8 +7965,8 @@
       "System"
     ],
     "extlib_imports": [
-      "NUnit",
-      "Azure"
+      "Azure",
+      "NUnit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -8025,8 +8025,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -8097,14 +8097,14 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Xunit",
       "Aspire",
+      "Spectre",
       "YamlDotNet",
-      "Spectre"
+      "Xunit"
     ],
     "dep_no_version": [
       "Verify.XunitV3"
@@ -8161,12 +8161,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Shouldly",
-      "FluentAssertions"
+      "FluentAssertions",
+      "Shouldly"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -8278,89 +8278,89 @@
     "stdlib_imports": [],
     "extlib_imports": [],
     "dep_no_version": [
-      "System.Numerics.Tensors",
-      "Microsoft.DotNet.Interactive.Formatting",
-      "System.Composition",
-      "Microsoft.DotNet.PlatformAbstractions",
+      "BenchmarkDotNet",
+      "Microsoft.Extensions.Logging.Console",
       "Microsoft.Bcl.Memory",
-      "Microsoft.ML.Onnx.TestModels",
-      "SciSharp.TensorFlow.Redist",
-      "SciSharp.TensorFlow.Redist-Linux-GPU",
-      "Drop.App",
-      "Microsoft.DotNet.IBCMerge",
-      "Microsoft.Extensions.AI.Abstractions",
-      "NuGet.Resolver",
-      "Microsoft.Extensions.DependencyInjection",
-      "System.Security.Principal.Windows",
-      "NuGet.Packaging.Core",
-      "Microsoft.CodeAnalysis.Analyzers",
-      "System.Text.Encodings.Web",
-      "Microsoft.ML.TestModels",
-      "Microsoft.VisualStudioEng.MicroBuild.Core",
-      "Microsoft.Extensions.Options",
-      "System.Formats.Asn1",
-      "System.Text.Json",
-      "TensorFlow.NET",
-      "SciSharp.TensorFlow.Redist-Windows-GPU",
-      "System.Buffers",
-      "AutoGen.Core",
-      "libtorch-cpu-linux-x64",
-      "Microsoft.Extensions.Logging",
-      "Microsoft.CodeAnalysis.CSharp.CodeFix.Testing.XUnit",
-      "Microsoft.ML.OnnxRuntime",
       "TorchSharp.PyBridge",
-      "System.IO.Pipelines",
-      "Microsoft.ML.OnnxRuntime.Managed",
-      "System.Memory",
-      "Plotly.NET.CSharp",
-      "Microsoft.ML.TestTokenizers",
-      "Microsoft.Bcl.AsyncInterfaces",
-      "System.IO.FileSystem.AccessControl",
-      "Newtonsoft.Json",
+      "Microsoft.CSharp",
+      "Microsoft.Extensions.ObjectPool",
+      "SkiaSharp.NativeAssets.Linux.NoDependencies",
       "Microsoft.CodeAnalysis.CSharp",
+      "TorchSharp",
+      "Microsoft.ManifestTool.CrossPlatform",
+      "System.IO.Pipelines",
+      "runtime.native.System.Data.SqlClient.sni",
+      "Microsoft.DotNet.Interactive",
+      "System.Buffers",
+      "System.Security.Principal.Windows",
+      "System.CodeDom",
+      "System.Composition",
+      "NuGet.Resolver",
+      "System.Runtime.CompilerServices.Unsafe",
+      "Microsoft.SemanticKernel.Abstractions",
+      "Microsoft.CodeAnalysis.CSharp.Workspaces",
+      "Microsoft.VisualStudioEng.MicroBuild.Core",
+      "Microsoft.Extensions.Logging",
+      "System.Text.Encodings.Web",
+      "Microsoft.ML.Onnx.TestModels",
+      "SkiaSharp",
+      "libtorch-cpu-osx-x64",
+      "Microsoft.ML.TensorFlow.TestModels",
+      "Microsoft.ML.TestDatabases",
+      "NuGet.Packaging.Core",
+      "System.IO.FileSystem.AccessControl",
+      "System.Text.Json",
+      "Microsoft.Extensions.AI.Abstractions",
+      "Microsoft.ML.TestModels",
+      "Drop.App",
+      "JsonSchema.Net.Generation",
+      "System.Numerics.Tensors",
+      "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "SciSharp.TensorFlow.Redist-Linux-GPU",
+      "Microsoft.Extensions.DependencyModel",
+      "Newtonsoft.Json",
+      "JsonSchema.Net",
+      "System.Memory",
+      "Microsoft.Bcl.HashCode",
+      "System.Data.SQLite",
+      "System.Reflection.Emit.Lightweight",
+      "Microsoft.DotNet.Interactive.Formatting",
+      "Microsoft.SemanticKernel",
+      "TorchSharp-cuda-windows",
+      "System.Threading.Channels",
+      "TensorFlow.NET",
+      "System.Data.SqlClient",
+      "Plotly.NET.CSharp",
+      "AutoGen.Core",
+      "AutoGen.SourceGenerator",
+      "Moq",
+      "BenchmarkDotNet.Diagnostics.Windows",
+      "Microsoft.ML.TestTokenizers",
+      "Microsoft.VisualStudioEng.MicroBuild.Plugins.SwixBuild",
+      "libtorch-cpu-win-x64",
+      "Microsoft.Extensions.DependencyInjection",
+      "SciSharp.TensorFlow.Redist-Windows-GPU",
+      "System.Configuration.ConfigurationManager",
+      "Microsoft.ML.OnnxRuntime",
+      "System.Data.SQLite.Core",
+      "libtorch-cpu-linux-x64",
+      "System.Formats.Asn1",
+      "MathNet.Numerics.Signed",
+      "System.Collections.Immutable",
+      "AwesomeAssertions",
+      "Microsoft.DotNet.PlatformAbstractions",
+      "Microsoft.Extensions.Options",
+      "Microsoft.ML.OnnxRuntime.Managed",
+      "Microsoft.CodeAnalysis.CSharp.CodeFix.Testing.XUnit",
+      "Microsoft.DotNet.RemoteExecutor",
       "Microsoft.CodeAnalysis",
       "Apache.Arrow",
       "ApprovalTests",
-      "Microsoft.DotNet.RemoteExecutor",
-      "runtime.native.System.Data.SqlClient.sni",
-      "Microsoft.CSharp",
-      "System.Data.SQLite.Core",
-      "Microsoft.SemanticKernel.Abstractions",
-      "TorchSharp",
-      "BenchmarkDotNet",
-      "SkiaSharp.NativeAssets.Linux.NoDependencies",
-      "libtorch-cpu-osx-x64",
-      "AwesomeAssertions",
-      "Microsoft.Extensions.ObjectPool",
-      "System.CodeDom",
-      "libtorch-cpu-win-x64",
-      "Microsoft.Extensions.DependencyInjection.Abstractions",
-      "System.Reflection.Emit.Lightweight",
-      "System.Threading.Channels",
-      "AutoGen.SourceGenerator",
-      "BenchmarkDotNet.Diagnostics.Windows",
-      "System.Configuration.ConfigurationManager",
-      "Microsoft.ML.TestDatabases",
-      "Microsoft.ManifestTool.CrossPlatform",
-      "Microsoft.Bcl.HashCode",
-      "System.Data.SqlClient",
-      "JsonSchema.Net.Generation",
-      "System.Runtime.CompilerServices.Unsafe",
-      "Microsoft.Extensions.DependencyModel",
-      "TorchSharp-cuda-windows",
-      "JsonSchema.Net",
-      "MathNet.Numerics.Signed",
-      "Microsoft.SemanticKernel",
-      "Microsoft.Extensions.Logging.Console",
-      "Microsoft.ML.TensorFlow.TestModels",
-      "System.Collections.Immutable",
-      "Microsoft.VisualStudioEng.MicroBuild.Plugins.SwixBuild",
-      "Microsoft.DotNet.Interactive",
-      "SkiaSharp",
       "Google.Protobuf",
-      "System.Data.SQLite",
-      "Microsoft.CodeAnalysis.CSharp.Workspaces",
-      "Moq"
+      "Microsoft.DotNet.IBCMerge",
+      "Microsoft.CodeAnalysis.Analyzers",
+      "Microsoft.Bcl.AsyncInterfaces",
+      "SciSharp.TensorFlow.Redist"
     ],
     "dep_with_version": []
   },
@@ -8400,12 +8400,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Xunit",
-      "Azure"
+      "Azure",
+      "Xunit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -8426,18 +8426,18 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Samples",
-      "NUnit",
-      "Azure"
+      "Azure",
+      "NUnit"
     ],
     "dep_no_version": [
       "Microsoft.AspNetCore.DataProtection",
-      "Azure.Core",
-      "Microsoft.Bcl.AsyncInterfaces"
+      "Microsoft.Bcl.AsyncInterfaces",
+      "Azure.Core"
     ],
     "dep_with_version": []
   },
@@ -8457,8 +8457,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Aspire",
@@ -8525,8 +8525,8 @@
     "extlib_imports": [],
     "dep_no_version": [],
     "dep_with_version": [
-      "MSTest.TestAdapter",
-      "MSTest.TestFramework"
+      "MSTest.TestFramework",
+      "MSTest.TestAdapter"
     ]
   },
   {
@@ -8535,8 +8535,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -8766,16 +8766,16 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Cosmos"
     ],
     "dep_no_version": [
-      "Microsoft.Extensions.Configuration.Binder",
+      "Microsoft.Extensions.Configuration",
       "Microsoft.Extensions.Configuration.Json",
-      "Microsoft.Extensions.Configuration"
+      "Microsoft.Extensions.Configuration.Binder"
     ],
     "dep_with_version": []
   },
@@ -8795,8 +8795,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Newtonsoft"
@@ -8919,15 +8919,15 @@
       "System"
     ],
     "extlib_imports": [
-      "NUnit",
-      "Xunit"
+      "Xunit",
+      "NUnit"
     ],
     "dep_no_version": [],
     "dep_with_version": [
-      "NUnit",
-      "xunit",
       "NUnit3TestAdapter",
-      "xunit.runner.visualstudio"
+      "xunit.runner.visualstudio",
+      "xunit",
+      "NUnit"
     ]
   },
   {
@@ -8946,13 +8946,13 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
+      "Xamarin",
       "Mono",
-      "NUnit",
-      "Xamarin"
+      "NUnit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -8963,27 +8963,27 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "NSubstitute",
-      "Elsa",
       "Xunit",
+      "Elsa",
       "JetBrains"
     ],
     "dep_no_version": [
-      "Microsoft.Extensions.Logging",
-      "xunit",
-      "Microsoft.Extensions.Http",
-      "xunit.runner.visualstudio",
-      "NSubstitute",
-      "Elsa.Email",
-      "Microsoft.Extensions.Logging.Abstractions",
-      "Microsoft.Extensions.Options",
-      "coverlet.collector",
       "Microsoft.Extensions.DependencyInjection.Abstractions",
-      "Microsoft.NET.Test.Sdk"
+      "Microsoft.Extensions.Logging.Abstractions",
+      "Microsoft.Extensions.Logging",
+      "Microsoft.NET.Test.Sdk",
+      "xunit",
+      "xunit.runner.visualstudio",
+      "Elsa.Email",
+      "Microsoft.Extensions.Http",
+      "NSubstitute",
+      "Microsoft.Extensions.Options",
+      "coverlet.collector"
     ],
     "dep_with_version": []
   },
@@ -9018,24 +9018,24 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Foundation",
-      "AVFoundation",
-      "CoreMedia",
-      "NUnit",
+      "AppKit",
       "AudioToolbox",
       "Xunit",
-      "UIKit",
-      "Xamarin",
-      "AppKit",
-      "Security",
+      "ObjCRuntime",
+      "NUnit",
       "CoreGraphics",
-      "CoreImage",
       "ObjCBindings",
-      "ObjCRuntime"
+      "AVFoundation",
+      "Security",
+      "Xamarin",
+      "CoreMedia",
+      "Foundation",
+      "UIKit",
+      "CoreImage"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9046,12 +9046,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Foundation",
-      "ObjCRuntime"
+      "ObjCRuntime",
+      "Foundation"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9095,14 +9095,14 @@
       "System"
     ],
     "extlib_imports": [
-      "NUnit",
       "Autorest",
-      "Azure"
+      "Azure",
+      "NUnit"
     ],
     "dep_no_version": [
-      "NUnit",
+      "NUnit3TestAdapter",
       "Azure.Identity",
-      "NUnit3TestAdapter"
+      "NUnit"
     ],
     "dep_with_version": []
   },
@@ -9172,22 +9172,22 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Foundation",
-      "CoreMedia",
-      "NUnit",
       "AudioToolbox",
       "Xunit",
-      "AudioUnit",
-      "Xamarin",
-      "Security",
-      "CoreGraphics",
-      "AVFoundation",
+      "ObjCRuntime",
+      "NUnit",
       "ObjCBindings",
-      "ObjCRuntime"
+      "CoreGraphics",
+      "Xamarin",
+      "AVFoundation",
+      "Security",
+      "AudioUnit",
+      "CoreMedia",
+      "Foundation"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9228,8 +9228,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "PerfView"
@@ -9283,20 +9283,20 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "ManagedCommon",
-      "OpenQA",
       "Windows",
-      "WinRT",
       "FancyZonesEditor",
-      "FancyZonesEditorCommon"
+      "FancyZonesEditorCommon",
+      "WinRT",
+      "OpenQA"
     ],
     "dep_no_version": [
-      "Appium.WebDriver",
-      "MSTest"
+      "MSTest",
+      "Appium.WebDriver"
     ],
     "dep_with_version": []
   },
@@ -9411,8 +9411,8 @@
       "System"
     ],
     "extlib_imports": [
-      "MathNet",
-      "ESPresense"
+      "ESPresense",
+      "MathNet"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9456,9 +9456,9 @@
       "Microsoft"
     ],
     "extlib_imports": [
-      "Newtonsoft",
+      "YamlDotNet",
       "MigrationTools",
-      "YamlDotNet"
+      "Newtonsoft"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9499,22 +9499,22 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Distribt",
+      "MongoDB",
       "Moq",
       "Xunit",
-      "MongoDB"
+      "Distribt"
     ],
     "dep_no_version": [],
     "dep_with_version": [
+      "Microsoft.NET.Test.Sdk",
       "xunit",
       "xunit.runner.visualstudio",
-      "coverlet.collector",
       "Moq",
-      "Microsoft.NET.Test.Sdk"
+      "coverlet.collector"
     ]
   },
   {
@@ -9526,12 +9526,12 @@
       "System"
     ],
     "extlib_imports": [
-      "Foundation",
+      "ObjCRuntime",
       "NUnit",
-      "CoreLocation",
       "Xamarin",
       "ARKit",
-      "ObjCRuntime"
+      "CoreLocation",
+      "Foundation"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9554,12 +9554,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "NCalc",
-      "MigrationTools"
+      "MigrationTools",
+      "NCalc"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9580,12 +9580,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "NCalc",
-      "MigrationTools"
+      "MigrationTools",
+      "NCalc"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9596,12 +9596,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "NCalc",
-      "MigrationTools"
+      "MigrationTools",
+      "NCalc"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9632,8 +9632,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "MigrationTools"
@@ -9662,8 +9662,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "FluentAssertions",
@@ -9754,12 +9754,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "OpenTelemetry",
-      "Azure"
+      "Azure",
+      "OpenTelemetry"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9780,8 +9780,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "FluentAssertions",
@@ -9796,8 +9796,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "FluentAssertions",
@@ -9812,14 +9812,14 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Newtonsoft",
-      "Moq",
       "FluentAssertions",
-      "Tomlyn"
+      "Moq",
+      "Tomlyn",
+      "Newtonsoft"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9830,8 +9830,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -9878,8 +9878,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Xunit",
-      "Azure"
+      "Azure",
+      "Xunit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9890,12 +9890,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "NUnit",
-      "Xunit"
+      "Xunit",
+      "NUnit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9907,9 +9907,9 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "DotNet",
       "Aspire",
-      "Xunit"
+      "Xunit",
+      "DotNet"
     ],
     "dep_no_version": [
       "Testcontainers"
@@ -9937,8 +9937,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Grpc",
@@ -9954,8 +9954,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "FluentAssertions",
@@ -9972,14 +9972,14 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Polyfills",
       "FluentAssertions",
-      "MSTest",
-      "Moq"
+      "Moq",
+      "MSTest"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10064,8 +10064,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -10117,8 +10117,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Xunit"
@@ -10209,8 +10209,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "FluentAssertions",
@@ -10257,8 +10257,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Azure"
@@ -10362,8 +10362,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "MSTest"
@@ -10440,8 +10440,8 @@
       "System"
     ],
     "extlib_imports": [
-      "NUnit",
-      "Azure"
+      "Azure",
+      "NUnit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10472,8 +10472,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -10485,8 +10485,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "MSTest"
@@ -10540,25 +10540,25 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "RichardSzalay",
       "SuaveServerWrapper",
-      "FluentAssertions",
-      "Xunit",
       "Autofac",
+      "Xunit",
+      "RichardSzalay",
+      "Azure",
       "NSubstitute",
-      "Newtonsoft",
-      "Azure"
+      "FluentAssertions",
+      "Newtonsoft"
     ],
     "dep_no_version": [
       "SuaveServerWrapper",
+      "Newtonsoft.Json",
       "NSubstitute",
       "RichardSzalay.MockHttp",
-      "Xunit.SkippableFact",
-      "Newtonsoft.Json"
+      "Xunit.SkippableFact"
     ],
     "dep_with_version": []
   },
@@ -10757,8 +10757,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Memoria",
-      "Xunit"
+      "Xunit",
+      "Memoria"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10769,8 +10769,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -10792,8 +10792,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -10852,19 +10852,19 @@
       "System"
     ],
     "extlib_imports": [
-      "Client",
-      "Azure"
+      "Azure",
+      "Client"
     ],
     "dep_no_version": [
-      "NUnit",
-      "Azure.Identity",
+      "Microsoft.NET.Test.Sdk",
       "xunit",
+      "NUnit",
       "Azure.ResourceManager.Batch",
+      "Azure.ResourceManager",
       "Portable.BouncyCastle",
       "NUnit3TestAdapter",
-      "Azure.ResourceManager",
       "Moq",
-      "Microsoft.NET.Test.Sdk"
+      "Azure.Identity"
     ],
     "dep_with_version": []
   },
@@ -10874,20 +10874,20 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Samples",
-      "NUnit",
       "Autorest",
-      "Azure"
+      "Samples",
+      "Azure",
+      "NUnit"
     ],
     "dep_no_version": [
+      "NUnit3TestAdapter",
       "NUnit",
       "Azure.Identity",
-      "Azure.Core",
-      "NUnit3TestAdapter"
+      "Azure.Core"
     ],
     "dep_with_version": []
   },
@@ -10961,33 +10961,33 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "WebFrontEnd",
-      "OpenTelemetry",
+      "Google",
       "Aspire",
       "Xunit",
-      "Google",
-      "Azure",
+      "OpenTelemetry",
       "Bunit",
       "Grpc",
       "AzureAIFoundryEndToEnd",
+      "Azure",
+      "WebFrontEnd",
       "Spectre",
       "StreamJsonRpc"
     ],
     "dep_no_version": [
-      "OpenTelemetry.Extensions.Hosting",
-      "Azure.Provisioning.CognitiveServices",
       "Microsoft.AI.Foundry.Local",
-      "OpenTelemetry.Instrumentation.Http",
+      "OpenTelemetry.Instrumentation.AspNetCore",
+      "OpenTelemetry.Instrumentation.GrpcNetClient",
       "OpenTelemetry.Instrumentation.Runtime",
+      "OpenTelemetry.Extensions.Hosting",
+      "OpenTelemetry.Instrumentation.Http",
+      "Azure.Provisioning.CognitiveServices",
       "Microsoft.Extensions.Http.Resilience",
       "Azure.Provisioning",
-      "OpenTelemetry.Instrumentation.AspNetCore",
       "OpenTelemetry.Exporter.OpenTelemetryProtocol",
-      "OpenTelemetry.Instrumentation.GrpcNetClient",
       "StreamJsonRpc"
     ],
     "dep_with_version": []
@@ -10998,8 +10998,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Polly"
@@ -11085,8 +11085,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Internal",
@@ -11101,13 +11101,13 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "CoreWCF",
-      "Xunit",
-      "Helpers"
+      "Helpers",
+      "Xunit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11118,8 +11118,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Ng",
@@ -11201,8 +11201,8 @@
       "System"
     ],
     "extlib_imports": [
-      "CycloneDX",
-      "Xunit"
+      "Xunit",
+      "CycloneDX"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11263,8 +11263,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Xunit"
@@ -11322,16 +11322,16 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Xunit"
     ],
     "dep_no_version": [],
     "dep_with_version": [
-      "Microsoft.CodeAnalysis.Analyzers",
-      "Microsoft.CodeAnalysis.CSharp"
+      "Microsoft.CodeAnalysis.CSharp",
+      "Microsoft.CodeAnalysis.Analyzers"
     ]
   },
   {
@@ -11486,16 +11486,16 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Shouldly",
       "Xunit"
     ],
     "dep_no_version": [
-      "Microsoft.Build.Utilities.Core",
-      "Microsoft.Build.Framework"
+      "Microsoft.Build.Framework",
+      "Microsoft.Build.Utilities.Core"
     ],
     "dep_with_version": []
   },
@@ -11515,8 +11515,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Aspire",
@@ -11531,14 +11531,14 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Semver",
       "Aspire",
+      "Spectre",
       "Xunit",
-      "Spectre"
+      "Semver"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11549,8 +11549,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "NUnit"
@@ -11629,8 +11629,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "NetEscapades"
@@ -11674,14 +11674,14 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Humanizer",
-      "NUnit",
       "MgmtTypeSpec",
-      "Azure"
+      "Humanizer",
+      "Azure",
+      "NUnit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11933,8 +11933,8 @@
       "System"
     ],
     "extlib_imports": [
-      "NUnit",
-      "Azure"
+      "Azure",
+      "NUnit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11945,16 +11945,16 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Nethermind",
-      "NUnit",
-      "FluentAssertions",
       "Autofac",
+      "NUnit",
+      "Open",
       "NSubstitute",
-      "Open"
+      "FluentAssertions"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11965,8 +11965,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "ILLink"
@@ -11980,19 +11980,19 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "FakeItEasy",
-      "NuGet",
       "FluentAssertions",
+      "NuGet",
+      "FakeItEasy",
       "Xunit"
     ],
     "dep_no_version": [
       "Microsoft.Extensions.Logging.Abstractions",
-      "System.Collections.Immutable",
-      "Microsoft.Build.Utilities.Core"
+      "Microsoft.Build.Utilities.Core",
+      "System.Collections.Immutable"
     ],
     "dep_with_version": []
   },
@@ -12025,8 +12025,8 @@
       "Microsoft"
     ],
     "extlib_imports": [
-      "NUnit",
-      "Android"
+      "Android",
+      "NUnit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -12079,16 +12079,16 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Aspire",
       "Xunit",
-      "StreamJsonRpc",
       "SharpFuzz",
       "Yarp",
-      "Spectre"
+      "Spectre",
+      "StreamJsonRpc"
     ],
     "dep_no_version": [
       "SharpFuzz"
@@ -12163,8 +12163,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -12178,8 +12178,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -12236,8 +12236,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -12417,18 +12417,18 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Android"
     ],
     "dep_no_version": [],
     "dep_with_version": [
+      "xunit.runner.visualstudio",
       "MSBuild.StructuredLogger",
-      "xunit",
       "Microsoft.NET.Test.Sdk",
-      "xunit.runner.visualstudio"
+      "xunit"
     ]
   },
   {
@@ -12437,12 +12437,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Paramore",
-      "Xunit"
+      "Xunit",
+      "Paramore"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -12727,8 +12727,8 @@
     ],
     "extlib_imports": [
       "Dock",
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -12739,8 +12739,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "MySqlConnector"
@@ -12781,9 +12781,9 @@
     ],
     "dep_no_version": [],
     "dep_with_version": [
-      "xunit",
+      "xunit.runner.visualstudio",
       "Microsoft.NET.Test.Sdk",
-      "xunit.runner.visualstudio"
+      "xunit"
     ]
   },
   {
@@ -12825,9 +12825,9 @@
       "System"
     ],
     "extlib_imports": [
-      "Newtonsoft",
+      "Xunit",
       "RulesEngine",
-      "Xunit"
+      "Newtonsoft"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -12880,23 +12880,23 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
+      "Google",
       "Aspire",
       "Xunit",
-      "Google",
-      "Azure",
       "Bunit",
       "Grpc",
       "AzureAIFoundryEndToEnd",
+      "Azure",
       "Spectre"
     ],
     "dep_no_version": [
       "Azure.Provisioning",
-      "Azure.Provisioning.CognitiveServices",
-      "Microsoft.AI.Foundry.Local"
+      "Microsoft.AI.Foundry.Local",
+      "Azure.Provisioning.CognitiveServices"
     ],
     "dep_with_version": []
   },
@@ -12975,8 +12975,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Xunit"
@@ -12986,10 +12986,10 @@
     ],
     "dep_with_version": [
       "xunit.v3.core",
+      "Microsoft.NET.Test.Sdk",
       "xunit",
       "xunit.runner.visualstudio",
-      "xunit.v3.runner.utility",
-      "Microsoft.NET.Test.Sdk"
+      "xunit.v3.runner.utility"
     ]
   },
   {
@@ -13038,15 +13038,15 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Xunit"
     ],
     "dep_no_version": [
-      "xunit.v3.extensibility.core",
       "xunit.v3",
+      "xunit.v3.extensibility.core",
       "Moq",
       "xunit.v3.runner.common"
     ],
@@ -13140,13 +13140,13 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "NUnit",
-      "UIKit",
-      "Xunit"
+      "Xunit",
+      "UIKit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -13255,38 +13255,38 @@
       "System"
     ],
     "extlib_imports": [
-      "DotNet",
+      "Azure",
       "Xunit",
-      "Azure"
+      "DotNet"
     ],
     "dep_no_version": [],
     "dep_with_version": [
-      "Aspire.Hosting.Testing",
-      "Swashbuckle.AspNetCore",
-      "xunit",
-      "Microsoft.IdentityModel.Tokens",
-      "xunit.analyzers",
-      "Microsoft.EntityFrameworkCore.Sqlite",
       "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "xunit",
+      "xunit.runner.visualstudio",
       "Microsoft.EntityFrameworkCore",
+      "Swashbuckle.AspNetCore",
+      "Azure.Core",
+      "Aspire.Hosting.Testing",
+      "Aspire.Hosting.AppHost",
+      "Microsoft.EntityFrameworkCore.Sqlite",
       "Azure.Security.KeyVault.Secrets",
       "Azure.Identity",
-      "Microsoft.AspNetCore.Mvc.Testing",
-      "xunit.runner.visualstudio",
-      "Microsoft.Extensions.ServiceDiscovery",
-      "Microsoft.Extensions.Http.Resilience",
-      "Microsoft.IdentityModel.JsonWebTokens",
-      "coverlet.collector",
-      "Azure.Security.KeyVault.Certificates",
-      "Testcontainers",
-      "Azure.Core",
-      "Aspire.Hosting.Azure.KeyVault",
+      "Microsoft.NET.Test.Sdk",
+      "Microsoft.IdentityModel.Tokens",
+      "xunit.analyzers",
       "Microsoft.Extensions.Azure",
       "OpenTelemetry.Exporter.OpenTelemetryProtocol",
+      "Azure.Security.KeyVault.Certificates",
+      "Microsoft.IdentityModel.JsonWebTokens",
+      "Microsoft.Extensions.ServiceDiscovery",
       "Microsoft.AspNetCore.Authentication.JwtBearer",
       "OpenTelemetry.Instrumentation.AspNetCore",
-      "Aspire.Hosting.AppHost",
-      "Microsoft.NET.Test.Sdk"
+      "Testcontainers",
+      "Aspire.Hosting.Azure.KeyVault",
+      "Microsoft.AspNetCore.Mvc.Testing",
+      "Microsoft.Extensions.Http.Resilience",
+      "coverlet.collector"
     ]
   },
   {
@@ -13325,8 +13325,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -13338,8 +13338,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Xunit"
@@ -13353,12 +13353,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Android",
-      "AndroidX"
+      "AndroidX",
+      "Android"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -13379,8 +13379,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Midjourney"
@@ -13492,12 +13492,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Android",
-      "Xunit"
+      "Xunit",
+      "Android"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -13598,8 +13598,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "MigrationTools"
@@ -13613,8 +13613,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Thor"
@@ -13698,12 +13698,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Roslyn",
-      "Xunit"
+      "Xunit",
+      "Roslyn"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -13854,14 +13854,14 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Foundation",
-      "NUnit",
-      "Xunit",
       "Google",
+      "Xunit",
+      "NUnit",
+      "Foundation",
       "Controls"
     ],
     "dep_no_version": [],
@@ -13873,21 +13873,21 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Distribt",
       "Moq",
-      "Xunit"
+      "Xunit",
+      "Distribt"
     ],
     "dep_no_version": [],
     "dep_with_version": [
+      "Microsoft.NET.Test.Sdk",
       "xunit",
       "xunit.runner.visualstudio",
-      "coverlet.collector",
       "Moq",
-      "Microsoft.NET.Test.Sdk"
+      "coverlet.collector"
     ]
   },
   {
@@ -13896,22 +13896,22 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Distribt",
       "Moq",
-      "Xunit"
+      "Xunit",
+      "Distribt"
     ],
     "dep_no_version": [],
     "dep_with_version": [
+      "Microsoft.NET.Test.Sdk",
       "xunit",
       "xunit.runner.visualstudio",
       "Microsoft.EntityFrameworkCore.InMemory",
-      "coverlet.collector",
       "Moq",
-      "Microsoft.NET.Test.Sdk"
+      "coverlet.collector"
     ]
   },
   {
@@ -13920,8 +13920,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -13958,9 +13958,9 @@
       "System"
     ],
     "extlib_imports": [
-      "CoravelUnitTests",
+      "Xunit",
       "Coravel",
-      "Xunit"
+      "CoravelUnitTests"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -13971,8 +13971,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Teapot"
@@ -14110,51 +14110,51 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
+      "Npgsql",
       "OpenTelemetry",
       "Xunit",
-      "Newtonsoft",
       "SharpSite",
-      "Npgsql",
-      "Moq"
+      "Moq",
+      "Newtonsoft"
     ],
     "dep_no_version": [
       "Microsoft.AspNetCore.Identity.UI",
       "xunit",
-      "Microsoft.Extensions.Hosting.Abstractions",
-      "Microsoft.EntityFrameworkCore.Design",
-      "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
-      "System.Text.Json",
-      "Microsoft.AspNetCore.Components.Web",
-      "Newtonsoft.Json",
-      "Microsoft.AspNetCore.Components",
-      "Microsoft.AspNetCore.Components.QuickGrid",
-      "PSC.Blazor.Components.MarkdownEditor",
       "Microsoft.Playwright.Xunit",
+      "Newtonsoft.Json",
       "xunit.runner.visualstudio",
-      "markdig",
-      "Microsoft.Extensions.ServiceDiscovery",
-      "Microsoft.Extensions.Http.Resilience",
-      "coverlet.collector",
-      "Aspire.Npgsql.EntityFrameworkCore.PostgreSQL",
-      "OpenTelemetry.Instrumentation.Http",
-      "Microsoft.Extensions.Localization",
-      "Microsoft.AspNetCore.Components.Authorization",
-      "Microsoft.AspNetCore.Authorization",
-      "OpenTelemetry.Exporter.OpenTelemetryProtocol",
-      "OpenTelemetry.Extensions.Hosting",
-      "Microsoft.Extensions.Identity.Stores",
       "OpenTelemetry.Instrumentation.Runtime",
-      "Microsoft.Extensions.Hosting",
-      "Microsoft.Extensions.Caching.Memory",
-      "Aspire.Hosting.PostgreSQL",
-      "OpenTelemetry.Instrumentation.AspNetCore",
+      "markdig",
+      "Microsoft.AspNetCore.Authorization",
+      "Microsoft.AspNetCore.Components.Authorization",
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+      "PSC.Blazor.Components.MarkdownEditor",
       "Aspire.Hosting.AppHost",
+      "Microsoft.Extensions.Localization",
+      "OpenTelemetry.Extensions.Hosting",
+      "Microsoft.Extensions.Http.Resilience",
+      "Microsoft.AspNetCore.Components",
+      "Microsoft.NET.Test.Sdk",
+      "Aspire.Hosting.PostgreSQL",
+      "Microsoft.AspNetCore.Components.QuickGrid",
+      "Microsoft.Extensions.Hosting",
+      "Microsoft.EntityFrameworkCore.Design",
+      "Microsoft.Extensions.Caching.Memory",
+      "OpenTelemetry.Exporter.OpenTelemetryProtocol",
+      "Microsoft.AspNetCore.Components.Web",
       "Moq",
-      "Microsoft.NET.Test.Sdk"
+      "Microsoft.Extensions.ServiceDiscovery",
+      "OpenTelemetry.Instrumentation.AspNetCore",
+      "System.Text.Json",
+      "OpenTelemetry.Instrumentation.Http",
+      "Microsoft.Extensions.Hosting.Abstractions",
+      "Aspire.Npgsql.EntityFrameworkCore.PostgreSQL",
+      "Microsoft.Extensions.Identity.Stores",
+      "coverlet.collector"
     ],
     "dep_with_version": []
   },
@@ -14184,8 +14184,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -14302,8 +14302,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Aspire",
@@ -14353,26 +14353,26 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "MgmtTypeSpec",
       "NUnit",
-      "Autorest",
+      "MgmtTypeSpec",
       "Visitors",
       "Azure",
       "_Specs_",
+      "Autorest",
       "Moq"
     ],
     "dep_no_version": [
+      "Microsoft.NET.Test.Sdk",
       "NUnit",
-      "Microsoft.TypeSpec.Generator.ClientModel",
-      "NUnit3TestAdapter",
       "Microsoft.TypeSpec.Generator.Input",
-      "Moq",
       "Azure.Core",
-      "Microsoft.NET.Test.Sdk"
+      "NUnit3TestAdapter",
+      "Moq",
+      "Microsoft.TypeSpec.Generator.ClientModel"
     ],
     "dep_with_version": []
   },
@@ -14389,18 +14389,18 @@
     ],
     "dep_no_version": [],
     "dep_with_version": [
-      "Microsoft.Extensions.Logging",
-      "Microsoft.Extensions.Logging.Console",
-      "Microsoft.Extensions.Configuration.Json",
-      "Microsoft.Extensions.Configuration.UserSecrets",
-      "Serilog.Extensions.Logging",
-      "AWSSDK.SQS",
-      "Microsoft.Extensions.Logging.Abstractions",
-      "Microsoft.Extensions.Configuration.Binder",
-      "Microsoft.Extensions.Configuration.FileExtensions",
-      "System.Text.Json",
       "Microsoft.Extensions.Configuration",
-      "AWSSDK.SecurityToken"
+      "Microsoft.Extensions.Logging.Abstractions",
+      "Microsoft.Extensions.Configuration.UserSecrets",
+      "Microsoft.Extensions.Logging",
+      "System.Text.Json",
+      "Microsoft.Extensions.Configuration.Binder",
+      "AWSSDK.SecurityToken",
+      "AWSSDK.SQS",
+      "Microsoft.Extensions.Logging.Console",
+      "Serilog.Extensions.Logging",
+      "Microsoft.Extensions.Configuration.Json",
+      "Microsoft.Extensions.Configuration.FileExtensions"
     ]
   },
   {
@@ -14461,12 +14461,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "NUnit",
-      "Xamarin"
+      "Xamarin",
+      "NUnit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -14526,14 +14526,14 @@
     ],
     "dep_no_version": [],
     "dep_with_version": [
-      "OpenTelemetry.Extensions.Hosting",
-      "Aspire.Hosting.AppHost",
       "Microsoft.Maui.Controls",
       "Microsoft.Extensions.ServiceDiscovery",
+      "Aspire.Hosting.AppHost",
+      "OpenTelemetry.Instrumentation.AspNetCore",
+      "OpenTelemetry.Instrumentation.Runtime",
+      "OpenTelemetry.Extensions.Hosting",
       "OpenTelemetry.Instrumentation.Http",
       "Microsoft.Extensions.Http.Resilience",
-      "OpenTelemetry.Instrumentation.Runtime",
-      "OpenTelemetry.Instrumentation.AspNetCore",
       "OpenTelemetry.Exporter.OpenTelemetryProtocol"
     ]
   },
@@ -14563,15 +14563,15 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Aspire",
+      "Markdig",
       "Projects",
       "Xunit",
       "Yarp",
-      "Markdig",
       "Spectre"
     ],
     "dep_no_version": [
@@ -14748,8 +14748,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "NSubstitute"
@@ -15011,8 +15011,8 @@
     ],
     "extlib_imports": [
       "Dock",
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -15090,13 +15090,13 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "NSubstitute",
-      "Serilog",
-      "Xunit"
+      "Xunit",
+      "Serilog"
     ],
     "dep_no_version": [],
     "dep_with_version": [
@@ -15121,8 +15121,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Serilog"
@@ -15161,10 +15161,10 @@
       "System"
     ],
     "extlib_imports": [
-      "Serilog",
       "Postgres",
       "FluentAssertions",
-      "Xunit"
+      "Xunit",
+      "Serilog"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -15210,8 +15210,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "TestContentPackage"
@@ -15251,8 +15251,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Xunit"
@@ -15450,17 +15450,17 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "BetterGenshinImpact",
-      "Quartz"
+      "Quartz",
+      "BetterGenshinImpact"
     ],
     "dep_no_version": [],
     "dep_with_version": [
-      "Quartz.Extensions.Hosting",
-      "Quartz"
+      "Quartz",
+      "Quartz.Extensions.Hosting"
     ]
   },
   {
@@ -15539,8 +15539,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -15638,12 +15638,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Elsa",
-      "Moq"
+      "Moq",
+      "Elsa"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -15669,24 +15669,24 @@
     "language": "csharp",
     "agent": "Cursor",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "NUnit",
-      "FluentAssertions",
-      "Xunit",
-      "Conversion",
       "Api",
-      "Newtonsoft",
+      "Dynastream",
+      "Xunit",
+      "Garmin",
+      "NUnit",
+      "Flurl",
       "Peloton",
+      "Conversion",
       "Common",
       "Sync",
-      "Garmin",
-      "Flurl",
-      "Dynastream",
+      "FluentAssertions",
+      "Moq",
       "Serilog",
-      "Moq"
+      "Newtonsoft"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -15700,13 +15700,13 @@
       "System"
     ],
     "extlib_imports": [
+      "Dynastream",
+      "Garmin",
       "NUnit",
-      "FluentAssertions",
+      "Flurl",
       "Conversion",
       "Common",
-      "Flurl",
-      "Garmin",
-      "Dynastream",
+      "FluentAssertions",
       "Moq"
     ],
     "dep_no_version": [],
@@ -15843,13 +15843,13 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Newtonsoft",
       "Midjourney",
-      "Serilog"
+      "Serilog",
+      "Newtonsoft"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -15872,8 +15872,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "SuperSocket",
@@ -15891,8 +15891,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Dock",
       "Prism",
+      "Dock",
       "Xunit"
     ],
     "dep_no_version": [],
@@ -15904,8 +15904,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "MSTest"
@@ -16098,8 +16098,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Xunit"
@@ -16162,14 +16162,14 @@
       "System"
     ],
     "extlib_imports": [
-      "NUnit",
-      "MUnique"
+      "MUnique",
+      "NUnit"
     ],
     "dep_no_version": [],
     "dep_with_version": [
       "NUnit3TestAdapter",
-      "NUnit",
-      "Microsoft.NET.Test.Sdk"
+      "Microsoft.NET.Test.Sdk",
+      "NUnit"
     ]
   },
   {
@@ -16232,8 +16232,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -16245,14 +16245,14 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Generator",
       "MgmtTypeSpec",
-      "NUnit",
-      "Azure"
+      "Azure",
+      "Generator",
+      "NUnit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -16298,8 +16298,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Azure"
@@ -16328,8 +16328,8 @@
       "System"
     ],
     "extlib_imports": [
-      "OctoshiftCLI",
-      "Azure"
+      "Azure",
+      "OctoshiftCLI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -16355,8 +16355,8 @@
       "System"
     ],
     "extlib_imports": [
-      "OctoshiftCLI",
-      "Azure"
+      "Azure",
+      "OctoshiftCLI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -16395,8 +16395,8 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "ExcelDna"
@@ -16416,9 +16416,9 @@
       "System"
     ],
     "extlib_imports": [
+      "Xunit",
       "Dock",
-      "Avalonia",
-      "Xunit"
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -16672,12 +16672,12 @@
     "extlib_imports": [],
     "dep_no_version": [],
     "dep_with_version": [
-      "SonarAnalyzer.CSharp",
+      "FluentResults",
+      "xunit.runner.visualstudio",
       "BenchmarkDotNet",
       "System.Collections.Immutable",
-      "xunit.runner.visualstudio",
+      "SonarAnalyzer.CSharp",
       "LightResults",
-      "FluentResults",
       "Shouldly"
     ]
   },
@@ -16690,11 +16690,11 @@
     "extlib_imports": [],
     "dep_no_version": [],
     "dep_with_version": [
-      "SonarAnalyzer.CSharp",
-      "BenchmarkDotNet",
-      "xunit.runner.visualstudio",
-      "LightResults",
       "FluentResults",
+      "xunit.runner.visualstudio",
+      "BenchmarkDotNet",
+      "SonarAnalyzer.CSharp",
+      "LightResults",
       "System.Threading.Tasks.Extensions"
     ]
   },
@@ -16916,8 +16916,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "Shouldly",
-      "LightResults"
+      "LightResults",
+      "Shouldly"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -17115,8 +17115,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "ReferencedLibrary"
@@ -17159,8 +17159,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Dock",
       "Prism",
+      "Dock",
       "CommunityToolkit"
     ],
     "dep_no_version": [],
@@ -17175,8 +17175,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Shop",
-      "Xunit"
+      "Xunit",
+      "Shop"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -17244,8 +17244,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Dock",
       "Prism",
+      "Dock",
       "CommunityToolkit"
     ],
     "dep_no_version": [],
@@ -17347,8 +17347,8 @@
       "System"
     ],
     "extlib_imports": [
-      "NUnit",
-      "Xamarin"
+      "Xamarin",
+      "NUnit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -17385,8 +17385,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "PSRule"
@@ -17452,8 +17452,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -17495,14 +17495,14 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [
+      "Microsoft.CodeAnalysis.Collections",
       "System.Collections.Immutable",
       "Microsoft.CodeAnalysis.PooledObjects",
-      "Microsoft.CodeAnalysis.Collections",
       "Microsoft.CodeAnalysis.Contracts"
     ],
     "dep_with_version": []
@@ -17589,11 +17589,11 @@
       "System"
     ],
     "extlib_imports": [
-      "Dock",
-      "Xunit",
-      "Avalonia",
       "ProtoBuf",
-      "YamlDotNet"
+      "Xunit",
+      "Dock",
+      "YamlDotNet",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -17607,11 +17607,11 @@
       "System"
     ],
     "extlib_imports": [
-      "Dock",
       "Xunit",
-      "Avalonia",
       "ProtoBuf",
-      "YamlDotNet"
+      "Dock",
+      "YamlDotNet",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -17656,11 +17656,11 @@
       "System"
     ],
     "extlib_imports": [
-      "Dock",
-      "Xunit",
-      "Avalonia",
       "ProtoBuf",
-      "YamlDotNet"
+      "Xunit",
+      "Dock",
+      "YamlDotNet",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -17718,11 +17718,11 @@
       "System"
     ],
     "extlib_imports": [
-      "Dock",
-      "Xunit",
-      "Avalonia",
       "ProtoBuf",
-      "YamlDotNet"
+      "Xunit",
+      "Dock",
+      "YamlDotNet",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -17750,9 +17750,9 @@
       "System"
     ],
     "extlib_imports": [
+      "Xunit",
       "Dock",
-      "Avalonia",
-      "Xunit"
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -17766,11 +17766,11 @@
       "System"
     ],
     "extlib_imports": [
-      "Dock",
-      "Xunit",
-      "Avalonia",
       "ProtoBuf",
-      "YamlDotNet"
+      "Xunit",
+      "Dock",
+      "YamlDotNet",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -17784,10 +17784,10 @@
       "System"
     ],
     "extlib_imports": [
+      "Xunit",
       "Dock",
-      "ProtoBuf",
       "Avalonia",
-      "Xunit"
+      "ProtoBuf"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -17799,8 +17799,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -17811,22 +17811,22 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "SuperSocket",
       "Xunit"
     ],
     "dep_no_version": [
-      "Microsoft.Extensions.Logging.Console",
+      "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "Microsoft.Extensions.Logging.Abstractions",
+      "Microsoft.NET.Test.Sdk",
       "xunit.v3",
       "xunit.runner.visualstudio",
-      "Microsoft.Extensions.Hosting",
-      "Microsoft.Extensions.Logging.Abstractions",
       "System.Text.Json",
-      "Microsoft.Extensions.DependencyInjection.Abstractions",
-      "Microsoft.NET.Test.Sdk"
+      "Microsoft.Extensions.Logging.Console",
+      "Microsoft.Extensions.Hosting"
     ],
     "dep_with_version": []
   },
@@ -17881,12 +17881,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Moq",
       "FluentAssertions",
+      "Moq",
       "MSTest"
     ],
     "dep_no_version": [],
@@ -17923,8 +17923,8 @@
       "System"
     ],
     "extlib_imports": [
-      "NUnit",
-      "ObjCRuntime"
+      "ObjCRuntime",
+      "NUnit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -18017,9 +18017,9 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "NSubstitute",
       "Xunit",
-      "Azure"
+      "Azure",
+      "NSubstitute"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -18030,13 +18030,13 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "NSubstitute",
-      "Xunit",
-      "Azure"
+      "Azure",
+      "Xunit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -18047,14 +18047,14 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "NSubstitute",
       "ModelContextProtocol",
-      "Xunit",
-      "Azure"
+      "Azure",
+      "Xunit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -18065,8 +18065,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "NSubstitute",
@@ -18125,14 +18125,14 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
+      "Xunit",
       "Dock",
-      "ReactiveUI",
       "Avalonia",
-      "Xunit"
+      "ReactiveUI"
     ],
     "dep_no_version": [
       "Microsoft.Extensions.DependencyInjection"
@@ -18160,13 +18160,13 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Dock",
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -18181,8 +18181,8 @@
     ],
     "extlib_imports": [
       "Dock",
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -18219,8 +18219,8 @@
     ],
     "extlib_imports": [
       "Dock",
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -18231,8 +18231,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "ReferencedLibrary"
@@ -18551,10 +18551,10 @@
       "System"
     ],
     "extlib_imports": [
-      "Newtonsoft",
       "Dock",
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "Newtonsoft",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -18568,9 +18568,9 @@
       "System"
     ],
     "extlib_imports": [
-      "Newtonsoft",
       "Dock",
-      "Avalonia"
+      "Avalonia",
+      "Newtonsoft"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -18625,15 +18625,15 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "jihadkhawaja",
-      "MailKit",
-      "MimeKit",
       "Npgsql",
-      "Moq"
+      "jihadkhawaja",
+      "Moq",
+      "MailKit",
+      "MimeKit"
     ],
     "dep_no_version": [],
     "dep_with_version": [
@@ -18646,12 +18646,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Skender",
-      "FluentAssertions"
+      "FluentAssertions",
+      "Skender"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -18665,10 +18665,10 @@
       "System"
     ],
     "extlib_imports": [
+      "Xunit",
       "Svg",
-      "ShimSkiaSharp",
       "Avalonia",
-      "Xunit"
+      "ShimSkiaSharp"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -18680,8 +18680,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -18705,8 +18705,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "ShimSkiaSharp",
-      "Xunit"
+      "Xunit",
+      "ShimSkiaSharp"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -18720,8 +18720,8 @@
       "System"
     ],
     "extlib_imports": [
-      "ShimSkiaSharp",
-      "Xunit"
+      "Xunit",
+      "ShimSkiaSharp"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -18733,8 +18733,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "ShimSkiaSharp",
-      "Xunit"
+      "Xunit",
+      "ShimSkiaSharp"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -18748,8 +18748,8 @@
       "System"
     ],
     "extlib_imports": [
-      "ShimSkiaSharp",
-      "Xunit"
+      "Xunit",
+      "ShimSkiaSharp"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -18763,8 +18763,8 @@
       "System"
     ],
     "extlib_imports": [
-      "ShimSkiaSharp",
-      "Svg"
+      "Svg",
+      "ShimSkiaSharp"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -18788,8 +18788,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Xunit"
@@ -18881,8 +18881,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Elsa"
@@ -19174,13 +19174,13 @@
       "BookWorm"
     ],
     "dep_no_version": [
-      "Saunter",
-      "Moq",
-      "Microsoft.Extensions.ServiceDiscovery",
       "Microsoft.Testing.Extensions.CodeCoverage",
+      "TUnit",
+      "Microsoft.Extensions.ServiceDiscovery",
+      "Saunter",
       "GitHubActionsTestLogger",
-      "Shouldly",
-      "TUnit"
+      "Moq",
+      "Shouldly"
     ],
     "dep_with_version": []
   },
@@ -19210,8 +19210,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -19322,8 +19322,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Xunit",
-      "Azure"
+      "Azure",
+      "Xunit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -19358,8 +19358,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "NSubstitute",
@@ -19374,8 +19374,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -19407,8 +19407,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Internal",
@@ -19423,8 +19423,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Internal",
@@ -19439,8 +19439,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "MSTest"
@@ -19454,8 +19454,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "MSTest"
@@ -19489,8 +19489,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "MSTest"
@@ -19548,9 +19548,9 @@
       "MudBlazor"
     ],
     "dep_no_version": [
+      "Microsoft.AspNetCore.Components.WebAssembly.DevServer",
       "Microsoft.AspNetCore.Components.WebAssembly",
-      "Humanizer.Core",
-      "Microsoft.AspNetCore.Components.WebAssembly.DevServer"
+      "Humanizer.Core"
     ],
     "dep_with_version": [
       "MudBlazor"
@@ -19576,12 +19576,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Mono",
-      "Xamarin"
+      "Xamarin",
+      "Mono"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -19612,8 +19612,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "OpenQA"
@@ -19627,8 +19627,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -19660,8 +19660,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "NSubstitute"
@@ -19693,9 +19693,9 @@
     ],
     "dep_no_version": [],
     "dep_with_version": [
-      "Microsoft.NET.Test.Sdk",
       "NUnit3TestAdapter",
-      "nunit"
+      "nunit",
+      "Microsoft.NET.Test.Sdk"
     ]
   },
   {
@@ -19740,24 +19740,24 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "BlazorWeb_CSharp"
     ],
     "dep_no_version": [],
     "dep_with_version": [
-      "Microsoft.AspNetCore.Components.WebAssembly.Authentication",
-      "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore",
       "Microsoft.AspNetCore.Components.WebAssembly.Server",
-      "Microsoft.EntityFrameworkCore.Sqlite",
-      "Microsoft.FluentUI.AspNetCore.Components",
-      "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
-      "Microsoft.EntityFrameworkCore.SqlServer",
       "Microsoft.FluentUI.AspNetCore.Components.Icons",
-      "Microsoft.EntityFrameworkCore.Tools",
-      "Microsoft.AspNetCore.Components.WebAssembly"
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+      "Microsoft.FluentUI.AspNetCore.Components",
+      "Microsoft.EntityFrameworkCore.SqlServer",
+      "Microsoft.EntityFrameworkCore.Sqlite",
+      "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore",
+      "Microsoft.AspNetCore.Components.WebAssembly.Authentication",
+      "Microsoft.AspNetCore.Components.WebAssembly",
+      "Microsoft.EntityFrameworkCore.Tools"
     ]
   },
   {
@@ -19858,16 +19858,16 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "KoalaWiki"
     ],
     "dep_no_version": [
-      "Pomelo.EntityFrameworkCore.MySql",
+      "Microsoft.Extensions.DependencyInjection.Abstractions",
       "Microsoft.EntityFrameworkCore",
-      "Microsoft.Extensions.DependencyInjection.Abstractions"
+      "Pomelo.EntityFrameworkCore.MySql"
     ],
     "dep_with_version": []
   },
@@ -19877,8 +19877,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Azure",
@@ -19888,8 +19888,8 @@
     "dep_no_version": [],
     "dep_with_version": [
       "NServiceBus.Extensions.Hosting",
-      "NServiceBus.DataBus.AzureBlobStorage",
       "NServiceBus.ClaimCheck",
+      "NServiceBus.DataBus.AzureBlobStorage",
       "NServiceBus"
     ]
   },
@@ -19899,8 +19899,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Azure",
@@ -19910,8 +19910,8 @@
     "dep_no_version": [],
     "dep_with_version": [
       "NServiceBus.Extensions.Hosting",
-      "NServiceBus.DataBus.AzureBlobStorage",
       "NServiceBus.ClaimCheck",
+      "NServiceBus.DataBus.AzureBlobStorage",
       "NServiceBus"
     ]
   },
@@ -19921,12 +19921,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Semver",
-      "Aspire"
+      "Aspire",
+      "Semver"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -19984,18 +19984,18 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
+      "Encode",
+      "SpecialWords",
       "MgmtTypeSpec",
       "Serialization",
-      "SpecialWords",
       "Azure",
-      "Parameters",
       "Payload",
-      "_Specs_",
-      "Encode"
+      "Parameters",
+      "_Specs_"
     ],
     "dep_no_version": [
       "Microsoft.Azure.AutoRest.CSharp"
@@ -20132,23 +20132,23 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "NXUI",
       "Reflectonia",
       "Avalonia",
+      "NXUI",
       "Generator"
     ],
     "dep_no_version": [],
     "dep_with_version": [
-      "Microsoft.Build.Utilities.Core",
-      "Avalonia",
-      "Avalonia.Controls.DataGrid",
       "Avalonia.Desktop",
+      "Avalonia.Controls.DataGrid",
       "Avalonia.Controls.ItemsRepeater",
       "Avalonia.Controls.TreeDataGrid",
+      "Microsoft.Build.Utilities.Core",
+      "Avalonia",
       "Avalonia.Controls.ColorPicker"
     ]
   },
@@ -20158,23 +20158,23 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Generator",
       "Reflectonia",
-      "Avalonia"
+      "Avalonia",
+      "Generator"
     ],
     "dep_no_version": [],
     "dep_with_version": [
-      "Microsoft.Build.Utilities.Core",
-      "Avalonia.Themes.Fluent",
-      "Avalonia",
       "Avalonia.Controls.DataGrid",
       "Avalonia.Controls.ItemsRepeater",
-      "Avalonia.Controls.TreeDataGrid",
+      "Avalonia.Themes.Fluent",
       "Microsoft.Build.Framework",
+      "Avalonia.Controls.TreeDataGrid",
+      "Microsoft.Build.Utilities.Core",
+      "Avalonia",
       "Avalonia.Controls.ColorPicker"
     ]
   },
@@ -20221,9 +20221,9 @@
       "System"
     ],
     "extlib_imports": [
-      "ShimSkiaSharp",
       "Svg",
-      "Avalonia"
+      "Avalonia",
+      "ShimSkiaSharp"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -20247,9 +20247,9 @@
       "System"
     ],
     "extlib_imports": [
-      "ShimSkiaSharp",
       "Svg",
-      "Avalonia"
+      "Avalonia",
+      "ShimSkiaSharp"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -20263,9 +20263,9 @@
       "System"
     ],
     "extlib_imports": [
-      "ShimSkiaSharp",
       "Svg",
-      "Avalonia"
+      "Avalonia",
+      "ShimSkiaSharp"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -20499,8 +20499,8 @@
     ],
     "extlib_imports": [
       "Svg",
-      "ShimSkiaSharp",
-      "Avalonia"
+      "Avalonia",
+      "ShimSkiaSharp"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -20514,8 +20514,8 @@
       "System"
     ],
     "extlib_imports": [
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -20601,8 +20601,8 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Dock"
@@ -20718,8 +20718,8 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Dock"
@@ -20734,8 +20734,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "ReactiveUI",
-      "Avalonia"
+      "Avalonia",
+      "ReactiveUI"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -20763,8 +20763,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -20778,8 +20778,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -20803,8 +20803,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -20830,8 +20830,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -20843,8 +20843,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -20933,8 +20933,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -21561,8 +21561,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "Dock",
       "Prism",
+      "Dock",
       "Avalonia"
     ],
     "dep_no_version": [],
@@ -21825,9 +21825,9 @@
       "System"
     ],
     "extlib_imports": [
+      "Unity",
       "UnityEngine",
-      "UMA",
-      "Unity"
+      "UMA"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -21838,13 +21838,13 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "CoravelUnitTests",
+      "Xunit",
       "Coravel",
-      "Xunit"
+      "CoravelUnitTests"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -21865,12 +21865,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "OrchardCore",
-      "Xunit"
+      "Xunit",
+      "OrchardCore"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -22141,9 +22141,9 @@
       "System"
     ],
     "extlib_imports": [
-      "ShimSkiaSharp",
       "Svg",
-      "Xunit"
+      "Xunit",
+      "ShimSkiaSharp"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -22261,8 +22261,8 @@
       "System"
     ],
     "extlib_imports": [
-      "SkiaSharp",
       "Svg",
+      "SkiaSharp",
       "Xunit"
     ],
     "dep_no_version": [],
@@ -22321,8 +22321,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "Avalonia",
-      "Xunit"
+      "Xunit",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -22336,8 +22336,8 @@
       "System"
     ],
     "extlib_imports": [
-      "ShimSkiaSharp",
-      "Svg"
+      "Svg",
+      "ShimSkiaSharp"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -22685,8 +22685,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "MSTest"
@@ -22710,8 +22710,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Hl7"
@@ -22725,8 +22725,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -22751,8 +22751,8 @@
       "System"
     ],
     "extlib_imports": [
-      "Newtonsoft",
-      "PepperDash"
+      "PepperDash",
+      "Newtonsoft"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -22793,8 +22793,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Maui",
@@ -22819,8 +22819,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Xunit"
@@ -22851,9 +22851,9 @@
       "Microsoft"
     ],
     "extlib_imports": [
-      "KoalaWiki",
+      "BCrypt",
       "Xunit",
-      "BCrypt"
+      "KoalaWiki"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -22867,19 +22867,19 @@
       "Microsoft"
     ],
     "extlib_imports": [
-      "Cosmos",
+      "MongoDB",
       "Moq",
-      "MongoDB"
+      "Cosmos"
     ],
     "dep_no_version": [
+      "Microsoft.Extensions.Configuration",
+      "Microsoft.NET.Test.Sdk",
+      "Newtonsoft.Json",
       "MSTest.TestFramework",
       "MSTest.TestAdapter",
-      "coverlet.collector",
-      "Microsoft.Extensions.Configuration",
-      "MongoDB.Driver",
-      "Newtonsoft.Json",
       "Moq",
-      "Microsoft.NET.Test.Sdk"
+      "MongoDB.Driver",
+      "coverlet.collector"
     ],
     "dep_with_version": []
   },
@@ -22944,8 +22944,8 @@
       "Azure"
     ],
     "dep_no_version": [
-      "Azure.ResourceManager",
       "System.ClientModel",
+      "Azure.ResourceManager",
       "System.Text.Json",
       "Azure.Core"
     ],
@@ -22992,11 +22992,11 @@
       "System"
     ],
     "extlib_imports": [
-      "Dock",
+      "Reactive",
       "Xunit",
-      "Avalonia",
       "CommunityToolkit",
-      "Reactive"
+      "Dock",
+      "Avalonia"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -23031,8 +23031,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "NUnit"
@@ -23070,8 +23070,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "NSubstitute",
@@ -23116,9 +23116,9 @@
       "System"
     ],
     "extlib_imports": [
-      "Newtonsoft",
+      "Crestron",
       "PepperDash",
-      "Crestron"
+      "Newtonsoft"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -23303,11 +23303,11 @@
     ],
     "dep_no_version": [],
     "dep_with_version": [
+      "Microsoft.NET.Test.Sdk",
       "xunit",
       "xunit.runner.visualstudio",
-      "coverlet.collector",
       "Moq",
-      "Microsoft.NET.Test.Sdk"
+      "coverlet.collector"
     ]
   },
   {
@@ -23378,14 +23378,14 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "AwesomeAssertions",
       "FluentAssertions",
-      "MSTest",
-      "Polyfills"
+      "Polyfills",
+      "MSTest"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -23396,8 +23396,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -23419,8 +23419,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "MSTest"
@@ -23436,8 +23436,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -23509,8 +23509,8 @@
     "language": "csharp",
     "agent": "OpenAI_Codex",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "taskt"
@@ -23524,8 +23524,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -23633,19 +23633,19 @@
       "Microsoft"
     ],
     "extlib_imports": [
-      "Cosmos",
+      "MongoDB",
       "Moq",
-      "MongoDB"
+      "Cosmos"
     ],
     "dep_no_version": [
+      "Microsoft.Extensions.Configuration",
+      "Microsoft.NET.Test.Sdk",
+      "Newtonsoft.Json",
       "MSTest.TestFramework",
       "MSTest.TestAdapter",
-      "coverlet.collector",
-      "Microsoft.Extensions.Configuration",
-      "MongoDB.Driver",
-      "Newtonsoft.Json",
       "Moq",
-      "Microsoft.NET.Test.Sdk"
+      "MongoDB.Driver",
+      "coverlet.collector"
     ],
     "dep_with_version": []
   },
@@ -23655,16 +23655,16 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "MSTest"
     ],
     "dep_no_version": [
-      "Microsoft.CodeAnalysis.VisualBasic.CodeFix.Testing",
+      "Microsoft.CodeAnalysis.VisualBasic.CodeRefactoring.Testing",
       "Microsoft.CodeAnalysis.VisualBasic.Analyzer.Testing",
-      "Microsoft.CodeAnalysis.VisualBasic.CodeRefactoring.Testing"
+      "Microsoft.CodeAnalysis.VisualBasic.CodeFix.Testing"
     ],
     "dep_with_version": []
   },
@@ -23800,8 +23800,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -23813,16 +23813,16 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "MSTest"
     ],
     "dep_no_version": [
-      "Microsoft.CodeAnalysis.VisualBasic.CodeFix.Testing",
+      "Microsoft.CodeAnalysis.VisualBasic.CodeRefactoring.Testing",
       "Microsoft.CodeAnalysis.VisualBasic.Analyzer.Testing",
-      "Microsoft.CodeAnalysis.VisualBasic.CodeRefactoring.Testing"
+      "Microsoft.CodeAnalysis.VisualBasic.CodeFix.Testing"
     ],
     "dep_with_version": []
   },
@@ -23972,13 +23972,13 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Newtonsoft",
+      "ModelContextProtocol",
       "Mix",
-      "ModelContextProtocol"
+      "Newtonsoft"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -24001,8 +24001,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -24144,8 +24144,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "Polyfills"
@@ -24181,12 +24181,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Windows",
-      "WinUIGallery"
+      "WinUIGallery",
+      "Windows"
     ],
     "dep_no_version": [],
     "dep_with_version": [
@@ -24219,8 +24219,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [],
     "dep_no_version": [],
@@ -24232,8 +24232,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "WinUIGallery",
@@ -24270,12 +24270,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Windows",
-      "WinUIGallery"
+      "WinUIGallery",
+      "Windows"
     ],
     "dep_no_version": [],
     "dep_with_version": [
@@ -24298,12 +24298,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Windows",
-      "WinUIGallery"
+      "WinUIGallery",
+      "Windows"
     ],
     "dep_no_version": [],
     "dep_with_version": [
@@ -24379,8 +24379,8 @@
     "extlib_imports": [],
     "dep_no_version": [],
     "dep_with_version": [
-      "Aspire.Hosting.AppHost",
-      "Aspire.Hosting.SqlServer"
+      "Aspire.Hosting.SqlServer",
+      "Aspire.Hosting.AppHost"
     ]
   },
   {
@@ -24389,12 +24389,12 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
-      "Windows",
-      "WinUIGallery"
+      "WinUIGallery",
+      "Windows"
     ],
     "dep_no_version": [],
     "dep_with_version": [
@@ -24407,8 +24407,8 @@
     "language": "csharp",
     "agent": "Copilot",
     "stdlib_imports": [
-      "Microsoft",
-      "System"
+      "System",
+      "Microsoft"
     ],
     "extlib_imports": [
       "WinUIGallery",
@@ -24438,8 +24438,8 @@
       "System"
     ],
     "extlib_imports": [
-      "CoreFXTestLibrary",
-      "Xunit"
+      "Xunit",
+      "CoreFXTestLibrary"
     ],
     "dep_no_version": [],
     "dep_with_version": []

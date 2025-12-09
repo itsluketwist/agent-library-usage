@@ -101,8 +101,8 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "futures",
-      "lazy_static"
+      "lazy_static",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -114,8 +114,8 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "futures",
-      "lazy_static"
+      "lazy_static",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -127,8 +127,8 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "futures",
-      "lazy_static"
+      "lazy_static",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -140,8 +140,8 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "futures",
-      "lazy_static"
+      "lazy_static",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -193,21 +193,21 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "smallvec",
+      "near_config_utils",
+      "itertools",
       "rand",
-      "bandwidth_scheduler",
+      "curve25519_dalek",
+      "reed_solomon_erasure",
+      "derive_where",
       "pipelining",
+      "smallvec",
+      "bandwidth_scheduler",
+      "config",
+      "congestion_control",
       "near_account_id",
       "metrics",
-      "curve25519_dalek",
-      "itertools",
-      "congestion_control",
-      "reed_solomon_erasure",
       "borsh",
-      "futures",
-      "config",
-      "near_config_utils",
-      "derive_where"
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -229,21 +229,21 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "smallvec",
+      "near_config_utils",
+      "itertools",
       "rand",
-      "bandwidth_scheduler",
+      "curve25519_dalek",
+      "reed_solomon_erasure",
+      "derive_where",
       "pipelining",
+      "smallvec",
+      "bandwidth_scheduler",
+      "config",
+      "congestion_control",
       "near_account_id",
       "metrics",
-      "curve25519_dalek",
-      "itertools",
-      "congestion_control",
-      "reed_solomon_erasure",
       "borsh",
-      "futures",
-      "config",
-      "near_config_utils",
-      "derive_where"
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -510,8 +510,8 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "isinf",
-      "num_traits"
+      "num_traits",
+      "isinf"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -523,8 +523,8 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "isinf",
       "num_traits",
+      "isinf",
       "isfinite"
     ],
     "dep_no_version": [],
@@ -595,8 +595,8 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "strpos",
-      "reverse"
+      "reverse",
+      "strpos"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -687,8 +687,8 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "round",
-      "num_traits"
+      "num_traits",
+      "round"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -700,9 +700,9 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "round",
+      "num_traits",
       "trunc",
-      "num_traits"
+      "round"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -737,9 +737,9 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "chrono",
+      "num_traits",
       "half",
-      "num_traits"
+      "chrono"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -751,8 +751,8 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "chrono",
-      "to_timestamp"
+      "to_timestamp",
+      "chrono"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -856,8 +856,8 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "regex",
-      "regexp_count"
+      "regexp_count",
+      "regex"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -869,9 +869,9 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "regex",
+      "regexp_count",
       "regexp_like",
-      "regexp_count"
+      "regex"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -883,8 +883,8 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "regex",
-      "regexp_like"
+      "regexp_like",
+      "regex"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -936,14 +936,14 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "rand",
-      "num_rational",
       "node_runtime",
-      "itertools",
       "rand_hc",
+      "itertools",
+      "num_rational",
+      "rand",
+      "near_store",
       "near_client",
-      "near_store"
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -955,14 +955,14 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "rand",
-      "num_rational",
       "node_runtime",
-      "itertools",
       "rand_hc",
+      "itertools",
+      "num_rational",
+      "rand",
+      "near_store",
       "near_client",
-      "near_store"
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -984,14 +984,14 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "rand",
-      "num_rational",
       "node_runtime",
-      "itertools",
       "rand_hc",
+      "itertools",
+      "num_rational",
+      "rand",
+      "near_store",
       "near_client",
-      "near_store"
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1003,14 +1003,14 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "rand",
-      "num_rational",
       "node_runtime",
-      "itertools",
       "rand_hc",
+      "itertools",
+      "num_rational",
+      "rand",
+      "near_store",
       "near_client",
-      "near_store"
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1062,15 +1062,15 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "near_parameters",
-      "rand",
-      "num_rational",
       "node_runtime",
-      "itertools",
       "rand_hc",
+      "itertools",
+      "num_rational",
+      "rand",
+      "near_parameters",
+      "near_store",
       "near_client",
-      "near_store"
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1082,15 +1082,15 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "near_parameters",
-      "rand",
-      "num_rational",
       "node_runtime",
-      "itertools",
       "rand_hc",
+      "itertools",
+      "num_rational",
+      "rand",
+      "near_parameters",
+      "near_store",
       "near_client",
-      "near_store"
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1112,14 +1112,14 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "rand",
-      "num_rational",
       "node_runtime",
-      "itertools",
       "rand_hc",
+      "itertools",
+      "num_rational",
+      "rand",
+      "near_store",
       "near_client",
-      "near_store"
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1131,14 +1131,14 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "rand",
-      "num_rational",
       "node_runtime",
-      "itertools",
       "rand_hc",
+      "itertools",
+      "num_rational",
+      "rand",
+      "near_store",
       "near_client",
-      "near_store"
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1150,14 +1150,14 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "rand",
-      "num_rational",
       "node_runtime",
-      "itertools",
       "rand_hc",
+      "itertools",
+      "num_rational",
+      "rand",
+      "near_store",
       "near_client",
-      "near_store"
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1169,16 +1169,16 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "near_parameters",
-      "rand",
-      "num_rational",
       "node_runtime",
-      "itertools",
       "rand_hc",
-      "near_client",
       "validator_stats",
-      "near_store"
+      "itertools",
+      "num_rational",
+      "rand",
+      "near_parameters",
+      "near_store",
+      "near_client",
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1190,19 +1190,19 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "near_parameters",
-      "rand",
-      "num_rational",
       "node_runtime",
-      "itertools",
       "rand_hc",
-      "near_client",
-      "validator_selection",
-      "chunk",
+      "block",
       "validator_stats",
+      "itertools",
+      "num_rational",
+      "rand",
+      "near_parameters",
+      "validator_selection",
       "near_store",
-      "block"
+      "chunk",
+      "near_client",
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1274,14 +1274,14 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "near_parameters",
-      "num_rational",
-      "validator_selection",
-      "chunk",
-      "wp",
       "finite_wasm",
       "validator_stats",
-      "block"
+      "num_rational",
+      "wp",
+      "near_parameters",
+      "validator_selection",
+      "block",
+      "chunk"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1306,14 +1306,14 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "near_parameters",
-      "num_rational",
-      "validator_selection",
-      "chunk",
-      "wp",
       "finite_wasm",
       "validator_stats",
-      "block"
+      "num_rational",
+      "wp",
+      "near_parameters",
+      "validator_selection",
+      "block",
+      "chunk"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1491,31 +1491,31 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "sha2",
-      "rand",
-      "metrics",
-      "serde",
-      "reqwest",
-      "redis",
-      "spki",
-      "pem",
-      "once_cell",
-      "pageserver_api",
-      "timeline",
-      "tonic",
       "bytes",
-      "tokio",
-      "x509_cert",
-      "postgres_client",
-      "axum",
       "utils",
-      "http_utils",
-      "compute_api",
+      "sha2",
+      "tonic",
+      "EndpointStorageCmd",
+      "axum",
       "anyhow",
+      "redis",
+      "postgres_client",
+      "serde",
       "jsonwebtoken",
+      "http_utils",
+      "metrics",
+      "tokio",
+      "once_cell",
+      "pem",
+      "pageserver_api",
+      "compute_api",
+      "tracing",
+      "reqwest",
+      "spki",
+      "rand",
+      "x509_cert",
       "tokio_util",
-      "EndpointStorageCmd"
+      "timeline"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1579,15 +1579,15 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "atanh",
-      "cot",
-      "cosh",
-      "sinh",
       "num_traits",
+      "atanh",
+      "cosh",
       "acosh",
       "atan2",
       "asinh",
-      "tanh"
+      "cot",
+      "tanh",
+      "sinh"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1611,8 +1611,8 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "gcd",
-      "num_traits"
+      "num_traits",
+      "gcd"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1677,9 +1677,9 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "raptorq",
+      "rand",
       "criterion",
-      "rand"
+      "raptorq"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1761,11 +1761,11 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "rest",
-      "extension",
       "catalog",
-      "futures",
-      "glaredb_core"
+      "extension",
+      "glaredb_core",
+      "rest",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1807,61 +1807,61 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "safekeeper_api",
-      "safekeeper_client",
-      "rand",
-      "postgres_backend",
-      "serde",
-      "tokio_rustls",
-      "arc_swap",
-      "NodeLifecycle",
-      "byteorder",
-      "postgres_ffi",
-      "pageserver_api",
-      "timeline",
-      "tonic",
-      "client",
-      "layer_manager",
       "bytes",
-      "tokio",
-      "clashmap",
-      "wal_decoder",
-      "axum_extra",
-      "PgMajorVersion",
-      "zerocopy",
       "async_trait",
-      "limiter",
-      "axum",
-      "PagestreamBeMessageTag",
+      "postgres_ffi",
       "utils",
-      "TenantSlotAcquireMode",
-      "itertools",
-      "clap",
+      "camino",
+      "PagestreamBeMessageTag",
+      "tonic",
+      "arc_swap",
+      "anyhow",
+      "axum",
+      "mgmt_api",
+      "clashmap",
+      "config",
       "futures",
       "pq_proto",
-      "anyhow",
-      "postgres_versioninfo",
-      "compute_api",
-      "mgmt_api",
-      "tokio_stream",
-      "tokio_util",
-      "smallvec",
-      "url",
-      "async_compression",
-      "pageserver_page_api",
-      "postgres_ffi_types",
-      "serde_json",
-      "TenantSlotError",
-      "camino",
-      "rstest",
-      "config",
-      "hyper",
-      "base64",
-      "page_api",
-      "storage_broker",
       "remote_storage",
-      "serde_repr"
+      "safekeeper_api",
+      "postgres_ffi_types",
+      "serde",
+      "safekeeper_client",
+      "postgres_backend",
+      "hyper",
+      "tokio",
+      "client",
+      "timeline",
+      "rstest",
+      "layer_manager",
+      "wal_decoder",
+      "serde_repr",
+      "itertools",
+      "zerocopy",
+      "pageserver_api",
+      "compute_api",
+      "tokio_stream",
+      "url",
+      "tracing",
+      "page_api",
+      "NodeLifecycle",
+      "PgMajorVersion",
+      "TenantSlotError",
+      "async_compression",
+      "postgres_versioninfo",
+      "byteorder",
+      "tokio_rustls",
+      "rand",
+      "pageserver_page_api",
+      "base64",
+      "limiter",
+      "smallvec",
+      "serde_json",
+      "tokio_util",
+      "clap",
+      "storage_broker",
+      "TenantSlotAcquireMode",
+      "axum_extra"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1873,29 +1873,29 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "aws_sdk_s3",
-      "rand",
-      "metrics",
-      "serde",
-      "reqwest",
-      "tokio_rustls",
-      "flush",
-      "pageserver_api",
       "bytes",
-      "tokio",
-      "temporary",
-      "tokio_epoll_uring",
-      "azure_storage_blobs",
-      "rustls",
       "utils",
-      "http_utils",
-      "futures",
-      "anyhow",
-      "tokio_util",
       "camino",
+      "anyhow",
+      "futures",
+      "remote_storage",
+      "serde",
+      "rustls",
+      "http_utils",
+      "metrics",
+      "tokio",
+      "azure_storage_blobs",
       "rstest",
-      "remote_storage"
+      "aws_sdk_s3",
+      "pageserver_api",
+      "flush",
+      "tracing",
+      "tokio_epoll_uring",
+      "temporary",
+      "tokio_rustls",
+      "rand",
+      "tokio_util",
+      "reqwest"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -1957,10 +1957,10 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "sha3",
+      "tokio_tungstenite",
       "colored",
-      "native_tls",
-      "tokio_tungstenite"
+      "sha3",
+      "native_tls"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2065,9 +2065,9 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
+      "num_traits",
       "binary",
-      "shl",
-      "num_traits"
+      "shl"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2103,8 +2103,8 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "bitor",
       "bitand",
+      "bitor",
       "bitxor"
     ],
     "dep_no_version": [],
@@ -2193,20 +2193,20 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "freenet",
-      "tracing",
-      "rand",
-      "freenet_stdlib",
       "tokio",
-      "freenet_ping_app",
       "testresult",
-      "freenet_ping_types",
+      "chrono",
+      "freenet_stdlib",
       "freenet_ping_contract",
       "tracing_subscriber",
+      "rand",
+      "anyhow",
+      "freenet_ping_types",
+      "freenet_ping_app",
       "tokio_tungstenite",
-      "futures",
-      "chrono",
-      "anyhow"
+      "freenet",
+      "tracing",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2218,20 +2218,20 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "freenet",
-      "tracing",
-      "rand",
-      "freenet_stdlib",
       "tokio",
-      "freenet_ping_app",
       "testresult",
-      "freenet_ping_types",
+      "chrono",
+      "freenet_stdlib",
       "freenet_ping_contract",
       "tracing_subscriber",
+      "rand",
+      "anyhow",
+      "freenet_ping_types",
+      "freenet_ping_app",
       "tokio_tungstenite",
-      "futures",
-      "chrono",
-      "anyhow"
+      "freenet",
+      "tracing",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2243,18 +2243,18 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
+      "tokio",
+      "testresult",
+      "chrono",
+      "freenet_stdlib",
+      "rand",
+      "anyhow",
+      "freenet_ping_types",
+      "freenet_ping_app",
+      "tokio_tungstenite",
       "freenet",
       "tracing",
-      "rand",
-      "tokio",
-      "freenet_stdlib",
-      "freenet_ping_app",
-      "testresult",
-      "freenet_ping_types",
-      "tokio_tungstenite",
-      "futures",
-      "chrono",
-      "anyhow"
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2266,18 +2266,18 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
+      "tokio",
+      "testresult",
+      "chrono",
+      "freenet_stdlib",
+      "rand",
+      "anyhow",
+      "freenet_ping_types",
+      "freenet_ping_app",
+      "tokio_tungstenite",
       "freenet",
       "tracing",
-      "rand",
-      "freenet_stdlib",
-      "tokio",
-      "freenet_ping_app",
-      "testresult",
-      "freenet_ping_types",
-      "tokio_tungstenite",
-      "futures",
-      "chrono",
-      "anyhow"
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2289,20 +2289,20 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "freenet",
-      "tracing",
-      "rand",
-      "freenet_stdlib",
       "tokio",
-      "freenet_ping_app",
       "testresult",
-      "freenet_ping_types",
+      "chrono",
+      "freenet_stdlib",
       "freenet_ping_contract",
       "tracing_subscriber",
+      "rand",
+      "anyhow",
+      "freenet_ping_types",
+      "freenet_ping_app",
       "tokio_tungstenite",
-      "futures",
-      "chrono",
-      "anyhow"
+      "freenet",
+      "tracing",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2314,20 +2314,20 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "freenet",
-      "tracing",
-      "rand",
-      "freenet_stdlib",
       "tokio",
-      "freenet_ping_app",
       "testresult",
-      "freenet_ping_types",
+      "chrono",
+      "freenet_stdlib",
       "freenet_ping_contract",
       "tracing_subscriber",
+      "rand",
+      "anyhow",
+      "freenet_ping_types",
+      "freenet_ping_app",
       "tokio_tungstenite",
-      "futures",
-      "chrono",
-      "anyhow"
+      "freenet",
+      "tracing",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2339,20 +2339,20 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "freenet",
-      "tracing",
-      "rand",
-      "freenet_stdlib",
       "tokio",
-      "freenet_ping_app",
       "testresult",
-      "freenet_ping_types",
+      "chrono",
+      "freenet_stdlib",
       "freenet_ping_contract",
       "tracing_subscriber",
+      "rand",
+      "anyhow",
+      "freenet_ping_types",
+      "freenet_ping_app",
       "tokio_tungstenite",
-      "futures",
-      "chrono",
-      "anyhow"
+      "freenet",
+      "tracing",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2454,20 +2454,20 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "anyhow",
-      "lsp_server",
-      "mysql",
-      "lsp_types",
-      "regex",
-      "glob",
-      "itertools",
-      "prqlc_parser",
-      "futures",
-      "vergen_gitcl",
-      "semver",
-      "connector_arrow",
       "tokio_util",
-      "insta"
+      "connector_arrow",
+      "regex",
+      "itertools",
+      "insta",
+      "vergen_gitcl",
+      "prqlc_parser",
+      "lsp_types",
+      "semver",
+      "anyhow",
+      "glob",
+      "mysql",
+      "lsp_server",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2584,8 +2584,8 @@
     "extlib_imports": [
       "tokio",
       "serde",
-      "llm",
-      "opf_models"
+      "opf_models",
+      "llm"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2609,8 +2609,8 @@
     "extlib_imports": [
       "tokio",
       "serde",
-      "llm",
-      "serde_json"
+      "serde_json",
+      "llm"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -2711,12 +2711,12 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "commonware_runtime",
       "commonware_macros",
-      "write",
-      "read",
       "commonware_utils",
-      "buffer"
+      "read",
+      "buffer",
+      "commonware_runtime",
+      "write"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -3039,13 +3039,13 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
+      "guest_logger",
+      "guest_function",
       "hyperlight_common",
       "buddy_system_allocator",
       "exceptions",
-      "hyperlight_guest",
       "hyperlight_host",
-      "guest_logger",
-      "guest_function"
+      "hyperlight_guest"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -3067,10 +3067,10 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
+      "wildmatch",
       "serde",
       "codex_core",
       "maplit",
-      "wildmatch",
       "event_processor"
     ],
     "dep_no_version": [],
@@ -3233,19 +3233,19 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "once_cell",
-      "tempfile",
       "tokio",
-      "serde",
-      "goose_server",
       "mcp_core",
-      "base64",
+      "serde",
+      "once_cell",
       "etcetera",
-      "futures",
-      "chrono",
+      "tempfile",
+      "axum",
       "anyhow",
+      "base64",
       "tokio_cron_scheduler",
-      "axum"
+      "goose_server",
+      "chrono",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -3337,8 +3337,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "hex",
-      "geph5_broker_protocol"
+      "geph5_broker_protocol",
+      "hex"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -3370,39 +3370,39 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "jackbot_execution",
-      "tracing",
-      "Jackbot",
-      "trailing_take_profit",
-      "rand",
-      "trailing_stop",
-      "futures_util",
-      "serde",
-      "jackbot_snapshot",
-      "jackbot_macro",
-      "prettytable",
-      "tokio",
-      "canonical",
       "async_trait",
-      "derive_more",
-      "trade",
-      "hmac",
-      "profit_target",
-      "fnv",
-      "jackbot_integration",
       "rust_decimal",
-      "rust_decimal_macros",
-      "tokio_tungstenite",
-      "jackbot_instrument",
-      "futures",
-      "chrono",
-      "tokio_stream",
-      "multi_level_stop",
-      "url",
-      "serde_json",
       "jackbot_data",
+      "derive_more",
+      "multi_level_stop",
+      "jackbot_macro",
+      "jackbot_snapshot",
+      "jackbot_integration",
+      "trade",
+      "chrono",
+      "futures",
       "l2",
-      "parking_lot"
+      "trailing_stop",
+      "serde",
+      "rust_decimal_macros",
+      "trailing_take_profit",
+      "tokio",
+      "fnv",
+      "profit_target",
+      "prettytable",
+      "Jackbot",
+      "jackbot_instrument",
+      "jackbot_execution",
+      "url",
+      "tokio_stream",
+      "tracing",
+      "hmac",
+      "parking_lot",
+      "rand",
+      "canonical",
+      "serde_json",
+      "futures_util",
+      "tokio_tungstenite"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -3414,39 +3414,39 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "jackbot_execution",
-      "tracing",
-      "Jackbot",
-      "trailing_take_profit",
-      "rand",
-      "trailing_stop",
-      "futures_util",
-      "serde",
-      "jackbot_snapshot",
-      "jackbot_macro",
-      "prettytable",
-      "tokio",
-      "canonical",
       "async_trait",
-      "derive_more",
-      "trade",
-      "hmac",
-      "profit_target",
-      "fnv",
-      "jackbot_integration",
       "rust_decimal",
-      "rust_decimal_macros",
-      "tokio_tungstenite",
-      "jackbot_instrument",
-      "futures",
-      "chrono",
-      "tokio_stream",
-      "multi_level_stop",
-      "url",
-      "serde_json",
       "jackbot_data",
+      "derive_more",
+      "multi_level_stop",
+      "jackbot_macro",
+      "jackbot_snapshot",
+      "jackbot_integration",
+      "trade",
+      "chrono",
+      "futures",
       "l2",
-      "parking_lot"
+      "trailing_stop",
+      "serde",
+      "rust_decimal_macros",
+      "trailing_take_profit",
+      "tokio",
+      "fnv",
+      "profit_target",
+      "prettytable",
+      "Jackbot",
+      "jackbot_instrument",
+      "jackbot_execution",
+      "url",
+      "tokio_stream",
+      "tracing",
+      "hmac",
+      "parking_lot",
+      "rand",
+      "canonical",
+      "serde_json",
+      "futures_util",
+      "tokio_tungstenite"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -3580,8 +3580,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "criterion",
-      "rayon"
+      "rayon",
+      "criterion"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -3593,8 +3593,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tk",
-      "serde"
+      "serde",
+      "tk"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -3744,13 +3744,13 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "futures_concurrency",
-      "mizaru2",
-      "futures_util",
-      "stdcode",
       "async_event",
+      "mizaru2",
+      "futures_concurrency",
+      "anyctx",
       "base64",
-      "anyctx"
+      "stdcode",
+      "futures_util"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -3841,13 +3841,13 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
       "tokio",
-      "serde",
-      "hf_hub",
-      "auto",
       "candle_core",
-      "anyhow"
+      "serde",
+      "anyhow",
+      "auto",
+      "hf_hub",
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -3871,8 +3871,8 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "sign",
-      "num_traits"
+      "num_traits",
+      "sign"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4019,12 +4019,12 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "search",
-      "which",
+      "walkdir",
       "pyo3",
       "anyhow",
-      "walkdir",
-      "mistralrs_core"
+      "search",
+      "mistralrs_core",
+      "which"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4046,10 +4046,10 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "anyhow",
+      "mistralrs_core",
       "walkdir",
-      "pyo3",
-      "mistralrs_core"
+      "anyhow",
+      "pyo3"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4071,16 +4071,16 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "sqlx",
-      "rand",
-      "rpc_impl",
-      "smol",
-      "geph5_broker_protocol",
-      "database",
       "moka",
+      "database",
+      "smol",
+      "rand",
       "smol_timeout2",
       "anyhow",
-      "async_io"
+      "geph5_broker_protocol",
+      "async_io",
+      "rpc_impl",
+      "sqlx"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4112,12 +4112,12 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "pgrx",
-      "regex",
-      "moonlink_backend",
       "tokio",
+      "postgres",
+      "pgrx",
+      "moonlink_backend",
       "bincode",
-      "postgres"
+      "regex"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4159,14 +4159,14 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "url",
-      "serde_json",
       "tokio",
-      "confirm_modal",
       "assets",
-      "queries",
+      "dioxus",
+      "confirm_modal",
       "axum",
-      "dioxus"
+      "queries",
+      "serde_json",
+      "url"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4198,8 +4198,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "confirm_modal",
-      "dioxus"
+      "dioxus",
+      "confirm_modal"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4306,8 +4306,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "deadpool_postgres",
-      "authorized"
+      "authorized",
+      "deadpool_postgres"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4319,12 +4319,12 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
+      "kornia_nn",
       "criterion",
-      "rand",
-      "kornia_tensor_ops",
-      "approx",
       "candle_nn",
-      "kornia_nn"
+      "rand",
+      "approx",
+      "kornia_tensor_ops"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4356,10 +4356,10 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "openai_api",
       "async_trait",
       "reqwest",
-      "serde_json"
+      "serde_json",
+      "openai_api"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4451,11 +4451,11 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
       "tokio",
+      "bitcoin",
       "bdk_electrum",
-      "futures",
-      "bitcoin"
+      "tracing",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4726,10 +4726,10 @@
     "agent": "Claude_Code",
     "stdlib_imports": [],
     "extlib_imports": [
-      "rue_ast",
       "salsa",
+      "rue_compiler",
       "rue_parser",
-      "rue_compiler"
+      "rue_ast"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4741,9 +4741,9 @@
     "agent": "Claude_Code",
     "stdlib_imports": [],
     "extlib_imports": [
-      "rue_ast",
       "rue_lexer",
-      "rue_semantic"
+      "rue_semantic",
+      "rue_ast"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -4815,12 +4815,12 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "serde_json",
       "tokio",
-      "mistralrs_server_core",
-      "rust_mcp_sdk",
       "async_trait",
+      "rust_mcp_sdk",
       "axum",
+      "serde_json",
+      "mistralrs_server_core",
       "mistralrs_core"
     ],
     "dep_no_version": [],
@@ -4955,8 +4955,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "gluesql",
-      "anyhow"
+      "anyhow",
+      "gluesql"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5052,8 +5052,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "once_cell",
-      "ratatui"
+      "ratatui",
+      "once_cell"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5107,8 +5107,8 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "libfuzzer_sys",
-      "micromap"
+      "micromap",
+      "libfuzzer_sys"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5228,11 +5228,11 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "transfer_account",
       "fixtures",
-      "bytemuck",
+      "marginfi",
       "anchor_lang",
-      "marginfi"
+      "bytemuck",
+      "transfer_account"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5306,12 +5306,12 @@
     "agent": "Cursor",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "serde_json",
       "tokio",
       "serde",
       "rmcp",
-      "anyhow"
+      "anyhow",
+      "serde_json",
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5333,9 +5333,9 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "once_cell",
+      "ratatui",
       "serde",
-      "ratatui"
+      "once_cell"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5465,15 +5465,15 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tiny_http",
       "client",
+      "async_trait",
       "tokio",
       "serde",
-      "reqwest",
-      "glues_core",
-      "async_trait",
       "server",
-      "ProxyRequest"
+      "glues_core",
+      "ProxyRequest",
+      "tiny_http",
+      "reqwest"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5498,12 +5498,12 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tiny_http",
-      "serde_json",
       "tokio",
-      "clap",
       "task",
-      "glues_core"
+      "glues_core",
+      "serde_json",
+      "tiny_http",
+      "clap"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5516,8 +5516,8 @@
     "stdlib_imports": [],
     "extlib_imports": [
       "Event",
-      "NotebookEvent",
-      "NormalModeTransition"
+      "NormalModeTransition",
+      "NotebookEvent"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5541,9 +5541,9 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
+      "tokio",
       "tiny_http",
-      "glues_core",
-      "tokio"
+      "glues_core"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5585,8 +5585,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "badge",
-      "dioxus"
+      "dioxus",
+      "badge"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5633,12 +5633,12 @@
     "stdlib_imports": [],
     "extlib_imports": [
       "tokio",
+      "async_trait",
+      "rust_mcp_sdk",
       "serde",
       "glues_core",
       "clap",
-      "handler",
-      "rust_mcp_sdk",
-      "async_trait"
+      "handler"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5748,9 +5748,9 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "openvm_sdk",
       "openvm_native_recursion",
-      "openvm_continuations"
+      "openvm_continuations",
+      "openvm_sdk"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5762,26 +5762,26 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "rand",
-      "serde",
-      "openvm_ecc_circuit",
-      "ecdsa_core",
-      "openvm_sha2",
-      "openvm_native_recursion",
       "openvm_continuations",
-      "openvm_ecc_guest",
-      "openvm_ecc_transpiler",
-      "openvm_p256",
-      "openvm_k256",
-      "openvm_sdk",
       "getrandom_v02",
-      "itertools",
-      "openvm_ecc_test_programs",
-      "hex_literal",
-      "openvm_keccak256",
+      "openvm_ecc_guest",
+      "serde_with",
       "openvm_instructions",
+      "openvm_ecc_transpiler",
+      "ecdsa_core",
+      "serde",
+      "hex_literal",
+      "openvm_ecc_circuit",
+      "openvm_k256",
+      "itertools",
       "openvm",
-      "serde_with"
+      "openvm_sdk",
+      "openvm_keccak256",
+      "openvm_native_recursion",
+      "openvm_p256",
+      "rand",
+      "openvm_ecc_test_programs",
+      "openvm_sha2"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -5966,14 +5966,14 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "quote",
-      "gluesql_macros",
-      "chrono",
-      "gluesql_core",
       "rust_decimal",
-      "gluesql_derive",
+      "quote",
       "from_row",
-      "syn"
+      "gluesql_core",
+      "syn",
+      "gluesql_derive",
+      "chrono",
+      "gluesql_macros"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -6005,8 +6005,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "im",
-      "im_rc"
+      "im_rc",
+      "im"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -6029,8 +6029,8 @@
     "stdlib_imports": [],
     "extlib_imports": [
       "file_input",
-      "button",
-      "dioxus"
+      "dioxus",
+      "button"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -6054,8 +6054,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "validator",
       "serde",
+      "validator",
       "dioxus"
     ],
     "dep_no_version": [],
@@ -6130,9 +6130,9 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "licence",
+      "time",
       "serde",
-      "time"
+      "licence"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -6207,8 +6207,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "glues",
       "ratatui",
+      "glues",
       "insta"
     ],
     "dep_no_version": [],
@@ -6469,11 +6469,11 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "serde",
       "strum_macros",
-      "clap",
+      "serde",
+      "typed_builder",
       "anyhow",
-      "typed_builder"
+      "clap"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -6628,15 +6628,15 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "async_native_tls",
-      "time",
-      "sillad_conntest",
-      "sillad_sosistab3",
-      "sillad_native_tls",
       "geph5_misc_rpc",
       "rcgen",
+      "sillad",
+      "time",
+      "sillad_sosistab3",
+      "sillad_conntest",
+      "sillad_native_tls",
       "anyhow",
-      "sillad"
+      "async_native_tls"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -6670,11 +6670,11 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "sillad_hex",
-      "pin_project",
-      "futures_util",
       "async_trait",
-      "sillad"
+      "sillad",
+      "sillad_hex",
+      "futures_util",
+      "pin_project"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -6746,30 +6746,30 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
+      "async_trait",
+      "bytes",
+      "geph5_misc_rpc",
+      "time",
+      "dashmap",
+      "http_body_util",
+      "async_channel",
+      "async_io",
+      "picomux",
+      "sillad",
+      "sillad_meeklike",
+      "hyper",
+      "smol_timeout2",
       "blake3",
+      "pin_project",
+      "chacha20poly1305",
+      "async_compat",
+      "sillad_sosistab3",
+      "sillad_native_tls",
+      "sillad_conntest",
+      "hyper_util",
       "rand",
       "futures_util",
-      "http_body_util",
-      "time",
-      "sillad_conntest",
-      "sillad",
-      "async_native_tls",
-      "sillad_meeklike",
-      "pin_project",
-      "bytes",
-      "async_compat",
-      "async_channel",
-      "async_trait",
-      "async_io",
-      "sillad_sosistab3",
-      "picomux",
-      "smol_timeout2",
-      "dashmap",
-      "hyper_util",
-      "hyper",
-      "sillad_native_tls",
-      "geph5_misc_rpc",
-      "chacha20poly1305"
+      "async_native_tls"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -6801,13 +6801,13 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "transfer_account",
-      "fixtures",
-      "bytemuck",
-      "anchor_lang",
-      "marginfi",
+      "migrate_pyth_push_oracle",
       "pyth_solana_receiver_sdk",
-      "migrate_pyth_push_oracle"
+      "fixtures",
+      "marginfi",
+      "anchor_lang",
+      "bytemuck",
+      "transfer_account"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -6850,9 +6850,9 @@
     "stdlib_imports": [],
     "extlib_imports": [
       "relay_protocol",
+      "axum",
       "chrono",
-      "uuid",
-      "axum"
+      "uuid"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -6864,8 +6864,8 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "openvm_sha2",
-      "openvm_keccak256"
+      "openvm_keccak256",
+      "openvm_sha2"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -6959,14 +6959,14 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "rand",
+      "scrypt",
       "encrypted_storage",
-      "tempfile",
       "serde",
       "ethexe_common",
-      "base64",
+      "rand",
       "anyhow",
-      "scrypt"
+      "base64",
+      "tempfile"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -6998,8 +6998,8 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "futures",
-      "fast_sync"
+      "fast_sync",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -7183,9 +7183,9 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "ahash",
       "rustc_hash",
-      "fnv"
+      "fnv",
+      "ahash"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -7207,9 +7207,9 @@
     "agent": "Claude_Code",
     "stdlib_imports": [],
     "extlib_imports": [
-      "sha2",
+      "subtle",
       "proptest",
-      "subtle"
+      "sha2"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -7241,11 +7241,11 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "openai_api",
-      "serde_json",
-      "rag_engine",
+      "async_trait",
       "serde",
-      "async_trait"
+      "rag_engine",
+      "serde_json",
+      "openai_api"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -7289,11 +7289,11 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "validator",
       "serde",
       "axum_typed_multipart",
+      "dioxus",
       "axum",
-      "dioxus"
+      "validator"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -7395,12 +7395,12 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "validator",
-      "actions",
-      "serde",
       "loader",
-      "axum_extra",
-      "axum"
+      "serde",
+      "actions",
+      "axum",
+      "validator",
+      "axum_extra"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -7412,11 +7412,11 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "validator",
       "serde",
-      "axum_extra",
+      "dioxus",
       "axum",
-      "dioxus"
+      "validator",
+      "axum_extra"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -7429,10 +7429,10 @@
     "stdlib_imports": [],
     "extlib_imports": [
       "serde",
-      "axum_extra",
-      "queries",
+      "dioxus",
       "axum",
-      "dioxus"
+      "queries",
+      "axum_extra"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -7509,14 +7509,14 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "glaredb_ext_parquet",
+      "glaredb_ext_tpch_gen",
+      "glaredb_rt_native",
       "napi",
-      "glaredb_ext_csv",
+      "glaredb_ext_parquet",
       "napi_derive",
       "glaredb_core",
-      "glaredb_ext_tpch_gen",
       "glaredb_ext_spark",
-      "glaredb_rt_native"
+      "glaredb_ext_csv"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -7594,8 +7594,8 @@
     "stdlib_imports": [],
     "extlib_imports": [
       "",
-      "windows",
-      "ntapi"
+      "ntapi",
+      "windows"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -7709,8 +7709,8 @@
     "agent": "Claude_Code",
     "stdlib_imports": [],
     "extlib_imports": [
-      "ahash",
-      "sqruff_lib_core"
+      "sqruff_lib_core",
+      "ahash"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -7938,11 +7938,11 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "openai_api",
-      "serde_json",
+      "async_trait",
       "serde",
-      "async_trait"
+      "serde_json",
+      "tracing",
+      "openai_api"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -7988,11 +7988,11 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "drain",
-      "clap",
-      "crossterm",
       "tracing_subscriber",
-      "ratatui"
+      "ratatui",
+      "crossterm",
+      "drain",
+      "clap"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -8088,29 +8088,29 @@
     "agent": "Cursor",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "terminator_observability",
-      "sqlx",
-      "metrics",
-      "serde",
-      "metrics_util",
-      "terminator",
+      "dashmap",
       "tracing_subscriber",
       "thiserror",
+      "anyhow",
+      "opentelemetry_sdk",
+      "session",
+      "serde",
+      "opentelemetry_otlp",
+      "terminator_observability",
+      "metrics_util",
+      "sqlx",
+      "metrics",
       "uuid",
       "tracing_opentelemetry",
-      "context",
-      "opentelemetry_otlp",
-      "error",
-      "opentelemetry",
-      "trace",
-      "session",
-      "opentelemetry_sdk",
-      "anyhow",
-      "decorator",
-      "dashmap",
       "criterion",
-      "parking_lot"
+      "decorator",
+      "context",
+      "terminator",
+      "tracing",
+      "trace",
+      "parking_lot",
+      "opentelemetry",
+      "error"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -8185,8 +8185,8 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "tracing_subscriber"
+      "tracing_subscriber",
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -8230,20 +8230,20 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "pageserver_page_api",
-      "posthog_client_lite",
-      "postgres_ffi_types",
-      "utils",
       "tokio",
+      "ConnectAction",
+      "posthog_client_lite",
+      "utils",
+      "postgres_ffi_types",
       "camino",
-      "clap",
-      "thiserror",
       "smol_str",
-      "futures",
+      "thiserror",
+      "pageserver_page_api",
       "anyhow",
       "tokio_util",
-      "ConnectAction"
+      "clap",
+      "tracing",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -8387,8 +8387,8 @@
     "stdlib_imports": [],
     "extlib_imports": [
       "tokio",
-      "tracing",
-      "lag_check"
+      "lag_check",
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -8400,13 +8400,13 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "rate_limiting_store",
-      "bytes",
       "tokio",
+      "async_trait",
+      "bytes",
+      "rate_limiting_store",
+      "tracing",
       "object_store",
-      "futures",
-      "async_trait"
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -8642,9 +8642,9 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "futures",
       "gluesql_core",
-      "parquet"
+      "parquet",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -8656,14 +8656,14 @@
     "agent": "Claude_Code",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tree_sitter",
-      "tempfile",
-      "serde",
-      "clap",
-      "predicates",
       "assert_cmd",
       "similarity_core",
-      "anyhow"
+      "serde",
+      "anyhow",
+      "tempfile",
+      "predicates",
+      "clap",
+      "tree_sitter"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -8675,10 +8675,10 @@
     "agent": "Cursor",
     "stdlib_imports": [],
     "extlib_imports": [
-      "salsa_ids",
       "rustc_hash",
-      "cached_queries",
       "pilota_build",
+      "salsa_ids",
+      "cached_queries",
       "faststr"
     ],
     "dep_no_version": [],
@@ -8744,20 +8744,20 @@
     "stdlib_imports": [],
     "extlib_imports": [
       "social_media_workflows",
-      "workflow_definitions",
-      "serde_json",
-      "rand",
-      "government_workflows",
       "tokio",
-      "simple_accuracy_test",
-      "serde",
-      "mock_workflow_runner",
-      "rmcp",
       "banking_workflows",
       "workflow_accuracy_tests",
+      "ecommerce_workflows",
+      "workflow_definitions",
+      "serde",
+      "rmcp",
+      "mock_workflow_runner",
+      "rand",
       "anyhow",
+      "serde_json",
+      "simple_accuracy_test",
       "workflows",
-      "ecommerce_workflows"
+      "government_workflows"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -8791,11 +8791,11 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
+      "bank_cache",
+      "anchor_lang",
       "close_bank",
       "fixed",
-      "bank_cache",
-      "bytemuck",
-      "anchor_lang"
+      "bytemuck"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -8847,12 +8847,12 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
+      "async_trait",
       "oauth2",
       "time",
-      "reqwest",
-      "token_providers",
       "queries",
-      "async_trait"
+      "token_providers",
+      "reqwest"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -8924,16 +8924,16 @@
     "agent": "Cursor",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "rand",
-      "serde_json",
       "tokio",
       "serde",
-      "reqwest",
-      "rmcp",
-      "base64",
       "tracing_subscriber",
-      "anyhow"
+      "rmcp",
+      "rand",
+      "anyhow",
+      "base64",
+      "serde_json",
+      "reqwest",
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -8945,17 +8945,17 @@
     "agent": "Cursor",
     "stdlib_imports": [],
     "extlib_imports": [
+      "tokio",
+      "async_trait",
+      "terminator_mcp_agent",
+      "serde",
       "webrtc",
+      "encoder",
+      "signaling",
+      "anyhow",
       "serde_json",
       "image",
-      "tokio",
-      "serde",
-      "capture",
-      "terminator_mcp_agent",
-      "encoder",
-      "async_trait",
-      "anyhow",
-      "signaling"
+      "capture"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -8987,8 +8987,8 @@
     "agent": "Cursor",
     "stdlib_imports": [],
     "extlib_imports": [
-      "serde_json",
-      "terminator"
+      "terminator",
+      "serde_json"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9042,11 +9042,11 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "ark_snark",
       "ark_ff",
+      "ark_snark",
+      "ark_std",
       "ark_relations",
-      "ark_serialize",
-      "ark_std"
+      "ark_serialize"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9058,11 +9058,11 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "serde_json",
-      "time",
-      "base64",
       "ed25519_dalek",
-      "anyhow"
+      "time",
+      "anyhow",
+      "base64",
+      "serde_json"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9196,10 +9196,10 @@
     "extlib_imports": [
       "serde",
       "assets",
-      "axum_extra",
-      "toml",
+      "dioxus",
       "axum",
-      "dioxus"
+      "axum_extra",
+      "toml"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9293,16 +9293,16 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "sov_rollup_interface",
-      "prover_services",
-      "tracing",
-      "tempfile",
+      "jsonrpsee",
       "tokio",
       "sov_mock_da",
-      "jsonrpsee",
+      "sov_mock_zkvm",
       "citrea_common",
-      "uuid",
-      "sov_mock_zkvm"
+      "sov_rollup_interface",
+      "prover_services",
+      "tempfile",
+      "tracing",
+      "uuid"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9438,13 +9438,13 @@
     "agent": "Claude_Code",
     "stdlib_imports": [],
     "extlib_imports": [
-      "ndarray",
-      "approx",
-      "neuro_divergent_models",
-      "num_traits",
       "quickcheck",
+      "num_traits",
+      "neuro_divergent_models",
+      "property_utils",
       "quickcheck_macros",
-      "property_utils"
+      "ndarray",
+      "approx"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9526,20 +9526,20 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
+      "jsonrpsee",
+      "async_trait",
+      "reth_tasks",
+      "citrea_light_client_prover",
+      "bitcoin_da",
+      "tokio",
       "sov_rollup_interface",
-      "tracing",
       "bitcoin",
       "alloy_primitives",
-      "tokio",
-      "metrics",
+      "sov_ledger_rpc",
       "citrea_e2e",
-      "reth_tasks",
-      "jsonrpsee",
       "bitcoincore_rpc",
-      "bitcoin_da",
-      "async_trait",
-      "citrea_light_client_prover",
-      "sov_ledger_rpc"
+      "metrics",
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9593,8 +9593,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "fixtures",
-      "anchor_lang"
+      "anchor_lang",
+      "fixtures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9684,15 +9684,15 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "default_desktop_file",
       "tracing",
-      "core_lib",
-      "clap_complete",
       "gtk",
-      "path",
-      "clap",
+      "clap_complete",
       "semver",
-      "anyhow"
+      "anyhow",
+      "core_lib",
+      "clap",
+      "path",
+      "default_desktop_file"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9734,11 +9734,11 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "image",
-      "serde",
       "serde_yaml",
-      "log",
-      "walkdir"
+      "walkdir",
+      "serde",
+      "image",
+      "log"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9793,13 +9793,13 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "petri_artifacts_vmm_test",
       "disk_backend_resources",
       "vmm_core_defs",
-      "hvlite_defs",
-      "scsidisk_resources",
       "storvsp_resources",
       "vm_resource",
+      "scsidisk_resources",
+      "petri_artifacts_vmm_test",
+      "hvlite_defs",
       "vmm_test_macros"
     ],
     "dep_no_version": [],
@@ -9812,8 +9812,8 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "mesh",
-      "user_driver"
+      "user_driver",
+      "mesh"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9895,10 +9895,10 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tinymist_vfs",
-      "typst",
       "tinymist_world",
-      "tinymist_package"
+      "tinymist_vfs",
+      "tinymist_package",
+      "typst"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -9950,8 +9950,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "anyhow",
       "serde",
+      "anyhow",
       "codex_core"
     ],
     "dep_no_version": [],
@@ -9974,27 +9974,27 @@
     "agent": "Cursor",
     "stdlib_imports": [],
     "extlib_imports": [
-      "frontend",
-      "serde",
-      "meta",
-      "udf",
-      "batch",
-      "educe",
-      "streaming",
-      "risingwave_common_proc_macro",
-      "utils",
-      "storage",
-      "clap",
-      "system",
-      "risingwave_pb",
-      "anyhow",
-      "server",
-      "serde_json",
-      "risingwave_common",
-      "risingwave_license",
       "foyer",
+      "utils",
+      "risingwave_pb",
+      "educe",
+      "anyhow",
+      "risingwave_common_proc_macro",
+      "frontend",
+      "batch",
+      "serde",
+      "streaming",
+      "storage",
+      "risingwave_license",
+      "udf",
+      "system",
+      "server",
+      "meta",
       "serde_default",
-      "risingwave_common_metrics"
+      "serde_json",
+      "risingwave_common_metrics",
+      "clap",
+      "risingwave_common"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10027,8 +10027,8 @@
     "stdlib_imports": [],
     "extlib_imports": [
       "tokio",
-      "once_cell",
-      "oauth2"
+      "oauth2",
+      "once_cell"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10040,10 +10040,10 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "openai_api",
       "serde",
+      "queries",
       "reqwest",
-      "queries"
+      "openai_api"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10075,9 +10075,9 @@
     "agent": "Cursor",
     "stdlib_imports": [],
     "extlib_imports": [
-      "terminator_mcp_agent",
+      "rmcp",
       "serde_json",
-      "rmcp"
+      "terminator_mcp_agent"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10141,8 +10141,8 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "mbtiles",
-      "martin_tile_utils"
+      "martin_tile_utils",
+      "mbtiles"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10164,11 +10164,11 @@
     "agent": "Cursor",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "serde_json",
+      "platform",
       "tauri",
       "terminator",
-      "platform"
+      "serde_json",
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10234,8 +10234,8 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "cargo_metadata",
-      "tempfile"
+      "tempfile",
+      "cargo_metadata"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10269,8 +10269,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "futures",
-      "tokio_util"
+      "tokio_util",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10282,12 +10282,12 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "mockito",
+      "once_cell",
       "serde_json",
       "tempfile",
+      "mockito",
       "reqwest",
-      "maplit",
-      "once_cell"
+      "maplit"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10299,9 +10299,9 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "futures",
       "tokio",
-      "bytes"
+      "bytes",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10313,19 +10313,19 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "test_support",
-      "ratatui",
-      "serde_json",
-      "tempfile",
       "tokio",
-      "insta",
-      "codex_core",
       "assert_cmd",
+      "wiremock",
+      "insta",
+      "ratatui",
+      "codex_core",
       "crossterm",
-      "futures",
-      "tokio_util",
+      "serde_json",
       "tokio_test",
-      "wiremock"
+      "tempfile",
+      "tokio_util",
+      "test_support",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10350,18 +10350,18 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "test_support",
-      "ratatui",
-      "serde_json",
-      "tempfile",
       "tokio",
-      "codex_core",
-      "wiremock",
-      "crossterm",
       "assert_cmd",
-      "tokio_util",
+      "insta",
+      "wiremock",
+      "ratatui",
+      "codex_core",
+      "crossterm",
+      "serde_json",
       "tokio_test",
-      "insta"
+      "tempfile",
+      "tokio_util",
+      "test_support"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10373,15 +10373,15 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "test_support",
-      "serde_json",
-      "tempfile",
+      "assert_cmd",
+      "wiremock",
       "insta",
+      "ratatui",
       "codex_core",
       "crossterm",
-      "assert_cmd",
-      "ratatui",
-      "wiremock"
+      "serde_json",
+      "tempfile",
+      "test_support"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10406,19 +10406,19 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "test_support",
-      "serde_json",
-      "tempfile",
       "tokio",
-      "tokio_test",
-      "insta",
-      "codex_core",
-      "predicates",
-      "crossterm",
       "assert_cmd",
-      "tokio_util",
+      "test_support",
+      "wiremock",
+      "insta",
       "ratatui",
-      "wiremock"
+      "codex_core",
+      "crossterm",
+      "serde_json",
+      "tokio_test",
+      "tempfile",
+      "tokio_util",
+      "predicates"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10430,22 +10430,22 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "test_support",
-      "mcp_types",
-      "serde_json",
-      "tempfile",
       "tokio",
-      "tokio_test",
-      "reqwest",
-      "insta",
-      "codex_core",
-      "pretty_assertions",
-      "crossterm",
       "assert_cmd",
-      "futures",
-      "tokio_util",
+      "test_support",
+      "wiremock",
+      "insta",
+      "pretty_assertions",
       "ratatui",
-      "wiremock"
+      "codex_core",
+      "crossterm",
+      "serde_json",
+      "tokio_test",
+      "tempfile",
+      "tokio_util",
+      "reqwest",
+      "mcp_types",
+      "futures"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10467,8 +10467,8 @@
     "agent": "Cursor",
     "stdlib_imports": [],
     "extlib_imports": [
-      "serde_json",
-      "terminator"
+      "terminator",
+      "serde_json"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10500,8 +10500,8 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "arwen",
-      "anyhow"
+      "anyhow",
+      "arwen"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10513,8 +10513,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "crossterm",
       "ratatui",
+      "crossterm",
       "insta"
     ],
     "dep_no_version": [],
@@ -10527,27 +10527,27 @@
     "agent": "Cursor",
     "stdlib_imports": [],
     "extlib_imports": [
-      "plugin",
-      "tempfile",
-      "reqwest",
       "xx",
-      "archiver",
-      "hooks",
-      "once_cell",
-      "thiserror",
-      "json",
-      "tokio",
       "env",
-      "html",
-      "file",
+      "mlua",
       "indexmap",
-      "error",
+      "thiserror",
+      "tempfile",
       "http",
-      "clap",
+      "archiver",
+      "tokio",
+      "once_cell",
       "itertools",
       "url",
-      "mlua",
-      "strings"
+      "clap",
+      "strings",
+      "html",
+      "json",
+      "plugin",
+      "hooks",
+      "error",
+      "file",
+      "reqwest"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10569,27 +10569,27 @@
     "agent": "Cursor",
     "stdlib_imports": [],
     "extlib_imports": [
-      "plugin",
-      "tempfile",
-      "reqwest",
       "xx",
-      "archiver",
-      "hooks",
-      "once_cell",
-      "thiserror",
-      "json",
-      "tokio",
       "env",
-      "html",
-      "file",
+      "mlua",
       "indexmap",
-      "error",
+      "thiserror",
+      "tempfile",
       "http",
-      "clap",
+      "archiver",
+      "tokio",
+      "once_cell",
       "itertools",
       "url",
-      "mlua",
-      "strings"
+      "clap",
+      "strings",
+      "html",
+      "json",
+      "plugin",
+      "hooks",
+      "error",
+      "file",
+      "reqwest"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10667,13 +10667,13 @@
     "agent": "Claude_Code",
     "stdlib_imports": [],
     "extlib_imports": [
-      "serde_json",
       "tokio",
-      "serde",
       "ruv_swarm_core",
+      "dashmap",
+      "serde",
       "anyhow",
-      "uuid",
-      "dashmap"
+      "serde_json",
+      "uuid"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10737,10 +10737,10 @@
     "agent": "Claude_Code",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "ort",
+      "clap",
       "tracing_subscriber",
-      "clap"
+      "tracing",
+      "ort"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10786,8 +10786,8 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "typst",
-      "pyo3"
+      "pyo3",
+      "typst"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10821,55 +10821,55 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "tree_sitter_bash",
-      "codex_common",
-      "tempfile",
-      "mcp_test_support",
-      "serde",
-      "codex_apply_patch",
-      "core_test_support",
-      "mock_model_server",
-      "sha1",
-      "codex_mcp_server",
-      "color_eyre",
-      "pretty_assertions",
-      "tracing_subscriber",
-      "OutgoingMessage",
-      "owo_colors",
-      "unicode_width",
-      "uuid",
-      "wiremock",
-      "tokio",
-      "model_provider_info",
-      "async_channel",
-      "event_processor_with_json_output",
-      "shlex",
-      "codex_arg0",
+      "assert_cmd",
       "codex_login",
+      "apply_patch",
+      "tracing_subscriber",
+      "pretty_assertions",
+      "ratatui",
+      "async_channel",
+      "anyhow",
+      "tempfile",
+      "codex",
+      "codex_arg0",
+      "chrono",
+      "OutgoingMessage",
+      "walkdir",
+      "sha1",
       "mcp_process",
+      "unicode_width",
+      "serde",
+      "codex_cli",
+      "event_processor_with_human_output",
+      "event_processor_with_json_output",
+      "owo_colors",
+      "serde_bytes",
+      "color_eyre",
+      "whoami",
+      "mcp_test_support",
       "tree_sitter",
       "mcp_types",
-      "strum_macros",
-      "event_processor_with_human_output",
-      "chrono",
-      "anyhow",
-      "tokio_util",
-      "walkdir",
-      "codex",
-      "tokio_test",
-      "ratatui",
-      "whoami",
-      "codex_cli",
-      "serde_json",
-      "AskForApproval",
-      "SandboxPolicy",
-      "codex_core",
-      "assert_cmd",
+      "uuid",
+      "tokio",
+      "mock_model_server",
+      "shlex",
+      "wiremock",
+      "codex_mcp_server",
       "crossterm",
+      "SandboxPolicy",
+      "tree_sitter_bash",
+      "codex_apply_patch",
+      "tracing",
+      "AskForApproval",
+      "strum_macros",
+      "codex_common",
+      "core_test_support",
       "responses",
-      "apply_patch",
-      "serde_bytes"
+      "codex_core",
+      "serde_json",
+      "tokio_test",
+      "model_provider_info",
+      "tokio_util"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10913,8 +10913,8 @@
     "agent": "Cursor",
     "stdlib_imports": [],
     "extlib_imports": [
-      "clap",
-      "eyre"
+      "eyre",
+      "clap"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10938,9 +10938,9 @@
     "agent": "Cursor",
     "stdlib_imports": [],
     "extlib_imports": [
+      "tempfile",
       "serde",
-      "either",
-      "tempfile"
+      "either"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -10984,18 +10984,18 @@
     "agent": "Cursor",
     "stdlib_imports": [],
     "extlib_imports": [
-      "display",
-      "comfy_table",
       "tokio",
-      "message",
-      "serde",
       "table",
-      "crossterm_utils",
+      "serde",
+      "message",
+      "infrastructure",
       "crossterm",
+      "crossterm_utils",
       "spinner",
-      "log",
+      "comfy_table",
+      "display",
       "message_display",
-      "infrastructure"
+      "log"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11007,9 +11007,9 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
+      "kmsg",
       "petri_artifacts_vmm_test",
-      "vmm_test_macros",
-      "kmsg"
+      "vmm_test_macros"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11031,11 +11031,11 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "pprof",
-      "criterion",
       "tokio",
+      "criterion",
+      "tonic",
       "opentelemetry_sdk",
-      "tonic"
+      "pprof"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11048,9 +11048,9 @@
     "stdlib_imports": [],
     "extlib_imports": [
       "tokio",
+      "serde",
       "anyhow",
-      "rmcp",
-      "serde"
+      "rmcp"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11062,15 +11062,15 @@
     "agent": "Cursor",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
+      "tokio",
+      "terminator_mcp_agent",
+      "rmcp",
       "anyhow",
       "serde_json",
       "tempfile",
-      "tokio",
       "quick_js",
-      "rmcp",
       "clap",
-      "terminator_mcp_agent"
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11082,8 +11082,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tokio",
       "ratatui",
+      "tokio",
       "tokio_util",
       "tokio_test"
     ],
@@ -11117,15 +11117,15 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "vtl2_settings_proto",
       "guid",
+      "storvsp_resources",
+      "vm_resource",
       "prost",
+      "scsidisk_resources",
+      "underhill_config",
       "base64",
       "hvlite_defs",
-      "scsidisk_resources",
-      "vm_resource",
-      "storvsp_resources",
-      "underhill_config"
+      "vtl2_settings_proto"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11137,8 +11137,8 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "gtk",
-      "adw"
+      "adw",
+      "gtk"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11190,9 +11190,9 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "pet_uv",
       "pet_conda",
-      "pet_fs"
+      "pet_fs",
+      "pet_uv"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11214,17 +11214,17 @@
     "agent": "Cursor",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "serde_json",
       "tokio",
-      "ollama_rs",
-      "rmcp",
-      "clap",
       "terminator_mcp_agent",
       "arboard",
       "tracing_subscriber",
-      "rdev",
-      "anyhow"
+      "rmcp",
+      "anyhow",
+      "ollama_rs",
+      "serde_json",
+      "clap",
+      "tracing",
+      "rdev"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11237,9 +11237,9 @@
     "stdlib_imports": [],
     "extlib_imports": [
       "anyhow",
-      "regex",
+      "log",
       "zip",
-      "log"
+      "regex"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11333,14 +11333,14 @@
     "extlib_imports": [
       "revision",
       "criterion",
-      "rand",
-      "serde",
       "quote",
-      "fuzzy_matcher",
-      "surrealdb_macros",
+      "serde",
+      "wiremock",
+      "rand",
       "surrealdb_core",
       "syn",
-      "wiremock"
+      "fuzzy_matcher",
+      "surrealdb_macros"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11352,13 +11352,13 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
+      "surrealdb_protocol",
       "surrealdb",
+      "value_proto",
       "serde",
       "socket",
-      "surrealdb_protocol",
-      "anyhow",
-      "value_proto",
-      "surrealdb_core"
+      "surrealdb_core",
+      "anyhow"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11421,9 +11421,9 @@
     "stdlib_imports": [],
     "extlib_imports": [
       "tokio",
-      "tracing",
       "anyhow",
-      "tracing_subscriber"
+      "tracing_subscriber",
+      "tracing"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11498,9 +11498,9 @@
     "stdlib_imports": [],
     "extlib_imports": [
       "opentelemetry_sdk",
+      "criterion",
       "pprof",
-      "tonic",
-      "criterion"
+      "tonic"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11512,8 +11512,8 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "risingwave_connector",
-      "risingwave_pb"
+      "risingwave_pb",
+      "risingwave_connector"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11537,39 +11537,39 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
+      "foyer",
+      "utils",
+      "risingwave_pb",
+      "educe",
+      "anyhow",
+      "risingwave_common_proc_macro",
       "async_recursion",
-      "frontend",
-      "serde",
-      "meta",
-      "risingwave_connector",
+      "risingwave_storage",
+      "futures",
       "sea_orm_migration",
+      "frontend",
+      "progress",
+      "batch",
+      "serde",
+      "streaming",
+      "await_tree",
+      "storage",
       "thiserror_ext",
       "tokio",
-      "udf",
-      "batch",
       "barrier_worker",
-      "educe",
-      "streaming",
-      "risingwave_common_proc_macro",
-      "utils",
-      "storage",
-      "clap",
-      "itertools",
-      "system",
-      "actor_manager",
-      "risingwave_pb",
-      "futures",
-      "anyhow",
-      "server",
-      "progress",
-      "serde_json",
-      "risingwave_common",
-      "await_tree",
       "risingwave_license",
-      "foyer",
+      "udf",
+      "system",
+      "server",
+      "meta",
+      "itertools",
+      "actor_manager",
       "serde_default",
-      "risingwave_storage",
-      "risingwave_common_metrics"
+      "risingwave_connector",
+      "serde_json",
+      "risingwave_common_metrics",
+      "clap",
+      "risingwave_common"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11582,43 +11582,43 @@
     "stdlib_imports": [],
     "extlib_imports": [
       "",
-      "tracing",
-      "iceberg",
-      "prometheus",
-      "uuid",
-      "tonic",
-      "google_cloud_googleapis",
-      "thiserror_ext",
-      "elasticsearch",
-      "tokio",
-      "sea_orm",
-      "mongodb",
-      "opensearch",
-      "arrow_schema_iceberg",
+      "with_options",
       "async_trait",
-      "tokio_retry",
-      "clickhouse",
-      "risingwave_common_estimate_size",
-      "regex",
-      "elasticsearch_opensearch",
-      "itertools",
-      "deltalake",
       "risingwave_pb",
+      "risingwave_common_estimate_size",
+      "tonic",
+      "google_cloud_pubsub",
+      "anyhow",
       "serde_with",
       "futures",
-      "anyhow",
-      "with_options",
-      "url",
-      "google_cloud_gax",
-      "serde_json",
-      "await_tree",
-      "risingwave_common",
-      "dynamodb",
       "imp",
+      "dynamodb",
+      "parquet",
+      "regex",
+      "tokio_retry",
       "big_query",
-      "google_cloud_pubsub",
+      "google_cloud_googleapis",
+      "google_cloud_gax",
+      "elasticsearch",
+      "await_tree",
+      "arrow_schema_iceberg",
+      "thiserror_ext",
+      "uuid",
       "serde_derive",
-      "parquet"
+      "tokio",
+      "opensearch",
+      "itertools",
+      "iceberg",
+      "clickhouse",
+      "url",
+      "deltalake",
+      "mongodb",
+      "tracing",
+      "sea_orm",
+      "elasticsearch_opensearch",
+      "prometheus",
+      "serde_json",
+      "risingwave_common"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11640,8 +11640,8 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "color_eyre",
-      "serde"
+      "serde",
+      "color_eyre"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11673,12 +11673,12 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "mcp_types",
-      "serde_json",
-      "uuid",
+      "walkdir",
       "sha1",
-      "walkdir"
+      "serde_json",
+      "mcp_types",
+      "tracing",
+      "uuid"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11690,11 +11690,11 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "serde_json",
-      "uuid",
       "tokio",
+      "walkdir",
       "serde",
-      "walkdir"
+      "serde_json",
+      "uuid"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11706,22 +11706,22 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "test_support",
-      "tracing",
-      "mcp_types",
-      "serde_json",
-      "uuid",
-      "codex_common",
-      "tempfile",
       "tokio",
-      "codex_core",
+      "walkdir",
       "sha1",
+      "codex_common",
       "shlex",
       "event_processor_with_human_output",
-      "event_processor_with_json_output",
       "owo_colors",
-      "walkdir",
-      "wiremock"
+      "event_processor_with_json_output",
+      "wiremock",
+      "codex_core",
+      "test_support",
+      "serde_json",
+      "tempfile",
+      "mcp_types",
+      "tracing",
+      "uuid"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11763,17 +11763,17 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "inspect",
-      "guid",
       "vmcore",
-      "guestmem",
-      "mesh",
-      "parking_lot",
       "pci_core",
-      "pal_async",
+      "guid",
+      "mesh",
+      "inspect",
+      "parking_lot",
       "zerocopy",
       "bitfield_struct",
-      "chipset_device"
+      "chipset_device",
+      "pal_async",
+      "guestmem"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11785,13 +11785,13 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "test_support",
-      "mcp_types",
-      "tempfile",
       "tokio",
+      "test_support",
+      "wiremock",
       "codex_core",
-      "uuid",
-      "wiremock"
+      "tempfile",
+      "mcp_types",
+      "uuid"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11813,8 +11813,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "ahash",
-      "sqruff_lib_core"
+      "sqruff_lib_core",
+      "ahash"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11826,12 +11826,12 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "test_support",
-      "tempfile",
       "tokio",
+      "wiremock",
       "codex_core",
-      "uuid",
-      "wiremock"
+      "tempfile",
+      "test_support",
+      "uuid"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11875,9 +11875,9 @@
     "agent": "Cursor",
     "stdlib_imports": [],
     "extlib_imports": [
-      "cpal",
       "audio",
-      "hound"
+      "hound",
+      "cpal"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11931,11 +11931,11 @@
     "agent": "Cursor",
     "stdlib_imports": [],
     "extlib_imports": [
-      "anyhow",
-      "tower",
       "prometheus",
+      "tower",
       "terminator_mcp_agent",
-      "axum"
+      "axum",
+      "anyhow"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -11967,8 +11967,8 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "pyo3",
-      "pyo3_stub_gen"
+      "pyo3_stub_gen",
+      "pyo3"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -12120,9 +12120,9 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
+      "swc_ecma_parser",
       "swc_common",
-      "swc_ecma_ast",
-      "swc_ecma_parser"
+      "swc_ecma_ast"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -12242,25 +12242,25 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "alloy_eips",
-      "tracing",
-      "kona_genesis",
-      "thiserror",
-      "kona_interop",
-      "alloy_primitives",
-      "cli_opts",
-      "error",
-      "kona_supervisor_storage",
-      "libp2p",
-      "derive_more",
-      "kona_registry",
       "kona_supervisor_types",
-      "clap",
-      "chain",
-      "rewinder",
-      "rstest",
       "op_alloy_rpc_types_engine",
-      "kona_cli"
+      "derive_more",
+      "alloy_eips",
+      "kona_interop",
+      "cli_opts",
+      "thiserror",
+      "rewinder",
+      "libp2p",
+      "kona_genesis",
+      "kona_supervisor_storage",
+      "rstest",
+      "alloy_primitives",
+      "kona_registry",
+      "tracing",
+      "chain",
+      "kona_cli",
+      "error",
+      "clap"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -12305,8 +12305,8 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "error",
-      "libp2p"
+      "libp2p",
+      "error"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -12338,21 +12338,21 @@
     "agent": "Devin",
     "stdlib_imports": [],
     "extlib_imports": [
-      "zcash_client_backend",
-      "serde_json",
-      "bitcoin_hashes",
-      "futures_util",
       "zcash_primitives",
+      "http",
+      "derive_more",
       "serde",
-      "coins",
+      "bitcoin_hashes",
       "mm2_core",
-      "crypto",
-      "bitcrypto",
-      "mm2_test_helpers",
       "keys",
       "mm2_err_handle",
-      "http",
-      "derive_more"
+      "zcash_client_backend",
+      "serde_json",
+      "futures_util",
+      "bitcrypto",
+      "coins",
+      "crypto",
+      "mm2_test_helpers"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -12364,8 +12364,8 @@
     "agent": "Copilot",
     "stdlib_imports": [],
     "extlib_imports": [
-      "typstyle_core",
-      "typst_syntax"
+      "typst_syntax",
+      "typstyle_core"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -12457,14 +12457,14 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "validator",
-      "actions",
-      "serde",
       "loader",
+      "serde",
       "assets",
-      "axum_extra",
+      "dioxus",
+      "actions",
       "axum",
-      "dioxus"
+      "validator",
+      "axum_extra"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -12476,8 +12476,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "kube",
-      "k8s_openapi"
+      "k8s_openapi",
+      "kube"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -12671,9 +12671,9 @@
     "agent": "Claude_Code",
     "stdlib_imports": [],
     "extlib_imports": [
-      "reth_trie",
+      "reth_trie_common",
       "reth_storage_api",
-      "reth_trie_common"
+      "reth_trie"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -12745,18 +12745,18 @@
     "agent": "Claude_Code",
     "stdlib_imports": [],
     "extlib_imports": [
-      "ahash",
-      "anyhow",
-      "criterion",
-      "rand",
-      "regex",
-      "tempfile",
-      "rayon",
-      "grep_searcher",
-      "aho_corasick",
       "simsimd",
-      "probe_code",
+      "criterion",
+      "grep_searcher",
       "memchr",
+      "regex",
+      "rand",
+      "rayon",
+      "anyhow",
+      "aho_corasick",
+      "tempfile",
+      "probe_code",
+      "ahash",
       "grep_regex"
     ],
     "dep_no_version": [],
@@ -12829,18 +12829,18 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "tracing",
-      "openai_api",
-      "serde_json",
-      "rand",
       "tokio",
-      "serde",
-      "kube",
-      "base64",
-      "object_storage",
       "async_trait",
+      "k8s_operator",
+      "serde",
+      "rand",
+      "base64",
+      "serde_json",
+      "object_storage",
       "k8s_openapi",
-      "k8s_operator"
+      "kube",
+      "tracing",
+      "openai_api"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -12862,9 +12862,9 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
+      "cu29_helpers",
       "cu29_export",
-      "cu29",
-      "cu29_helpers"
+      "cu29"
     ],
     "dep_no_version": [],
     "dep_with_version": []
@@ -12876,8 +12876,8 @@
     "agent": "OpenAI_Codex",
     "stdlib_imports": [],
     "extlib_imports": [
-      "cu29",
-      "cu29_helpers"
+      "cu29_helpers",
+      "cu29"
     ],
     "dep_no_version": [],
     "dep_with_version": []
