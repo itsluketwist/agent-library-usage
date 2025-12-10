@@ -1,4 +1,4 @@
-# **research-template**
+# **agent-library-usage**
 
 This repository contains the artifacts and full results for the research paper **A Study of Library Usage in Agent-Authored Pull Requests**.
 
@@ -40,7 +40,7 @@ python --version
 Now clone the repository code:
 
 ```shell
-git clone **redacted**
+git clone https://github.com/itsluketwist/agent-library-usage
 ```
 
 Once cloned, install the requirements locally in a virtual environment:
