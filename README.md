@@ -15,7 +15,17 @@ This repository contains the artifacts and full results for the research paper *
 
 ## *abstract*
 
-todo
+Coding agents are becoming increasingly capable of completing end-to-end software engineering workflows that previously required a human developer, including raising pull requests (PRs) to propose their changes.
+However, we still know little about how these agents use libraries when generating code, a core part of real-world software development.
+To fill this gap, we study 26,760 agent-authored PRs from the [AIDev dataset](https://huggingface.co/datasets/hao-li/AIDev) to examine three questions: how often do agents import libraries, how often do they introduce new dependencies (and with what versioning), and which specific libraries they choose?
+We find that agents often import libraries (29.5\% of PRs) but rarely add new dependencies (1.3\% of PRs); when they do, they follow strong versioning practices (75.0\% specify a version), an improvement on direct LLM usage where versions are rarely mentioned.
+Generally, agents draw from a surprisingly diverse set of external libraries, contrasting with the limited ``library preferences'' seen in prior non-agentic LLM studies.
+Our results offer an early empirical view into how AI coding agents interact with today’s software ecosystems.
+
+## *dataset*
+
+This work is part of the [MSR 2026 Mining Challenge](https://2026.msrconf.org/track/msr-2026-mining-challenge), analysing the [AIDev dataset](https://huggingface.co/datasets/hao-li/AIDev), the first large-scale, openly available dataset of agent-authored pull requests from real-world GitHub repositories.
+The dataset was introduced by [Li et al.](https://arxiv.org/abs/2507.15003) and captures the emergence of autonomous coding agents in software engineering, providing a unique opportunity to study how AI teammates interact with real-world codebases and software ecosystems.
 
 ## *installation*
 
@@ -47,7 +57,7 @@ pip install .
 
 After [*installation*](#installation), all analysis is run through Jupyter notebooks in the [`notebooks/`](notebooks/) directory. Run the notebooks in order:
 
-1. **`01_download_dataset.ipynb`** - Download and prepare the AIDev dataset
+1. **`01_download_dataset.ipynb`** - Download and prepare the [AIDev dataset](https://huggingface.co/datasets/hao-li/AIDev)
 2. **`02_explore_languages.ipynb`** - Identify programming languages in the dataset
 3. **`03_analyze_library_usage.ipynb`** - Analyse library usage patterns across all languages
 4. **`04_generate_latex_tables.ipynb`** - Generate LaTeX tables for the research paper
