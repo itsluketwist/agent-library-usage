@@ -27,6 +27,8 @@ Our results offer an early empirical view into how AI coding agents interact wit
 This work is part of the [MSR 2026 Mining Challenge](https://2026.msrconf.org/track/msr-2026-mining-challenge), analysing the [AIDev dataset](https://huggingface.co/datasets/hao-li/AIDev), the first large-scale, openly available dataset of agent-authored pull requests from real-world GitHub repositories.
 The dataset was introduced by [Li et al.](https://arxiv.org/abs/2507.15003) and captures the emergence of autonomous coding agents in software engineering, providing a unique opportunity to study how AI teammates interact with real-world codebases and software ecosystems.
 
+**Dataset Version:** This research utilises [AIDev dataset](https://huggingface.co/datasets/hao-li/AIDev) revision [`eee0408a277826d88fc0ca5fa07d2fc325c96af1`](https://huggingface.co/datasets/hao-li/AIDev/commit/eee0408a277826d88fc0ca5fa07d2fc325c96af1) (November 2025 snapshot).
+
 ## *installation*
 
 The code requires Python 3.11 or later to run.
