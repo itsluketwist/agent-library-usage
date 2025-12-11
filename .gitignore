@@ -168,8 +168,4 @@ cython_debug/
 
 # project
 todo.txt
-output/archive
-data/raw
-
-# temporary ignore
 data/*
