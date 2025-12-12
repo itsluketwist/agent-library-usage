@@ -71,24 +71,24 @@ Each notebook is self-contained and documents its purpose and outputs.
 - [`data/`](data/) - Downloaded AIDev dataset files (parquet format, git-ignored)
 - [`output/`](output/) - Generated analysis results:
   - `*_library_usage.json` - Per-language library usage data
-  - `aggregated_statistics.json` - Summary statistics across all languages
-  - `latex_tables.tex` - Generated LaTeX tables for the paper
+  - [`aggregated_statistics.json`](output/aggregated_statistics.json) - Summary statistics across all languages
+  - [`latex_tables.tex`](output/latex_tables.tex) - Generated LaTeX tables for the paper
 - [`src/`](src/) - Main project code:
   - [`extractors/`](src/extractors/) - Language-specific library extractors:
-    - `base.py` - Base extractor interface
-    - `python.py` - Python import and requirements.txt extraction
-    - `javascript.py` - JavaScript/TypeScript import and package.json extraction
-    - `go.py` - Go import and go.mod extraction
-    - `csharp.py` - C# using statements and .csproj extraction
-    - `rust.py` - Rust use statements and Cargo.toml extraction
-  - `pr_analyzer.py` - Analyse PRs for library usage patterns
-  - `constants.py` - Shared constants and configurations
-  - `main.py` - Main analysis entry point
+    - [`base.py`](src/extractors/base.py) - Base extractor interface
+    - [`python.py`](src/extractors/python.py) - Python import and requirements.txt extraction
+    - [`javascript.py`](src/extractors/javascript.py) - JavaScript/TypeScript import and package.json extraction
+    - [`go.py`](src/extractors/go.py) - Go import and go.mod extraction
+    - [`csharp.py`](src/extractors/csharp.py) - C# using statements and .csproj extraction
+    - [`rust.py`](src/extractors/rust.py) - Rust use statements and Cargo.toml extraction
+  - [`pr_analyzer.py`](src/pr_analyzer.py) - Analyse PRs for library usage patterns
+  - [`constants.py`](src/constants.py) - Shared constants and configurations
+  - [`main.py`](src/main.py) - Main analysis entry point
 - [`notebooks/`](notebooks/) - Jupyter notebooks for the analysis pipeline:
-  - `01_download_dataset.ipynb` - Download and prepare the AIDev dataset
-  - `02_explore_languages.ipynb` - Identify programming languages in the dataset
-  - `03_analyze_library_usage.ipynb` - Analyse library usage patterns (generates output/*.json)
-  - `04_generate_latex_tables.ipynb` - Generate LaTeX tables for the paper (4 languages: TypeScript, Python, Go, C#)
+  - [`01_download_dataset.ipynb`](notebooks/01_download_dataset.ipynb) - Download and prepare the AIDev dataset
+  - [`02_explore_languages.ipynb`](notebooks/02_explore_languages.ipynb) - Identify programming languages in the dataset
+  - [`03_analyze_library_usage.ipynb`](notebooks/03_analyze_library_usage.ipynb) - Analyse library usage patterns (generates output/*.json)
+  - [`04_generate_latex_tables.ipynb`](notebooks/04_generate_latex_tables.ipynb) - Generate LaTeX tables for the paper (4 languages: TypeScript, Python, Go, C#)
 - [`tests/`](tests/) - Unit tests for extractors and analyser
 
 ## *development*
