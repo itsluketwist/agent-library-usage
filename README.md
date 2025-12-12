@@ -17,8 +17,8 @@ This repository contains the artifacts and full results for the research paper *
 
 Coding agents are becoming increasingly capable of completing end-to-end software engineering workflows that previously required a human developer, including raising pull requests (PRs) to propose their changes.
 However, we still know little about how these agents use libraries when generating code, a core part of real-world software development.
-To fill this gap, we study 26,760 agent-authored PRs from the [AIDev dataset](https://huggingface.co/datasets/hao-li/AIDev) to examine three questions: how often do agents import libraries, how often do they introduce new dependencies (and with what versioning), and which specific libraries they choose?
-We find that agents often import libraries (29.5\% of PRs) but rarely add new dependencies (1.3\% of PRs); when they do, they follow strong versioning practices (75.0\% specify a version), an improvement on direct LLM usage where versions are rarely mentioned.
+To fill this gap, we study 26,760 agent-authored PRs from the [AIDev dataset](https://huggingface.co/datasets/hao-li/AIDev) to examine three questions: how often do agents import libraries, how often do they introduce new dependencies (and with what versioning), and which specific libraries do they choose?
+We find that agents often import libraries (29.5\% of PRs) but rarely add new dependencies (1.3\% of PRs); and when they do, they follow strong versioning practices (75.0\% specify a version), an improvement on direct LLM usage where versions are rarely mentioned.
 Generally, agents draw from a surprisingly diverse set of external libraries, contrasting with the limited ``library preferences'' seen in prior non-agentic LLM studies.
 Our results offer an early empirical view into how AI coding agents interact with today’s software ecosystems.
 
