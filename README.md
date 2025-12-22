@@ -11,6 +11,9 @@ This repository contains the artifacts and full results for the research paper *
     <a href="https://www.python.org/">
         <img alt="Python 3" src="https://img.shields.io/badge/Python_3-blue?style=for-the-badge&logo=python&logoColor=white" />
     </a>
+    <a href="https://code.claude.com/docs/en/overview">
+        <img alt="Claude Code" src="https://img.shields.io/badge/Claude_Code-D97757?style=for-the-badge&logo=claude&logoColor=white" />
+    </a>
 </div>
 
 ## *abstract*
@@ -127,3 +130,8 @@ Then version lock with [`uv`](https://astral.sh/blog/uv) using:
 ```shell
 uv pip compile requirements.in --output-file requirements.txt --upgrade
 ```
+
+## *acknowledgments*
+
+In a fitting twist of irony, this repository&ndash;which analyses how AI coding agents use libraries&ndash;was itself developed with assistance from [Claude Code](https://code.claude.com/docs/en/overview), an AI coding agent.
+All code was thoroughly reviewed and validated by the authors, who remain responsible for the scientific interpretations and conclusions.
