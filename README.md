@@ -152,11 +152,11 @@ Lukas Twist and Jie M. Zhang. 2026. A Study of Library Usage in Agent-Authored P
   author = {Twist, Lukas and Zhang, Jie M.},
   booktitle = {Proceedings of the 23rd International Conference on Mining Software Repositories},
   series = {MSR '26},
+  location = {Rio de Janeiro, Brazil},
   year = {2026},
   month = {April},
-  location = {Rio de Janeiro, Brazil},
   publisher = {ACM},
-  doi = {10.1145/3793302.3793562}
+  doi = {10.1145/3793302.3793562},
 }
 ```
 
