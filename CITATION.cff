@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the associated paper."
+title: "A Study of Library Usage in Agent-Authored Pull Requests"
+authors:
+  - family-names: Twist
+    given-names: Lukas
+  - family-names: Zhang
+    given-names: Jie M.
+conference:
+  name: "International Conference on Mining Software Repositories"
+  acronym: MSR
+  year: 2026
+  location: "Rio de Janeiro, Brazil"
+identifiers:
+  - type: doi
+    value: "10.1145/3793302.3793562"

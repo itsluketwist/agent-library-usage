@@ -1,6 +1,6 @@
 # **agent-library-usage**
 
-This repository contains the artifacts and full results for the research paper **A Study of Library Usage in Agent-Authored Pull Requests**.
+This repository contains the artifacts and full results for the research paper **A Study of Library Usage in Agent-Authored Pull Requests**, accepted at the *23rd International Conference on Mining Software Repositories (MSR '26), April 13--14, 2026, Rio de Janeiro, Brazil*, and available on [arXiv](https://arxiv.org/abs/2512.11589).
 
 <div>
     <!-- badges from : https://shields.io/ -->
@@ -13,6 +13,9 @@ This repository contains the artifacts and full results for the research paper *
     </a>
     <a href="https://code.claude.com/docs/en/overview">
         <img alt="Claude Code" src="https://img.shields.io/badge/Claude_Code-D97757?style=for-the-badge&logo=claude&logoColor=white" />
+    </a>
+    <a href="https://arxiv.org/abs/2512.11589">
+        <img alt="arXiv" src="https://img.shields.io/badge/arXiv-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white" />
     </a>
 </div>
 
@@ -129,6 +132,32 @@ Then version lock with [`uv`](https://astral.sh/blog/uv) using:
 
 ```shell
 uv pip compile requirements.in --output-file requirements.txt --upgrade
+```
+
+## *citation*
+
+If you use this work in your research, please cite our paper:
+
+**ACM Reference Format:**
+
+```
+Lukas Twist and Jie M. Zhang. 2026. A Study of Library Usage in Agent-Authored Pull Requests. In 23rd International Conference on Mining Software Repositories (MSR '26), April 13–14, 2026, Rio de Janeiro, Brazil. ACM, New York, NY, USA, 6 pages. https://doi.org/10.1145/3793302.3793562
+```
+
+**BibTeX:**
+
+```
+@inproceedings{twist2026AgentLibraryUsage,
+  title = {{A Study of Library Usage in Agent-Authored Pull Requests}},
+  author = {Twist, Lukas and Zhang, Jie M.},
+  booktitle = {Proceedings of the 23rd International Conference on Mining Software Repositories},
+  series = {MSR '26},
+  year = {2026},
+  month = {April},
+  location = {Rio de Janeiro, Brazil},
+  publisher = {ACM},
+  doi = {10.1145/3793302.3793562}
+}
 ```
 
 ## *acknowledgments*
