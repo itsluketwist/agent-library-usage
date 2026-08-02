@@ -147,7 +147,7 @@ Lukas Twist and Jie M. Zhang. 2026. A Study of Library Usage in Agent-Authored P
 **BibTeX:**
 
 ```
-@inproceedings{twist2026AgentLibraryUsage,
+@inproceedings{twistAgentLibraryUsage2026,
   title = {{A Study of Library Usage in Agent-Authored Pull Requests}},
   author = {Twist, Lukas and Zhang, Jie M.},
   booktitle = {Proceedings of the 23rd International Conference on Mining Software Repositories},
@@ -157,6 +157,10 @@ Lukas Twist and Jie M. Zhang. 2026. A Study of Library Usage in Agent-Authored P
   month = {April},
   publisher = {ACM},
   doi = {10.1145/3793302.3793562},
+  url = {https://dl.acm.org/doi/10.1145/3793302.3793562},
+  pages = {722--726},
+  isbn = {979-8-4007-2474-9},
+  note = {Mining Challenge Track},
 }
 ```
 
