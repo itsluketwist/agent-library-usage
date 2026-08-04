@@ -1,6 +1,6 @@
 # **agent-library-usage**
 
-This repository contains the artifacts and full results for the research paper **A Study of Library Usage in Agent-Authored Pull Requests**, accepted at the *23rd International Conference on Mining Software Repositories (MSR '26), April 13-14, 2026, Rio de Janeiro, Brazil*, and available on [arXiv](https://arxiv.org/abs/2512.11589).
+This repository contains the artefacts and full results for the research paper [**A Study of Library Usage in Agent-Authored Pull Requests**](https://dl.acm.org/doi/10.1145/3793302.3793562), published in *Proceedings of the 23rd International Conference on Mining Software Repositories (MSR '26), April 13-14, 2026, Rio de Janeiro, Brazil*.
 
 <div>
     <!-- badges from : https://shields.io/ -->
@@ -15,7 +15,7 @@ This repository contains the artifacts and full results for the research paper *
         <img alt="Claude Code" src="https://img.shields.io/badge/Claude_Code-D97757?style=for-the-badge&logo=claude&logoColor=white" />
     </a>
     <a href="https://arxiv.org/abs/2512.11589">
-        <img alt="arXiv" src="https://img.shields.io/badge/arXiv-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white" />
+        <img alt="arXiv" src="https://img.shields.io/badge/arXiv-2512.11589-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white" />
     </a>
 </div>
 
@@ -98,6 +98,8 @@ Each notebook is self-contained and documents its purpose and outputs.
 - [`tests/`](tests/) - Unit tests for extractors and analyser
 
 ## *development*
+
+[![check](https://github.com/itsluketwist/agent-library-usage/actions/workflows/check.yaml/badge.svg)](https://github.com/itsluketwist/agent-library-usage/actions/workflows/check.yaml)
 
 We use a few extra processes to ensure the code maintains a high quality.
 First clone the project and create a virtual environment - as described above.
