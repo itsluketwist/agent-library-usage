@@ -14,6 +14,9 @@ This repository contains the artefacts and full results for the research paper [
     <a href="https://code.claude.com/docs/en/overview">
         <img alt="Claude Code" src="https://img.shields.io/badge/Claude_Code-D97757?style=for-the-badge&logo=claude&logoColor=white" />
     </a>
+    <a href="https://dl.acm.org/doi/10.1145/3793302.3793562">
+        <img alt="ACM Digital Library" src="https://img.shields.io/badge/ACM_DL-10.1145%2F3793302.3793562-0085CA?style=for-the-badge&logo=acm&logoColor=white" />
+    </a>
     <a href="https://arxiv.org/abs/2512.11589">
         <img alt="arXiv" src="https://img.shields.io/badge/arXiv-2512.11589-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white" />
     </a>
@@ -143,7 +146,7 @@ If you use this work in your research, please cite our paper:
 **ACM Reference Format:**
 
 ```
-Lukas Twist and Jie M. Zhang. 2026. A Study of Library Usage in Agent-Authored Pull Requests. In 23rd International Conference on Mining Software Repositories (MSR '26), April 13-14, 2026, Rio de Janeiro, Brazil. ACM, New York, NY, USA, 6 pages. https://doi.org/10.1145/3793302.3793562
+Lukas Twist and Jie M. Zhang. 2026. A Study of Library Usage in Agent-Authored Pull Requests. In 23rd International Conference on Mining Software Repositories (MSR '26), April 13-14, 2026, Rio de Janeiro, Brazil. ACM, New York, NY, USA, 5 pages. https://doi.org/10.1145/3793302.3793562
 ```
 
 **BibTeX:**
